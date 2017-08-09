@@ -1,0 +1,257 @@
+# Takes in a BeautifulSoup object and looks for specific contents in it
+import sys
+sys.path.append("exceptions")
+
+from BjsExceptions import BjsScrapeException
+
+import re
+
+from Model import BjsProduct
+
+
+
+class BjsPageWizard():
+    """docstring for BjsPageWizard"""
+    def __init__(self):
+        self.base_url = "http://www.bjs.com"
+
+    def has_description_tab(self, soup):
+        """
+        identifies if the html soup countains 'description', 'specifications', 
+        'reviews ()', and 'shipping + returns' tabs
+        """
+        tab_titles = [
+            "description", 
+            "specifications", 
+            "reviews", 
+            "shipping + returns"]
+
+        description_tabs = soup.find("div", {"class":"tabs"})
+        if not description_tabs:
+            return False
+
+        for title in tab_titles:
+            if title not in description_tabs.text:
+                return False
+
+        return True
+
+    def is_item_details_page(self, soup):
+        return \
+            self.has_description_tab(soup)
+
+    def has_item_filter_options(self, soup):
+        """
+        identifies if the html soup countains the bjs filter bar as off june 25, 2017
+        """
+        filter_bar = soup.find("div", {"class":"filter-options -in-page"})
+        
+        if filter_bar == None:
+            """
+            This page doesn't have the filter_bar element
+            """
+            return False
+
+        """ 
+        Match BJ's items filter block
+        Example match: 
+        43 Items | All (43) | Online (0) | In Club (43) | By Best Match | 40 per page
+        """
+        regex_str = "\d+\sItems.*All\s\(\d+\)\sOnline\s\(\d+\)\sIn\sClub\s\(\d+\).*By\sBest\sMatch.*40\sper\spage"
+        match = re.search(regex_str, filter_bar.text)
+        
+        return match != None # true if found match
+
+    def has_item_block(self, soup):
+        """
+        identifies if the html soup has at least one bjs item block
+        """
+        item_block = soup.find("li", {"class":"product ng-scope"})
+
+        if item_block == None:
+            """
+            This page doesn't have the item_block element
+            """
+            return False
+        """
+        Match BJ's item display block
+        """
+        regex_str = "Compare"
+        match = re.search(regex_str, item_block.text)
+
+        return match != None # true if found match
+
+    def has_brands_and_rating_block(self, soup):
+        """
+        identifies if the html soup has the Bj's brands block
+        """
+        brands_and_rating = soup.find_all("fieldset", {"class":"checklist -open"})
+
+        if brands_and_rating == None:
+            return False
+
+        blocks = ""
+        for block in brands_and_rating:
+            blocks += block.text
+
+        regex_str = "Brand.*Rating"
+        match = re.search(regex_str, blocks)
+
+        return match != None # true if found match
+
+    def is_product_page(self, soup):
+        """
+        Identifies if a page has a list of products
+        """
+        return \
+            self.has_item_filter_options(soup) and \
+            self.has_item_block(soup)
+            # and \
+            # self.has_brands_and_rating_block(soup)
+
+    def has_categories_block(self, soup):
+        categories_block = soup.find("fieldset", {"class":"checklist -open"})
+
+        if categories_block == None:
+            return False
+
+        regex_str = "Categories"
+        match = re.search(regex_str, categories_block.text)
+
+        return match != None # true if found match
+
+    def is_categories_page(self, soup):
+        return \
+            self.has_categories_block(soup) and \
+            not \
+                (self.has_item_filter_options(soup) or \
+                self.has_item_block(soup) or \
+                self.has_brands_and_rating_block(soup))
+
+    def map_categories_to_urls(self, soup):
+        """
+        Get all categories on page as a map of category name to url
+        """
+        categories_grid = soup.find("ul",{"class":"categories"})
+        if categories_grid == None:
+            raise Exception("No Categories grid on page="+url)
+
+        category_list = categories_grid.find_all("li",{"class":"category"})
+        if category_list == None:
+            raise Exception("Categories grid is empty on this page="+url)
+
+        category_url_map = {}
+
+        for cat_html in category_list:
+            category_name = cat_html.find("h4",{"class":"name ng-binding"}).text
+            category_url = cat_html.find("a", href=True)["href"]
+            
+            category_url_map[category_name] = self.base_url + category_url
+
+        return category_url_map
+
+    def get_partial_products(self, soup):
+        """
+        Gets all the products on a page. Information on this page is incomplete. 
+        Fields provided: name, product_url, image_url.
+        Call complete_product(BjsProduct) to fill all the fields for a specific product.
+        """
+        product_grid = soup.find_all("div", {"class":"productBox"})
+        if product_grid == None:
+            raise Exception("No product grid on this page="+url)
+
+        products = []
+
+        for product_html in product_grid:
+            sku = None # sku is provided in product details page only
+            model = None # model is provided in product details page only
+            name = product_html.find("h4",{"class":"name"}).text
+            availability_stores = None # availability requires a dedicated process
+            availability_prices = None # availability requires a dedicated process
+            product_url = self.base_url + product_html.find("a", href=True)["href"]
+            image_url = product_html.find("img")["src"]
+
+            products.append(
+                BjsProduct(
+                    sku=sku,
+                    model=model,
+                    name=name,
+                    availabilityStores=availability_stores,
+                    availabilityPrices=availability_prices,
+                    imageUrl=image_url,
+                    productUrl=product_url))
+
+        return products
+
+    def get_a_match_for_item_and_model(self, string):
+        regex_strings_prioritized = [
+            "Item:\s(\d+).*\|\s*Model:\s*([#A-Z\d-]+)", # Item: 123 | Model: #AS-123
+            "Item:\s(\d+)()",                             # Item: 123
+            "Item:().*\|\s*Model:\s*([#A-Z\d-]+)"         # Item: | Model: #AS-123
+        ]
+
+        for regex_str in regex_strings_prioritized:
+            match = re.search(regex_str, string)
+            if match:
+                return (match, regex_str)
+
+    def get_sku_and_model_to_product(self, soup):
+        """
+        Returns the updated product.
+        On the given soup, find value for sku and model. Add them to the given product.
+        """
+        sku_and_model = soup.find(id="productModel")
+        
+        if not sku_and_model:
+            error = "No id=productModel"
+            raise BjsScrapeException(100, error)
+        
+        sku_and_model_str = sku_and_model.text.replace("\n"," ")
+
+        match = self.get_a_match_for_item_and_model(sku_and_model_str)
+
+        # match = re.search(sku_and_model_regex_str, sku_and_model_str)
+
+        if not match[0]:
+            error = "No match for regex=%s on string=%s" % (
+                match[1], sku_and_model_str)
+            raise BjsScrapeException(101, error)
+
+        sku = match[0].group(1)
+        model = match[0].group(2)
+            
+        return sku, model
+
+    def get_online_price(self, soup):
+        """Gets the price on the item's detail page. Marked by class=price4"""
+        price = soup.find("div",{"class":"price4"})
+        if price:
+            return price.text.strip()
+        
+        return None
+
+    def get_estimated_delivery(self, soup):
+        """Gets the estimated delivery on item's detail page. Marked by id=estimatedDelivery"""
+        delivery_elem = soup.find(id="estimatedDelivery")
+
+        
+        if delivery_elem:
+            delivery_regex_str = "Estimated Delivery:\s(.*)"
+            match = re.search(delivery_regex_str, delivery_elem.text)
+            if match:
+                delivery = match.group(1)
+                return delivery
+
+        return None
+
+    def get_details(self, soup):
+        """ Gets the details panel for an item."""
+        # details_elem = soup.find("div",{"class":"detailPanel"})
+        details_elem = soup.find(id="tab-1")
+
+        if details_elem:
+            return details_elem.text
+
+        return None
+
+
