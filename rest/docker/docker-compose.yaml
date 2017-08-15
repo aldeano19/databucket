@@ -13,5 +13,5 @@ services:
     image: inovatrend/tomcat8-java8
     ports:
       - "8088:8080"
-    volumes:
-      - ../databucket/build/libs/rest-0.1.0.war:/opt/tomcat/webapps/rest-0.1.0.war
+    # volumes:
+    #   - ../databucket/build/libs/rest-0.1.0.war:/opt/tomcat/webapps/rest-0.1.0.war

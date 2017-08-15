@@ -16,8 +16,10 @@ import org.springframework.data.mongodb.config.AbstractMongoConfiguration;
 public class MongodbConfig extends AbstractMongoConfiguration{
 
     private final String DATABASE_NAME = "data_bucket_mongodb";
-    private final String DATABASE_HOST = "127.0.0.1";
-    private final int DATABASE_PORT = 27027;
+//    private final String DATABASE_HOST = "127.0.0.1";
+//    private final int DATABASE_PORT = 27027;
+    private final String DATABASE_HOST = "database";
+    private final int DATABASE_PORT = 27017;
 
 
     @Override
