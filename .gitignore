@@ -1,1 +1,4 @@
-*.pem
+*/\.gradle*
+*/\.idea*
+*/build/*
+logs/*
