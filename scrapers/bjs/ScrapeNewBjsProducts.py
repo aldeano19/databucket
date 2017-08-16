@@ -35,6 +35,7 @@ import os
 LOGFILE = ("%s.log" % (os.path.basename(__file__))).replace(".py","")
 
 def get_items_from_store_website(driver, wizard, category, url):
+
     driver.get(url)
 
     category_name_element_xapth = '//*[@id="listing-container"]/div[1]/section/header/h1'
@@ -42,7 +43,7 @@ def get_items_from_store_website(driver, wizard, category, url):
         category_name_element = WebDriverWait(driver, 3).until(
             EC.presence_of_element_located((By.XPATH, category_name_element_xapth))
         )
-    except TimeoutException, e:
+    except Exception, e:
         message = "Cant find category=%s at url=%s" % (category, url)
         BjsUtil.log(LOGFILE, BjsUtil.LOG_ERROR, message, console_out=True)
         return
@@ -93,10 +94,11 @@ def get_and_save_new_items(
     driver = webdriver.Firefox()
     driver.get(bjs_main_product_page)
     
-    name_element_xpath = '//*[@id="listing-container"]/div[1]/section/header/h1'
-    name_element = WebDriverWait(driver, 3).until(
-        EC.presence_of_element_located((By.XPATH, name_element_xpath))
-    )
+    time.sleep(3)
+    # name_element_xpath = '//*[@id="listing-container"]/div[1]/section/header/h1'
+    # name_element = WebDriverWait(driver, 3).until(
+    #     EC.presence_of_element_located((By.XPATH, name_element_xpath))
+    # )
 
     wizard = BjsPageWizard()
 
@@ -109,6 +111,8 @@ def get_and_save_new_items(
         BjsUtil.log(LOGFILE, BjsUtil.LOG_INFO, message, console_out=True)
 
         category_map = wizard.map_categories_to_urls(soup)
+        print "QQQQQQQQQ" + str(category_map)
+        # exit()
     else:
         message = "Not categories on page, category=%s, url=%s" % (
             bjs_main_product_category_name, 

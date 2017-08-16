@@ -6,6 +6,11 @@ import com.mongodb.MongoClient;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.mongodb.config.AbstractMongoConfiguration;
+import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
+
+import java.util.Map;
+import java.util.Properties;
+import java.util.Set;
 
 
 /**
@@ -13,14 +18,10 @@ import org.springframework.data.mongodb.config.AbstractMongoConfiguration;
  */
 
 @Configuration
+@EnableMongoRepositories(basePackages = "com.consequentialdata.rest.repository")
 public class MongodbConfig extends AbstractMongoConfiguration{
 
     private final String DATABASE_NAME = "data_bucket_mongodb";
-//    private final String DATABASE_HOST = "127.0.0.1";
-//    private final int DATABASE_PORT = 27027;
-    private final String DATABASE_HOST = "database";
-    private final int DATABASE_PORT = 27017;
-
 
     @Override
     protected String getDatabaseName() {
@@ -30,6 +31,8 @@ public class MongodbConfig extends AbstractMongoConfiguration{
     @Override
     @Bean
     public Mongo mongo() throws Exception {
-        return new MongoClient(DATABASE_HOST, DATABASE_PORT);
+        String dbHost = System.getenv("DB_HOST");
+        int dbPort = Integer.parseInt(System.getenv("DB_PORT"));
+        return new MongoClient(dbHost, dbPort);
     }
 }

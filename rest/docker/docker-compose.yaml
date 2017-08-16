@@ -13,5 +13,12 @@ services:
     image: inovatrend/tomcat8-java8
     ports:
       - "8088:8080"
-    # volumes:
-    #   - ../databucket/build/libs/rest-0.1.0.war:/opt/tomcat/webapps/rest-0.1.0.war
+      - "8098:8090"
+    environment:
+      - DB_HOST=database
+      - DB_PORT=27017
+      - SERVER_PORT=8090 
+    volumes:
+      - ../databucket/build/libs/rest-0.1.0.war:/opt/tomcat/webapps/rest-0.1.0.war
+      - ../databucket/build/libs/rest-0.1.0.war:/rest-0.1.0.war
+      - ./logs/rest:/opt/tomcat/logs
