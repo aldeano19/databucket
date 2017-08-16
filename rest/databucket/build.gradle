@@ -35,6 +35,5 @@ dependencies {
     compile("org.springframework.boot:spring-boot-starter-web")
     compile("org.springframework.boot:spring-boot-starter-data-rest")
     compile("org.springframework.boot:spring-boot-starter-data-mongodb")
-    compile("com.thetransactioncompany:cors-filter:2.1.2")
     testCompile('org.springframework.boot:spring-boot-starter-test')
 }
