@@ -1,0 +1,21 @@
+install docker : use new-install-ubuntu.sh
+install docker-compose : use new-install-ubuntu.sh
+
+IMPORTANT: when doint docker-compose up, any volumes created for back up, will be created with root ownership, causing the compose to fail, change the ownership for those newly created directories to ubuntu:ubuntu and run the compose again.
+
+run jira docker-compose : 
+open jira http port on server [aws]
+finish jira configuration
+
+run jenkins docker-compose
+open jenkins http port on server [aws]
+finish jenkins configuration 
+
+Jenkins shell:
+--------------
+ssh -i ~/pem-keys/dataserver-do-not-put-in-git.pem ubuntu@ec2-52-14-169-214.us-east-2.compute.amazonaws.com <<-'ENDSSH'
+    #commands to run on remote host
+    cd ~/databucket
+	git pull
+	date > ~/lastupdate.txt
+ENDSSH
