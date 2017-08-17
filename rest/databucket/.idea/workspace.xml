@@ -1,32 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fbdd62cd-73e3-45ba-94f1-57dbce19f959" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_thetransactioncompany_cors_filter_2_1_2.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_thetransactioncompany_java_property_utils_1_9_1.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileHashes.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileSnapshots.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.lock" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/com/consequentialdata/rest/Application.class" afterPath="$PROJECT_DIR$/build/classes/main/com/consequentialdata/rest/Application.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/com/consequentialdata/rest/configuration/SwaggerConfig.class" afterPath="$PROJECT_DIR$/build/classes/main/com/consequentialdata/rest/configuration/SwaggerConfig.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/com/consequentialdata/rest/configuration/WarInitializer.class" afterPath="$PROJECT_DIR$/build/classes/main/com/consequentialdata/rest/configuration/WarInitializer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/libs/rest-0.1.0.war" afterPath="$PROJECT_DIR$/build/libs/rest-0.1.0.war" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/libs/rest-0.1.0.war.original" afterPath="$PROJECT_DIR$/build/libs/rest-0.1.0.war.original" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules/databucket_main.iml" afterPath="$PROJECT_DIR$/.idea/modules/databucket_main.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules/databucket_test.iml" afterPath="$PROJECT_DIR$/.idea/modules/databucket_test.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.gradle" afterPath="$PROJECT_DIR$/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/consequentialdata/rest/Application.java" afterPath="$PROJECT_DIR$/src/main/java/com/consequentialdata/rest/Application.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/consequentialdata/rest/configuration/DatabucketRestConfig.java" afterPath="$PROJECT_DIR$/src/main/java/com/consequentialdata/rest/configuration/DatabucketRestConfig.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/consequentialdata/rest/configuration/SwaggerConfig.java" afterPath="$PROJECT_DIR$/src/main/java/com/consequentialdata/rest/configuration/SwaggerConfig.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/consequentialdata/rest/configuration/WarInitializer.java" afterPath="$PROJECT_DIR$/src/main/java/com/consequentialdata/rest/configuration/WarInitializer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../docker/docker-compose.yaml" afterPath="$PROJECT_DIR$/../docker/docker-compose.yaml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../docker/logs/rest/catalina.2017-08-16.log" afterPath="$PROJECT_DIR$/../docker/logs/rest/catalina.2017-08-16.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../docker/logs/rest/localhost.2017-08-16.log" afterPath="$PROJECT_DIR$/../docker/logs/rest/localhost.2017-08-16.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../docker/logs/rest/localhost_access_log.2017-08-16.txt" afterPath="$PROJECT_DIR$/../docker/logs/rest/localhost_access_log.2017-08-16.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../docker/logs/rest/manager.2017-08-16.log" afterPath="$PROJECT_DIR$/../docker/logs/rest/manager.2017-08-16.log" />
-    </list>
+    <list default="true" id="fbdd62cd-73e3-45ba-94f1-57dbce19f959" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -86,8 +61,8 @@
       <file leaf-file-name="DatabucketRestConfig.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/consequentialdata/rest/configuration/DatabucketRestConfig.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="28" column="1" lean-forward="true" selection-start-line="28" selection-start-column="1" selection-end-line="28" selection-end-column="1" />
+            <state relative-caret-position="285">
+              <caret line="27" column="5" lean-forward="true" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -695,8 +670,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1920" />
-    <option name="y" value="-531" />
+    <option name="x" value="-3840" />
+    <option name="y" value="-478" />
     <option name="width" value="1920" />
     <option name="height" value="1057" />
   </component>
@@ -1149,7 +1124,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1920" y="-531" width="1920" height="1057" extended-state="6" />
+    <frame x="-3840" y="-478" width="1920" height="1057" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1544,8 +1519,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/consequentialdata/rest/configuration/DatabucketRestConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="28" column="1" lean-forward="true" selection-start-line="28" selection-start-column="1" selection-end-line="28" selection-end-column="1" />
+        <state relative-caret-position="285">
+          <caret line="27" column="5" lean-forward="true" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
           <folding />
         </state>
       </provider>
