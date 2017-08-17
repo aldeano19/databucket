@@ -1,8 +1,6 @@
 version: '2'
 services:
-  jenkins:
+  jira:
     image: cptactionhank/atlassian-jira
     ports:
       - "8022:8080"
-    volumes:
-      - ./jenkins_home_save:/var/jenkins_home
