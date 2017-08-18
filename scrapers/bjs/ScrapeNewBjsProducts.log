@@ -1,19 +1,799 @@
 INFO            | Getting TOP category=http://www.bjs.com/grocery-household--pet.category.3000000000000117223.2001244, url=Grocery, Household & Pet
 INFO            | Getting TOP category=http://www.bjs.com/grocery-household--pet.category.3000000000000117223.2001244, url=Grocery, Household & Pet
 INFO            | Category=Grocery, Household & Pet is a categories page with url=http://www.bjs.com/grocery-household--pet.category.3000000000000117223.2001244.
-INFO            | Getting TOP category=http://www.bjs.com/grocery-household--pet.category.3000000000000117223.2001244, url=Grocery, Household & Pet
-INFO            | Category=Grocery, Household & Pet is a categories page with url=http://www.bjs.com/grocery-household--pet.category.3000000000000117223.2001244.
-INFO            | Getting TOP category=http://www.bjs.com/grocery-household--pet.category.3000000000000117223.2001244, url=Grocery, Household & Pet
-INFO            | Category=Grocery, Household & Pet is a categories page with url=http://www.bjs.com/grocery-household--pet.category.3000000000000117223.2001244.
+ERROR           | Cant find category=Coffee, Tea & Creamers at url=http://www.bjs.com/grocery-household--pet/coffee-tea--creamers.category.3000000000000117334.3000000000000117223.2001349.1
 INFO            | Getting TOP category=http://www.bjs.com/grocery-household--pet.category.3000000000000117223.2001244, url=Grocery, Household & Pet
 INFO            | Category=Grocery, Household & Pet is a categories page with url=http://www.bjs.com/grocery-household--pet.category.3000000000000117223.2001244.
 ERROR           | Cant find category=Coffee, Tea & Creamers at url=http://www.bjs.com/grocery-household--pet/coffee-tea--creamers.category.3000000000000117334.3000000000000117223.2001349.1
 INFO            | Getting TOP category=http://www.bjs.com/grocery-household--pet.category.3000000000000117223.2001244, url=Grocery, Household & Pet
 INFO            | Category=Grocery, Household & Pet is a categories page with url=http://www.bjs.com/grocery-household--pet.category.3000000000000117223.2001244.
-INFO            | Getting TOP category=http://www.bjs.com/grocery-household--pet.category.3000000000000117223.2001244, url=Grocery, Household & Pet
-INFO            | Category=Grocery, Household & Pet is a categories page with url=http://www.bjs.com/grocery-household--pet.category.3000000000000117223.2001244.
-INFO            | Getting TOP category=http://www.bjs.com/grocery-household--pet.category.3000000000000117223.2001244, url=Grocery, Household & Pet
-INFO            | Category=Grocery, Household & Pet is a categories page with url=http://www.bjs.com/grocery-household--pet.category.3000000000000117223.2001244.
+ERROR           | Cant find category=Coffee, Tea & Creamers at url=http://www.bjs.com/grocery-household--pet/coffee-tea--creamers.category.3000000000000117334.3000000000000117223.2001349.1
+ERROR           | Cant find category=Frozen Food at url=http://www.bjs.com/grocery-household--pet/frozen-food.category.3000000000000117306.3000000000000117223.2001318.1
+ERROR           | Cant find category=Emergency Food at url=http://www.bjs.com/grocery-household--pet/emergency-food.category.3000000000000117130.3000000000000117223.2001362.1
+ERROR           | Cant find category=Pet at url=http://www.bjs.com/grocery-household--pet/pet.category.3000000000000117369.3000000000000117223.2001266.1
+ERROR           | Cant find category=Fresh & Refrigerated Food at url=http://www.bjs.com/grocery-household--pet/fresh--refrigerated-food.category.3000000000000117224.3000000000000117223.2001252.1
+ERROR           | Cant find category=Beverages at url=http://www.bjs.com/grocery-household--pet/beverages.category.3000000000000018003.3000000000000117223.2001304.1
+ERROR           | Cant find category=Canned & Packaged Food at url=http://www.bjs.com/grocery-household--pet/canned--packaged-food.category.3000000000000117263.3000000000000117223.2001270.1
+ERROR           | Cant find category=Cleaning & Household Goods at url=http://www.bjs.com/grocery-household--pet/cleaning--household-goods.category.3000000000000117335.3000000000000117223.2001301.1
+ERROR           | Cant find category=Weight Loss & Nutrition at url=http://www.bjs.com/grocery-household--pet/weight-loss--nutrition.category.3000000000000117222.3000000000000117223.2001658.1
 INFO            | Getting TOP category=http://www.bjs.com/grocery-household--pet.category.3000000000000117223.2001244, url=Grocery, Household & Pet
 INFO            | Category=Grocery, Household & Pet is a categories page with url=http://www.bjs.com/grocery-household--pet.category.3000000000000117223.2001244.
 ERROR           | Cant find category=Coffee, Tea & Creamers at url=http://www.bjs.com/grocery-household--pet/coffee-tea--creamers.category.3000000000000117334.3000000000000117223.2001349.1
+ERROR           | Cant find category=Frozen Food at url=http://www.bjs.com/grocery-household--pet/frozen-food.category.3000000000000117306.3000000000000117223.2001318.1
+ERROR           | Cant find category=Emergency Food at url=http://www.bjs.com/grocery-household--pet/emergency-food.category.3000000000000117130.3000000000000117223.2001362.1
+ERROR           | Cant find category=Pet at url=http://www.bjs.com/grocery-household--pet/pet.category.3000000000000117369.3000000000000117223.2001266.1
+ERROR           | Cant find category=Fresh & Refrigerated Food at url=http://www.bjs.com/grocery-household--pet/fresh--refrigerated-food.category.3000000000000117224.3000000000000117223.2001252.1
+ERROR           | Cant find category=Beverages at url=http://www.bjs.com/grocery-household--pet/beverages.category.3000000000000018003.3000000000000117223.2001304.1
+ERROR           | Cant find category=Canned & Packaged Food at url=http://www.bjs.com/grocery-household--pet/canned--packaged-food.category.3000000000000117263.3000000000000117223.2001270.1
+ERROR           | Cant find category=Cleaning & Household Goods at url=http://www.bjs.com/grocery-household--pet/cleaning--household-goods.category.3000000000000117335.3000000000000117223.2001301.1
+ERROR           | Cant find category=Weight Loss & Nutrition at url=http://www.bjs.com/grocery-household--pet/weight-loss--nutrition.category.3000000000000117222.3000000000000117223.2001658.1
+INFO            | Getting TOP category=http://www.bjs.com/grocery-household--pet.category.3000000000000117223.2001244, url=Grocery, Household & Pet
+INFO            | Category=Grocery, Household & Pet is a categories page with url=http://www.bjs.com/grocery-household--pet.category.3000000000000117223.2001244.
+INFO            | Category=Coffee, Tea & Creamers is a categories page with url=http://www.bjs.com/grocery-household--pet/coffee-tea--creamers.category.3000000000000117334.3000000000000117223.2001349.1.
+INFO            | Category=Cocoa is a product page with url=http://www.bjs.com/coffee-tea--creamers/cocoa.category.3000000000000117035.3000000000000117334.2001378.1.
+INFO            | Category=Tea is a product page with url=http://www.bjs.com/coffee-tea--creamers/tea.category.3000000000000117034.3000000000000117334.2001377.1.
+INFO            | Category=Coffee is a product page with url=http://www.bjs.com/coffee-tea--creamers/coffee.category.3000000000000117030.3000000000000117334.2001373.1.
+INFO            | Category=Creamer is a product page with url=http://www.bjs.com/coffee-tea--creamers/creamer.category.3000000000000117036.3000000000000117334.2001381.1.
+INFO            | Category=Frozen Food is a categories page with url=http://www.bjs.com/grocery-household--pet/frozen-food.category.3000000000000117306.3000000000000117223.2001318.1.
+INFO            | Category=Frozen Entrees is a product page with url=http://www.bjs.com/frozen-food/frozen-entrees.category.3000000000000117310.3000000000000117306.2001321.1.
+INFO            | Category=Frozen Meat is a product page with url=http://www.bjs.com/frozen-food/frozen-meat.category.3000000000000117318.3000000000000117306.2001325.1.
+INFO            | Category=Frozen Appetizers is a product page with url=http://www.bjs.com/frozen-food/frozen-appetizers.category.3000000000000117307.3000000000000117306.2001317.1.
+INFO            | Category=Frozen Meatless Options is a product page with url=http://www.bjs.com/frozen-food/frozen-meatless-options.category.3000000000000117319.3000000000000117306.2001326.1.
+INFO            | Category=Ice Cream & Desserts is a product page with url=http://www.bjs.com/frozen-food/ice-cream--desserts.category.3000000000000117316.3000000000000117306.2001323.1.
+INFO            | Category=Frozen Fruit & Vegetables is a product page with url=http://www.bjs.com/frozen-food/frozen-fruit--vegetables.category.3000000000000117326.3000000000000117306.2001333.1.
+INFO            | Category=Frozen Seafood is a product page with url=http://www.bjs.com/frozen-food/frozen-seafood.category.3000000000000117324.3000000000000117306.2001331.1.
+INFO            | Category=Frozen Pizza & Bread is a product page with url=http://www.bjs.com/frozen-food/frozen-pizza--bread.category.3000000000000117321.3000000000000117306.2001328.1.
+INFO            | Category=Frozen Breakfast Food is a product page with url=http://www.bjs.com/frozen-food/frozen-breakfast-food.category.3000000000000117311.3000000000000117306.2001322.1.
+INFO            | Category=Emergency Food is a product page with url=http://www.bjs.com/grocery-household--pet/emergency-food.category.3000000000000117130.3000000000000117223.2001362.1.
+INFO            | Category=Pet is a categories page with url=http://www.bjs.com/grocery-household--pet/pet.category.3000000000000117369.3000000000000117223.2001266.1.
+INFO            | Category=Pet Food & Treats is a categories page with url=http://www.bjs.com/pet/pet-food--treats.category.3000000000000117375.3000000000000117369.2001300.1.
+INFO            | Category=Pet Food is a product page with url=http://www.bjs.com/pet-food--treats/pet-food.category.34522.3000000000000117375.2001433.1.
+INFO            | Category=Pet Treats is a product page with url=http://www.bjs.com/pet-food--treats/pet-treats.category.131008.3000000000000117375.2001299.1.
+INFO            | Category=Pet Beds & Furniture is a categories page with url=http://www.bjs.com/pet/pet-beds--furniture.category.3000000000000154486.3000000000000117369.2002616.1.
+INFO            | Category=Ped Beds is a product page with url=http://www.bjs.com/pet-beds--furniture/ped-beds.category.3000000000000154487.3000000000000154486.2002615.1.
+INFO            | Category=Pet Steps, Gates & Crates is a product page with url=http://www.bjs.com/pet-beds--furniture/pet-steps-gates--crates.category.3000000000000154985.3000000000000154486.2002618.1.
+INFO            | Category=Pet Accessories is a categories page with url=http://www.bjs.com/pet/pet-accessories.category.728.3000000000000117369.2001238.1.
+INFO            | Category=Dog Healthcare is a product page with url=http://www.bjs.com/pet-accessories/dog-healthcare.category.3000000000000123462.728.2001659.1.
+INFO            | Category=Dog Travel Accessories is a product page with url=http://www.bjs.com/pet-accessories/dog-travel-accessories.category.34526.728.2001239.1.
+INFO            | Category=Cat Healthcare is a product page with url=http://www.bjs.com/pet-accessories/cat-healthcare.category.34531.728.2001240.1.
+INFO            | Category=Fresh & Refrigerated Food is a categories page with url=http://www.bjs.com/grocery-household--pet/fresh--refrigerated-food.category.3000000000000117224.3000000000000117223.2001252.1.
+INFO            | Category=Fresh Fruit & Vegetables is a categories page with url=http://www.bjs.com/fresh--refrigerated-food/fresh-fruit--vegetables.category.3000000000000117249.3000000000000117224.2001272.1.
+INFO            | Category=Fresh Fruit is a product page with url=http://www.bjs.com/fresh-fruit--vegetables/fresh-fruit.category.3000000000000117251.3000000000000117249.2001281.1.
+INFO            | Category=Fresh Vegetables is a product page with url=http://www.bjs.com/fresh-fruit--vegetables/fresh-vegetables.category.3000000000000117250.3000000000000117249.2001280.1.
+INFO            | Category=Meat is a categories page with url=http://www.bjs.com/fresh--refrigerated-food/meat.category.3000000000000117236.3000000000000117224.2001267.1.
+INFO            | Category=Poultry is a product page with url=http://www.bjs.com/meat/poultry.category.3000000000000117239.3000000000000117236.2001422.1.
+INFO            | Category=Lamb is a product page with url=http://www.bjs.com/meat/lamb.category.3000000000000117240.3000000000000117236.2001425.1.
+INFO            | Category=Pork is a product page with url=http://www.bjs.com/meat/pork.category.3000000000000117238.3000000000000117236.2001421.1.
+INFO            | Category=Beef & Bison is a product page with url=http://www.bjs.com/meat/beef--bison.category.3000000000000117237.3000000000000117236.2001420.1.
+INFO            | Category=Bacon & Breakfast Meat is a product page with url=http://www.bjs.com/meat/bacon--breakfast-meat.category.3000000000000117245.3000000000000117236.2001430.1.
+INFO            | Category=Sausage & Hot Dogs is a product page with url=http://www.bjs.com/meat/sausage--hot-dogs.category.3000000000000117243.3000000000000117236.2001428.1.
+INFO            | Category=Deli is a categories page with url=http://www.bjs.com/fresh--refrigerated-food/deli.category.3000000000000117255.3000000000000117224.2001273.1.
+INFO            | Category=Cheese is a product page with url=http://www.bjs.com/deli/cheese.category.3000000000000117231.3000000000000117255.2001409.1.
+INFO            | Category=Meal Solutions & Sides is a product page with url=http://www.bjs.com/deli/meal-solutions--sides.category.3000000000000120961.3000000000000117255.2001488.1.
+INFO            | Category=Deli Meat is a product page with url=http://www.bjs.com/deli/deli-meat.category.3000000000000117261.3000000000000117255.2001424.1.
+INFO            | Category=Dips, Spreads & Salsas is a product page with url=http://www.bjs.com/deli/dips-spreads--salsas.category.3000000000000117260.3000000000000117255.2001423.1.
+INFO            | Category=Seafood is a product page with url=http://www.bjs.com/fresh--refrigerated-food/seafood.category.3000000000000033006.3000000000000117224.2001403.1.
+INFO            | Category=Bakery is a categories page with url=http://www.bjs.com/fresh--refrigerated-food/bakery.category.3000000000000117225.3000000000000117224.2001257.1.
+INFO            | Category=Bread, Rolls & Bagels is a product page with url=http://www.bjs.com/bakery/bread-rolls--bagels.category.3000000000000117227.3000000000000117225.2001411.1.
+INFO            | Category=Tortillas, Wraps & Flatbreads is a product page with url=http://www.bjs.com/bakery/tortillas-wraps--flatbreads.category.3000000000000117226.3000000000000117225.2001410.1.
+INFO            | Category=Pastries, Muffins & Donuts is a product page with url=http://www.bjs.com/bakery/pastries-muffins--donuts.category.3000000000000117228.3000000000000117225.2001412.1.
+INFO            | Category=Cakes, Pies & Brownies is a product page with url=http://www.bjs.com/bakery/cakes-pies--brownies.category.3000000000000152991.3000000000000117225.2002612.1.
+INFO            | Category=Dairy is a categories page with url=http://www.bjs.com/fresh--refrigerated-food/dairy.category.3000000000000117229.3000000000000117224.2001262.1.
+INFO            | Category=Yogurt is a product page with url=http://www.bjs.com/dairy/yogurt.category.3000000000000117232.3000000000000117229.2001358.1.
+INFO            | Category=Cheese is a product page with url=http://www.bjs.com/dairy/cheese.category.3000000000000117231.3000000000000117229.2001357.1.
+INFO            | Category=Eggs is a product page with url=http://www.bjs.com/dairy/eggs.category.3000000000000117233.3000000000000117229.2001359.1.
+INFO            | Category=Milk & Cream is a product page with url=http://www.bjs.com/dairy/milk--cream.category.3000000000000117230.3000000000000117229.2001356.1.
+INFO            | Category=Butter & Margarine is a product page with url=http://www.bjs.com/dairy/butter--margarine.category.3000000000000117234.3000000000000117229.2001360.1.
+INFO            | Category=Beverages is a categories page with url=http://www.bjs.com/grocery-household--pet/beverages.category.3000000000000018003.3000000000000117223.2001304.1.
+INFO            | Category=Sports & Energy Drinks is a product page with url=http://www.bjs.com/beverages/sports--energy-drinks.category.3000000000000117329.3000000000000018003.2001305.1.
+INFO            | Category=Drink Mixes & Powders is a product page with url=http://www.bjs.com/beverages/drink-mixes--powders.category.3000000000000117332.3000000000000018003.2001313.1.
+INFO            | Category=Juice is a product page with url=http://www.bjs.com/beverages/juice.category.3000000000000117333.3000000000000018003.2001314.1.
+INFO            | Category=Bottled Water is a product page with url=http://www.bjs.com/beverages/bottled-water.category.3000000000000117331.3000000000000018003.2001312.1.
+INFO            | Category=Soda is a product page with url=http://www.bjs.com/beverages/soda.category.3000000000000117328.3000000000000018003.2001303.1.
+INFO            | Category=Canned & Packaged Food is a categories page with url=http://www.bjs.com/grocery-household--pet/canned--packaged-food.category.3000000000000117263.3000000000000117223.2001270.1.
+INFO            | Category=Canned & Jarred Food is a categories page with url=http://www.bjs.com/canned--packaged-food/canned--jarred-food.category.3000000000000117300.3000000000000117263.2001274.1.
+INFO            | Category=Fruit & Vegetables is a product page with url=http://www.bjs.com/canned--jarred-food/fruit--vegetables.category.3000000000000117305.3000000000000117300.2001344.1.
+INFO            | Category=Meat & Fish is a product page with url=http://www.bjs.com/canned--jarred-food/meat--fish.category.3000000000000117303.3000000000000117300.2001342.1.
+INFO            | Category=Chilis, Soups & Stews is a product page with url=http://www.bjs.com/canned--jarred-food/chilis-soups--stews.category.3000000000000117304.3000000000000117300.2001343.1.
+INFO            | Category=Snacks is a categories page with url=http://www.bjs.com/canned--packaged-food/snacks.category.3000000000000117265.3000000000000117263.2001307.1.
+INFO            | Category=Sweet Snacks is a product page with url=http://www.bjs.com/snacks/sweet-snacks.category.3000000000000152990.3000000000000117265.2002610.1.
+INFO            | Category=Dried Fruit & Nuts is a product page with url=http://www.bjs.com/snacks/dried-fruit--nuts.category.3000000000000117271.3000000000000117265.2001316.1.
+INFO            | Category=Salty Snacks is a product page with url=http://www.bjs.com/snacks/salty-snacks.category.3000000000000117268.3000000000000117265.2001309.1.
+INFO            | Category=Snack Bars is a product page with url=http://www.bjs.com/snacks/snack-bars.category.3000000000000152985.3000000000000117265.2002606.1.
+INFO            | Category=Candy & Cookies is a categories page with url=http://www.bjs.com/canned--packaged-food/candy--cookies.category.3000000000000152988.3000000000000117263.2002607.1.
+INFO            | Category=Cookies is a product page with url=http://www.bjs.com/candy--cookies/cookies.category.3000000000000117270.3000000000000152988.2002609.1.
+INFO            | Category=Gum & Mints is a product page with url=http://www.bjs.com/candy--cookies/gum--mints.category.3000000000000117269.3000000000000152988.2002608.1.
+INFO            | Category=Candy is a product page with url=http://www.bjs.com/candy--cookies/candy.category.3000000000000152989.3000000000000152988.2002611.1.
+INFO            | Category=Breakfast Food is a categories page with url=http://www.bjs.com/canned--packaged-food/breakfast-food.category.3000000000000117280.3000000000000117263.2001368.1.
+INFO            | Category=Cereal & Oats is a product page with url=http://www.bjs.com/breakfast-food/cereal--oats.category.3000000000000117281.3000000000000117280.2001367.1.
+INFO            | Category=Breakfast Bars is a product page with url=http://www.bjs.com/breakfast-food/breakfast-bars.category.3000000000000117284.3000000000000117280.2001371.1.
+INFO            | Category=Syrup & Honey is a product page with url=http://www.bjs.com/breakfast-food/syrup--honey.category.3000000000000152986.3000000000000117280.2002604.1.
+INFO            | Category=Breakfast Mixes is a product page with url=http://www.bjs.com/breakfast-food/breakfast-mixes.category.3000000000000117283.3000000000000117280.2001370.1.
+INFO            | Category=Baking & Cooking Needs is a categories page with url=http://www.bjs.com/canned--packaged-food/baking--cooking-needs.category.3000000000000117272.3000000000000117263.2001380.1.
+INFO            | Category=Flour & Meal is a product page with url=http://www.bjs.com/baking--cooking-needs/flour--meal.category.3000000000000117273.3000000000000117272.2001379.1.
+INFO            | Category=Baking Mixes is a product page with url=http://www.bjs.com/baking--cooking-needs/baking-mixes.category.3000000000000117278.3000000000000117272.2001386.1.
+INFO            | Category=Baking Nuts & Chocolate is a product page with url=http://www.bjs.com/baking--cooking-needs/baking-nuts--chocolate.category.3000000000000117277.3000000000000117272.2001385.1.
+INFO            | Category=Baking Soda, Powder & Yeast is a product page with url=http://www.bjs.com/baking--cooking-needs/baking-soda-powder--yeast.category.3000000000000117275.3000000000000117272.2001383.1.
+INFO            | Category=Extracts & Flavorings is a product page with url=http://www.bjs.com/baking--cooking-needs/extracts--flavorings.category.3000000000000117276.3000000000000117272.2001384.1.
+INFO            | Category=Sugar & Sweeteners is a product page with url=http://www.bjs.com/baking--cooking-needs/sugar--sweeteners.category.3000000000000117274.3000000000000117272.2001382.1.
+INFO            | Category=Herbs, Spices & Seasonings is a product page with url=http://www.bjs.com/baking--cooking-needs/herbs-spices--seasonings.category.3000000000000152987.3000000000000117272.2002605.1.
+INFO            | Category=Sauces, Condiments & Dressings is a categories page with url=http://www.bjs.com/canned--packaged-food/sauces-condiments--dressings.category.3000000000000117264.3000000000000117263.2001405.1.
+INFO            | Category=Pickles, Peppers & Olives is a product page with url=http://www.bjs.com/sauces-condiments--dressings/pickles-peppers--olives.category.3000000000000125967.3000000000000117264.2001692.1.
+INFO            | Category=Condiments is a product page with url=http://www.bjs.com/sauces-condiments--dressings/condiments.category.3000000000000125964.3000000000000117264.2001689.1.
+INFO            | Category=Peanut Butter & Fruit Spreads is a product page with url=http://www.bjs.com/sauces-condiments--dressings/peanut-butter--fruit-spreads.category.3000000000000125966.3000000000000117264.2001691.1.
+INFO            | Category=Oil & Vinegar is a product page with url=http://www.bjs.com/sauces-condiments--dressings/oil--vinegar.category.3000000000000125961.3000000000000117264.2001686.1.
+INFO            | Category=Marinades & Sauces is a product page with url=http://www.bjs.com/sauces-condiments--dressings/marinades--sauces.category.3000000000000125965.3000000000000117264.2001690.1.
+INFO            | Category=Salad Dressing & Fixings is a product page with url=http://www.bjs.com/sauces-condiments--dressings/salad-dressing--fixings.category.3000000000000125962.3000000000000117264.2001687.1.
+INFO            | Category=Pasta, Potatoes & Grains is a categories page with url=http://www.bjs.com/canned--packaged-food/pasta-potatoes--grains.category.3000000000000117296.3000000000000117263.2001259.1.
+INFO            | Category=Pasta is a product page with url=http://www.bjs.com/pasta-potatoes--grains/pasta.category.3000000000000117297.3000000000000117296.2001258.1.
+INFO            | Category=Potatoes, Rice & Grains is a product page with url=http://www.bjs.com/pasta-potatoes--grains/potatoes-rice--grains.category.3000000000000117298.3000000000000117296.2001260.1.
+INFO            | Category=Cleaning & Household Goods is a categories page with url=http://www.bjs.com/grocery-household--pet/cleaning--household-goods.category.3000000000000117335.3000000000000117223.2001301.1.
+INFO            | Category=Paper Products is a categories page with url=http://www.bjs.com/cleaning--household-goods/paper-products.category.3000000000000117351.3000000000000117335.2001339.1.
+INFO            | Category=Bath & Facial Tissue is a product page with url=http://www.bjs.com/paper-products/bath--facial-tissue.category.3000000000000117353.3000000000000117351.2001351.1.
+INFO            | Category=Napkins is a product page with url=http://www.bjs.com/paper-products/napkins.category.3000000000000117357.3000000000000117351.2001354.1.
+INFO            | Category=Paper Towel is a product page with url=http://www.bjs.com/paper-products/paper-towel.category.3000000000000117352.3000000000000117351.2001350.1.
+INFO            | Category=Floor Care is a product page with url=http://www.bjs.com/cleaning--household-goods/floor-care.category.1354.3000000000000117335.2001234.1.
+INFO            | Category=Air Fresheners is a product page with url=http://www.bjs.com/cleaning--household-goods/air-fresheners.category.3000000000000117336.3000000000000117335.2001404.1.
+INFO            | Category=Trash Bags & Liners is a product page with url=http://www.bjs.com/cleaning--household-goods/trash-bags--liners.category.1369.3000000000000117335.2001566.1.
+INFO            | Category=Laundry & Clothing Care is a categories page with url=http://www.bjs.com/cleaning--household-goods/laundry--clothing-care.category.3000000000000117094.3000000000000117335.2002098.1.
+ERROR           | Cant find category=Laundry Detergent at url=http://www.bjs.com/laundry--clothing-care/laundry-detergent.category.3000000000000117345.3000000000000117094.2002099.1
+INFO            | Getting TOP category=http://www.bjs.com/grocery-household--pet.category.3000000000000117223.2001244, url=Grocery, Household & Pet
+INFO            | Getting TOP category=http://www.bjs.com/grocery-household--pet.category.3000000000000117223.2001244, url=Grocery, Household & Pet
+INFO            | Category=Grocery, Household & Pet is a categories page with url=http://www.bjs.com/grocery-household--pet.category.3000000000000117223.2001244.
+INFO            | Category=Coffee, Tea & Creamers is a categories page with url=http://www.bjs.com/grocery-household--pet/coffee-tea--creamers.category.3000000000000117334.3000000000000117223.2001349.1.
+INFO            | Category=Cocoa is a product page with url=http://www.bjs.com/coffee-tea--creamers/cocoa.category.3000000000000117035.3000000000000117334.2001378.1.
+INFO            | Category=Tea is a product page with url=http://www.bjs.com/coffee-tea--creamers/tea.category.3000000000000117034.3000000000000117334.2001377.1.
+INFO            | Category=Coffee is a product page with url=http://www.bjs.com/coffee-tea--creamers/coffee.category.3000000000000117030.3000000000000117334.2001373.1.
+INFO            | Category=Creamer is a product page with url=http://www.bjs.com/coffee-tea--creamers/creamer.category.3000000000000117036.3000000000000117334.2001381.1.
+INFO            | Saved new item=Swiss Miss Hot Chocolate K-Cups, 160 ct.
+INFO            | Saved new item=Swiss Miss Cocoa Canister, Milk Chocolate, 58.4 oz.
+INFO            | Saved new item=Swiss Miss Cocoa Milk Chocolate Packets, 60 ct.
+INFO            | Saved new item=Pure Leaf Real Brewed Sweet Tea, 15 pk./18.5 oz.
+INFO            | Saved new item=Snapple Ice Tea Variety Pack, 24 pk./20 fl. oz.
+INFO            | Saved new item=Arizona Ice Tea with Lemon Flavor, 24 pk./16 oz.
+INFO            | Saved new item=Lipton Tea Bags, Decaffeinated, 144 ct.
+INFO            | Saved new item=Pure Leaf Unsweetened Tea, 15 ct./18.5 fl. oz.
+INFO            | Saved new item=4C Iced Tea Mix, 92.8 oz.
+INFO            | Saved new item=4C Raspberry Iced Tea Mix, 92.8 oz.
+INFO            | Saved new item=Snapple Diet Ice Tea Variety Pack, 24 pk./20 fl. oz.
+INFO            | Saved new item=Lipton Diet Green Tea with Citrus, 24 pk./16.9 oz.
+INFO            | Saved new item=Lipton Peach Iced Tea, 24 pk./16.9 oz.
+INFO            | Saved new item=Nestea Lemon Flavored Iced Tea, 24 ct./16.9 fl. oz.
+INFO            | Saved new item=Bigelow English Breakfast Tea, 100 pk.
+INFO            | Saved new item=Gold Peak Sweet Tea, 18 ct./18.5 oz.
+INFO            | Saved new item=Arizona Arnold Palmer Half & Half Green Tea Lemonade, 30 pk./24 oz.
+INFO            | Saved new item=Lipton Brisk Lemon Iced Tea, 36 pk./12 oz.
+INFO            | Saved new item=Celestial Seasonings Zinger Variety Pack, 80 ct.
+INFO            | Saved new item=Wellsley Farms Iced Tea with Lemon, 35 ct./16.9 fl. oz.
+INFO            | Saved new item=Arizona Green Tea with Ginseng and Honey, 16 pk./24 oz.
+INFO            | Saved new item=Lipton Lemon Iced Tea Mix, 38 qt.
+INFO            | Saved new item=Bigelow Earl Gray Tea, 100 pk.
+INFO            | Saved new item=Nestea Peach Flavored Iced Tea, 24 ct./16.9 fl. oz.
+INFO            | Saved new item=Bigelow Cozy Chamomile Tea, 100 ct.
+INFO            | Saved new item=Lipton Tea Bags, 312 ct.
+INFO            | Saved new item=Caribou Coffee Caribou Blend K-Cups, 180 ct.
+INFO            | Saved new item=Green Mountain Coffee Breakfast Blend K-Cups, 180 ct.
+INFO            | Saved new item=Starbucks Cafe Verona Dark Roast Ground Coffee, 32 oz.
+INFO            | Saved new item=Gevalia Kaffe Colombia Medium Roast K-Cups, 84 ct.
+INFO            | Saved new item=Folgers Instant Coffee, 16 oz.
+INFO            | Saved new item=Donut Shop Medium Roast Coffee K-Cups, 180 ct.
+INFO            | Saved new item=Wellsley Farms Breakfast Blend K-Cups, 100 ct.
+INFO            | Saved new item=Maxwell House House Blend K-Cups, 100 ct.
+INFO            | Saved new item=Tully's Italian Roast K-Cups, 180 ct.
+INFO            | Saved new item=Green Mountain Coffee Caramel Vanilla Cream K-Cups, 180 ct.
+INFO            | Saved new item=Starbucks, French Roast K-Cups, 54 ct.
+INFO            | Saved new item=Newman's Own Organics Newman's Special Decaf Coffee K-Cups, 180 ct.
+INFO            | Saved new item=Wellsley Farms Colombian Ground Coffee, 40 oz.
+INFO            | Saved new item=Wellsley Farms Organic Peruvian Ground Coffee, 32 oz.
+INFO            | Saved new item=Green Mountain Coffee Nantucket Blend K-Cups, 180 ct.
+INFO            | Saved new item=Green Mountain Coffee Sumatran Reserve K-Cups, 180 ct.
+INFO            | Saved new item=Wellsley Farms Breakfast Blend K-Cups, 200 ct.
+INFO            | Saved new item=Wellsley Farms Colombian K-Cups, 100 ct.
+INFO            | Saved new item=Chock Full O'Nuts Original Blend Ground Coffee, 3 lbs.
+INFO            | Saved new item=Starbucks Light Roast K-Cup Variety Pack, 3 pk./16 ct.
+INFO            | Saved new item=Eight O'Clock Original Arabica Whole Bean Coffee, 42 oz.
+INFO            | Saved new item=Keurig K-Cup Variety Pack, 72 ct.
+INFO            | Saved new item=Maxwell House Max Boost Three Levels of Caffeine Coffee K-Cup Variety...
+INFO            | Saved new item=Green Mountain Coffee French Vanilla Coffee K-Cups, 180 ct.
+INFO            | Saved new item=Wellsley Farms Decaffeinated Blend Ground Coffee, 40 oz.
+INFO            | Saved new item=Green Mountain Coffee Lovers Variety Pack, 54 ct.
+INFO            | Saved new item=Newman's Own Organics Special Blend Extra Bold K-Cups, 100 ct.
+INFO            | Saved new item=Wellsley Farms Costa Rican Whole Bean Coffee, 40 oz.
+INFO            | Saved new item=Starbucks House Blend Whole Bean Medium Roast Coffee, 40 oz.
+INFO            | Saved new item=Starbucks Vanilla Frappuccino, 15 ct.
+INFO            | Saved new item=Tully's Hawaiian Coffee K-Cups, 180 ct.
+INFO            | Saved new item=Wellsley Farms Organic Sumatra Estates Whole Bean Coffee, 40 oz.
+INFO            | Saved new item=Eight O'Clock Original K-Cups, 100 ct.
+INFO            | Saved new item=Green Mountain Coffee Colombian K-Cups, 180 ct.
+INFO            | Saved new item=Wellsley Farms Organic Extra Bold Single-Serve Cups, 100 ct.
+INFO            | Saved new item=Green Mountain Pumpkin Spice K-Cups, 54 ct.
+INFO            | Saved new item=Newman's Own French Roast K-Cups, 180 ct.
+INFO            | Saved new item=Dunkin' Donuts Original Blend K-Cups, 72 ct.
+INFO            | Saved new item=Stok Un-Sweet Black Cold-Brew Iced Coffee, 48 fl. oz.
+INFO            | Saved new item=Wellsley Farms Colombian K-Cups, 200 ct.
+INFO            | Saved new item=Nestle Coffee Mate Coffee Creamer, 56 oz.
+INFO            | Saved new item=Nestle CoffeeMate Non-Dairy Creamer, 56 oz.
+INFO            | Saved new item=Nestle Coffee-Mate Natural Bliss Coffee Creamer, 46 oz.
+INFO            | Saved new item=Nestle CoffeeMate Liquid Hazelnut Creamer, 2 pk./32 oz.
+INFO            | Saved new item=Land O'Lakes Fat Free 1/2 & 1/2 Creamer, 32 oz.
+INFO            | Saved new item=Nestle CoffeeMate Liquid French Vanilla Creamer, 2 pk./32 oz.
+INFO            | Saved new item=Nestle Coffeemate Original Liquid Coffee Creamer, 32 fl. oz.
+INFO            | Saved new item=Wellsley Farms Non-Dairy Creamer, 2pk./35.3 fl. oz.
+INFO            | Saved new item=Land O'Lakes Traditional 1/2 & 1/2 Creamer, 32 oz.
+INFO            | Saved new item=Land O'Lakes Heavy Whipping Cream, 32 oz.
+INFO            | Saved new item=Land O'Lakes Light Cream, 32 oz.
+INFO            | Category=Frozen Food is a categories page with url=http://www.bjs.com/grocery-household--pet/frozen-food.category.3000000000000117306.3000000000000117223.2001318.1.
+INFO            | Category=Frozen Entrees is a product page with url=http://www.bjs.com/frozen-food/frozen-entrees.category.3000000000000117310.3000000000000117306.2001321.1.
+INFO            | Category=Frozen Meat is a product page with url=http://www.bjs.com/frozen-food/frozen-meat.category.3000000000000117318.3000000000000117306.2001325.1.
+INFO            | Category=Frozen Appetizers is a product page with url=http://www.bjs.com/frozen-food/frozen-appetizers.category.3000000000000117307.3000000000000117306.2001317.1.
+INFO            | Category=Frozen Meatless Options is a product page with url=http://www.bjs.com/frozen-food/frozen-meatless-options.category.3000000000000117319.3000000000000117306.2001326.1.
+INFO            | Category=Ice Cream & Desserts is a product page with url=http://www.bjs.com/frozen-food/ice-cream--desserts.category.3000000000000117316.3000000000000117306.2001323.1.
+INFO            | Category=Frozen Fruit & Vegetables is a product page with url=http://www.bjs.com/frozen-food/frozen-fruit--vegetables.category.3000000000000117326.3000000000000117306.2001333.1.
+INFO            | Category=Frozen Seafood is a product page with url=http://www.bjs.com/frozen-food/frozen-seafood.category.3000000000000117324.3000000000000117306.2001331.1.
+INFO            | Category=Frozen Pizza & Bread is a product page with url=http://www.bjs.com/frozen-food/frozen-pizza--bread.category.3000000000000117321.3000000000000117306.2001328.1.
+INFO            | Category=Frozen Breakfast Food is a product page with url=http://www.bjs.com/frozen-food/frozen-breakfast-food.category.3000000000000117311.3000000000000117306.2001322.1.
+INFO            | Saved new item=Innovasion Cuisine Chicken Fried Rice, 2 pk.
+INFO            | Saved new item=Hot Pockets Sandwiches, Ham 'N Cheese, 17 pk./4.5 oz.
+INFO            | Saved new item=Innovasian Cuisine Sweet & Sour Chicken, 2 pk.
+INFO            | Saved new item=Hot Pockets Sandwiches, Pepperoni Pizza, 17 pk./4.5 oz.
+INFO            | Saved new item=Wellsley Farms Organic Spinach Ravioli, 25 oz.
+INFO            | Saved new item=Michael Angelo's Chicken Piccata, 2 ct./20 oz.
+INFO            | Saved new item=Bertolli Shrimp Scampi Linguine, 2 ct./24 oz.
+INFO            | Saved new item=Innovasian Cuisine Beef & Broccoli, 2 pk./20 oz.
+INFO            | Saved new item=Moe's Southwest Grill Chipotle Chicken Flautas, 40 oz.
+INFO            | Saved new item=Wellsley Farms Organic Butternut Squash Ravioli, 28 oz.
+INFO            | Saved new item=Nuovo Pasta Roasted Mushroom Ravioli, 30 oz.
+INFO            | Saved new item=Wellsley Farms Jumbo Cheese Ravioli, 4 lbs.
+INFO            | Saved new item=Lean Cuisine Comfort 6pk
+INFO            | Saved new item=Moe's Southwest Grill Chicken and 2 Cheese Mini Tacos, 2.19 lbs.
+INFO            | Saved new item=Lemon Grass Kitchen Chicken Pad Thai, 2 ct./20 oz.
+INFO            | Saved new item=Wellsley Farms Chicken Ravioli, 30 oz.
+INFO            | Saved new item=UNO Chicken Spinoccoli Penne, 2 pk.
+INFO            | Saved new item=Lean Cuisine Variety Pack, 6 ct.
+INFO            | Saved new item=Wellsley Farms Organic Spinach and Cheddar Tortellini, 24 oz.
+INFO            | Saved new item=Bertolli Chicken Florentine & Farfalle, 2 pk./24 oz.
+INFO            | Saved new item=Birds Eye Garlic Chicken Skillet Meal, 3lbs. 10 oz.
+INFO            | Saved new item=Michael Angelo's Lasagna with Meat Sauce, 4 ct./11 oz.
+INFO            | Saved new item=Michael Angelo's Chicken Parmesan, 2 pk./20 oz.
+INFO            | Saved new item=Cucina Di Carla Parmesan Risotto, 2 pk./20 oz.
+INFO            | Saved new item=Bertolli Italian Sausage and Rigatoni, 2 ct./24 oz.
+INFO            | Saved new item=Lemon Grass Kitchen Chicken & Broccoli Noodles, 2 ct./20 oz.
+INFO            | Saved new item=Wellsley Farms Rainbow Tortellini, 34 oz.
+INFO            | Saved new item=Hot Pockets Meatballs and Mozzarella,  17 ct.
+INFO            | Saved new item=Sandwich Bros. Sausage & Cheese Flatbread Pocket Sandwich, 12 ct.
+INFO            | Saved new item=Sandwich Bros. Chicken Pita Melts, 30 oz.
+INFO            | Saved new item=Moe's Southwest Grill Chicken Empanadas, 40 oz.
+INFO            | Saved new item=Cucina di Carla Rigatoni Bolognese, 2 pk./20 oz.
+INFO            | Saved new item=Wellsley Farms Spinach and Cheese Lasagna, 32 oz.
+INFO            | Saved new item=Michael Angelo's Chicken Bruschetta, 28 oz.
+INFO            | Saved new item=Innovasian Cuisine Shrimp Fried Rice, 2 ct./20 oz.
+INFO            | Saved new item=Blake's Chicken Pot Pie, 2 ct./26 oz.
+INFO            | Saved new item=Wellsley Farms Tortellini, 40 oz.
+INFO            | Saved new item=Wellsley Farms Mashed Red Skin Potatoes, 2 ct./24 oz.
+INFO            | Saved new item=Stouffer's Signature Meat Lasagna
+INFO            | Saved new item=Stouffer's Macaroni and Cheese, 2 pk./40 oz.
+INFO            | Saved new item=Tyson Fully Cooked Buffalo Style Hot Wings, 5 lbs.
+INFO            | Saved new item=Tyson Fully Cooked Crispy Breaded Chicken Wings, 4 lbs.
+INFO            | Saved new item=Tyson Boneless Skinless Chicken Breasts, 10 lbs.
+INFO            | Saved new item=Tyson Boneless Skinless Chicken Breast, 6.5 lbs.
+INFO            | Saved new item=Tyson All Natural Boneless Skinless Chicken Thighs, 5 lbs.
+INFO            | Saved new item=Barber Foods Cordon Bleu Stuffed Chicken, 36 oz.
+INFO            | Saved new item=Bubba Burger Turkey Burgers, 16 ct.
+INFO            | Saved new item=BUBBA Burger with Sweet Onions, 12 pk./5.3 oz.
+INFO            | Saved new item=Coleman Natural Ready-To-Cook Frozen Beef Burgers, 3 lbs.
+INFO            | Saved new item=Tyson Honey BBQ Boneless Chicken Wyngz, 3.5 lbs.
+INFO            | Saved new item=Tyson Spicy Panko White Meat Chicken Patties, 60 oz.
+INFO            | Saved new item=Crazy Cuizine General Tso's Chicken, 42 oz.
+INFO            | Saved new item=Tyson Fully Cooked Buffalo Style Hot Wings, 5 lbs.
+INFO            | Saved new item=Tyson Fully Cooked White Meat Chicken Nuggets, 5 lbs.
+INFO            | Saved new item=Tyson All Natural Raw Chicken Wings, 10 lbs.
+INFO            | Saved new item=Perdue Whole Grain Chicken Breast Nuggets, 4.25 lbs.
+INFO            | Saved new item=Angus Beef BUBBA Burger, 12 pk./5.3 oz.
+INFO            | Saved new item=Tyson Fully Cooked Buffalo Style Chicken Tenders, 3.5 lbs.
+INFO            | Saved new item=Perdue Panko Breaded Chicken Nuggets, 5 lbs.
+INFO            | Saved new item=Tyson Breaded Chicken Breast Tenderloins, 5 lbs.
+INFO            | Saved new item=Tyson Fully Cooked Honey BBQ Chicken Strips, 3.5 lbs.
+INFO            | Saved new item=Cooked Perfect Teriyaki Glazed Chicken Meatballs, 3.5 lbs.
+INFO            | Saved new item=Tyson Fully Cooked Buffalo Chicken Tenders, 3.5 lbs.
+INFO            | Saved new item=Yummy Dino Buddies All Natural Chicken Breast Nuggets, 5 lbs.
+INFO            | Saved new item=Original BUBBA Burger, 12 pk./5.3 oz.
+INFO            | Saved new item=Crazy Cuizine Mandarin Orange Chicken, 42 oz.
+INFO            | Saved new item=Cedar Canyon Quarter Pound Beef Patties, 40 ct.
+INFO            | Saved new item=Barber Foods Broccoli & Cheese Stuffed Chicken, 36 oz.
+INFO            | Saved new item=Perdue Popcorn Chicken, 3.25 lbs.
+INFO            | Saved new item=Yummy All Natural Chicken Breast Fries, 60 oz.
+INFO            | Saved new item=Tyson Premium Boneless Skinless Thin Sliced Chicken Breasts, 10 lbs.
+INFO            | Saved new item=Tyson Honey BBQ Chicken Strips, 3.5 lbs.
+INFO            | Saved new item=Tyson Fully Cooked Honey BBQ Flavored Boneless Chicken Wyngz, 3.5 lbs.
+INFO            | Saved new item=Tyson Fully Cooked Honey Barbecue Flavored Wings, 5 lbs.
+INFO            | Saved new item=Tyson Panko Breaded Chicken Breast Patties, 5 lbs.
+INFO            | Saved new item=Crazy Cuizine Teriyaki Chicken, 38 oz.
+INFO            | Saved new item=Tyson Fully Cooked Honey BBQ Flavored Wings, 5 lbs.
+INFO            | Saved new item=Tyson Panko Breaded Chicken Patties, 5 lbs.
+INFO            | Saved new item=Tyson Fully Cooked Buffalo Style Boneless Chicken Wyngz, 3.25 lbs.
+INFO            | Saved new item=SteakEZE Chicken Parmesan Sandwich, 8 pk./6.9 oz.
+INFO            | Saved new item=Wellsley Farms Chicken Nacho Bites, 24 ct.
+INFO            | Saved new item=Wellsley Farms Spinach & Artichoke Poppers, 24 ct.
+INFO            | Saved new item=Bibigo Chicken & Vegetable Mini Wontons, 32 oz.
+INFO            | Saved new item=Michael Angelo's Ham & Cheese Mini Calzones, 40 ct.
+INFO            | Saved new item=Totino's Stuffed Nachos Supreme, 150 ct.
+INFO            | Saved new item=Caribbean Food Delights Jamaican Style Beefy Cheese Patties, 10...
+INFO            | Saved new item=Wellsley Farms Loaded Potato Skins, 2 lbs.
+INFO            | Saved new item=Wellsley Farms Risotto Arancini Bites, 24 ct.
+INFO            | Saved new item=Quirch Arepas, 6 ct.
+INFO            | Saved new item=Coyote Grill Buffalo Chicken Rolls, 34 ct.
+INFO            | Saved new item=Totino's Pepperoni Pizza Rolls, 150 ct.
+INFO            | Saved new item=Wellsley Farms Bacon Mac & Cheese Bites, 1.125 lbs.
+INFO            | Saved new item=Jose Ole Mini Beef & Cheese Tacos, 42 ct.
+INFO            | Saved new item=Davio's Philly Cheese Steak Spring Rolls, 24 ct.
+INFO            | Saved new item=Wellsley Farms Jalapeno Poppers, 36 oz.
+INFO            | Saved new item=Minh Chicken Egg Rolls, 20 ct.
+INFO            | Saved new item=Wellsley Farms Bacon Wrapped Scallops, 12 oz.
+INFO            | Saved new item=Ling Ling Chicken and Vegetable Potstickers, 3.5 lbs.
+INFO            | Saved new item=Wellsley Farms Mini Pizza Bagels, 56 oz.
+INFO            | Saved new item=Wellsley Farms Toasted Ravioli, 36 oz.
+INFO            | Saved new item=Wellsley Farms Puff Pastry Assortment, 100 ct.
+INFO            | Saved new item=Ore-Ida Cheese & Pepperoni Bagel Bites, 72 ct.
+INFO            | Saved new item=Moe's Chicken Chimichangas, 12 ct.
+INFO            | Saved new item=Buen Sabor Chipotle Chicken & Cheese Empanadas, 8 ct.
+INFO            | Saved new item=Wellsley Farms Ready-To-Eat Fully Cooked Bacon, 10 oz.
+INFO            | Saved new item=Wellsley Farms Bacon Wrapped Scallops, 18 ct.
+INFO            | Saved new item=Wellsley Farms Toasted Ravioli, 1.75 lbs.
+INFO            | Saved new item=UNO Buffalo Chicken Dip, 32 oz.
+INFO            | Saved new item=Coyote Grill Bacon Habanero Bites, 40 ct.
+INFO            | Saved new item=Quirch Tequenos, 10 ct.
+INFO            | Saved new item=Cheating Gourmet Crab Stuffed Mushrooms, 15.6 oz.
+INFO            | Saved new item=Totino's Cheese Pizza Rolls, 150 ct.
+INFO            | Saved new item=Wellsley Farms Signature Collection Mini Crab Cakes, 14.4 oz.
+INFO            | Saved new item=No Forks Required Chicken and Cheese Quesadilla Cones, 24 ct.
+INFO            | Saved new item=Ling Ling Mini Vegetable Spring Rolls, 30 ct.
+INFO            | Saved new item=Wellsley Farms Cocktail Beef Franks Wrapped in Puff Pastry, 40 oz.
+INFO            | Saved new item=J. Scott Foods Bacon Wrapped Chicken and Pineapple, 18 ct.
+INFO            | Saved new item=Wellsley Farms Steak and Cheese Spring Rolls, 24 oz.
+INFO            | Saved new item=Wellsley Farms Mozzarella Sticks, 2pk./2 lbs.
+INFO            | Saved new item=Bibigo Mandu Beef & Vegetable Dumplings, 32 oz.
+INFO            | Saved new item=Gardein Seven Grain Crispy Meatless Tenders, 32 oz.
+INFO            | Saved new item=Gardein Meatless Meatballs, 32 ct.
+INFO            | Saved new item=MorningStar Farms Original Chick Patties, 15 ct.
+INFO            | Saved new item=Smucker's Peanut Butter and Grape Uncrustables, 18 pk./2.8 oz.
+INFO            | Saved new item=MorningStar Farms Chik Patties, 16 ct.
+INFO            | Saved new item=Gardenburger Malibu Vegan Burger, 12 ct.
+INFO            | Saved new item=MorningStar Farms Garden Veggie Burgers, 16 ct.
+INFO            | Saved new item=MorningStar Farms Organic Quinoa & Sweet Potato Veggie Burgers, 12 ct.
+INFO            | Saved new item=Wellsley Farms Quinoa Veggie Burgers, 8 ct.
+INFO            | Saved new item=Gardein Chipotle Black Bean Burger, 12 ct.
+INFO            | Saved new item=Wellsley Farms Double Dark Chocolate Gelato, 48 oz.
+INFO            | Saved new item=Breyers Blasts! Oreo Cookies & Cream Ice Cream, 64 oz.
+INFO            | Saved new item=Talenti Pumpkin Pie Gelato, 32 oz.
+INFO            | Saved new item=Breyers Gelato Vanilla Caramel, Twin Pack/28.5 oz.
+INFO            | Saved new item=Haagen-Dazs Vanilla Ice Cream, 64 oz.
+INFO            | Saved new item=Wellsley Farms Sheet Ice Cream Cake - Small
+INFO            | Saved new item=Wellsley Farms Freeze Pops, 250 ct.
+INFO            | Saved new item=Snickers Ice Cream Bars, 24 ct./2 oz.
+INFO            | Saved new item=Breyers Natural Vanilla Ice Cream, 64 oz.
+INFO            | Saved new item=Talenti Coconut Almond Gelato, 1 qt.
+INFO            | Saved new item=Popsicle Orange Cherry Grape Sugar Free, 40 ct.
+INFO            | Saved new item=Hood Hoodsie Cups, 30 pk./3 oz.
+INFO            | Saved new item=Wellsley Farms Sheet Ice Cream Cake - Large
+INFO            | Saved new item=Luigi's Real Italian Ice, 18 pk./6 oz. cups
+INFO            | Saved new item=So Delicious Coconut Milk Vanilla Bean Frozen Dessert, 1 Qt.
+INFO            | Saved new item=Wellsley Farms Sea Salt Caramel Gelato with Chocolate Chunks, 48 oz.
+INFO            | Saved new item=Wellsley Farms Mini Ice Cream Variety Pack, 36 ct.
+INFO            | Saved new item=Haagen-Dazs Vanilla Milk Chocolate Almond Ice Cream Bars, 15 pk.
+INFO            | Saved new item=Magnum Double Caramel Ice Cream Bars, 9 ct.
+INFO            | Saved new item=Talenti Mediterranean Mint Gelato, 32 oz.
+INFO            | Saved new item=Breyers Indulgences Raspberry Cheesecake Gelato, 2 pk./28.5 oz.
+INFO            | Saved new item=Breyers Chocolate Ice Cream, 64 oz.
+INFO            | Saved new item=Breyers Mint Chocolate Chip, 64 oz.
+INFO            | Saved new item=Cheesecake Factory Original Cheesecake, 64 oz.
+INFO            | Saved new item=Edy's Outshine Fruit Bars, 24 ct.
+INFO            | Saved new item=Good Humor Reese's Peanut Butter Dessert Cup Ice Cream, 18 ct.
+INFO            | Saved new item=MagnumMini Double Chocolate Vanilla, 12 ct.
+INFO            | Saved new item=Twix Ice Cream Bars, 24 ct.
+INFO            | Saved new item=Magnum Cookies & Cream, 9 ct.
+INFO            | Saved new item=Yasso Mint Chocolate Chip Frozen Greek Yogurt Bars, 15 ct.
+INFO            | Saved new item=Whole Fruit Organic Juice Bars, Coconut & Mango, 16 ct.
+INFO            | Saved new item=Skinny Cow Enrobed Bars and Ice Cream Sandwiches Variety Pack, 17 ct.
+INFO            | Saved new item=Nestle Drumstick Sundae Cone Variety Pack, 16 ct.
+INFO            | Saved new item=Breyers Coffee Ice Cream, 64 oz.
+INFO            | Saved new item=Klondike CLASSIC Vanilla Ice Cream Sandwiches, 24 ct.
+INFO            | Saved new item=Nestle Toll House Vanilla Bean Ice Cream Chocolate Chip Cookie...
+INFO            | Saved new item=Nestle Drumstick Lil' Drums, 24 pk.
+INFO            | Saved new item=Ben & Jerrys Cookie Dough Cups, 12 ct./4 oz.
+INFO            | Saved new item=Path of Life All Natural Butternut Squash, 4 lbs.
+INFO            | Saved new item=Wyman's of Maine Frozen Strawberries, Blueberries and Cherries with...
+INFO            | Saved new item=Wellsley Farms Organic Strawberries, 4 lbs.
+INFO            | Saved new item=Wellsley Farms Mango, 4 lbs.
+INFO            | Saved new item=Wellsley Farms Organic Crinkle Cut Fries, 4 lb.
+INFO            | Saved new item=Chiquita Tostones, 4 lbs.
+INFO            | Saved new item=Wellsley Farms Organic Spinach Kale Blend, 2.5 lbs.
+INFO            | Saved new item=Quirch Sofrito, 2 lbs.
+INFO            | Saved new item=Wellsley Farms Mixed Vegetables, 5 lbs.
+INFO            | Saved new item=Birds Eye Steamfresh Fresh-Frozen Vegetables, 4 pk./12 oz.
+INFO            | Saved new item=Ore-Ida Crinkle Fries, 8 lbs.
+INFO            | Saved new item=Chiquita Maduros, 4 lbs.
+INFO            | Saved new item=Wyman's of Maine Frozen Wild Blueberries, 4 lbs.
+INFO            | Saved new item=Wellsley Farms Organic Cherries, 3 lbs.
+INFO            | Saved new item=Wellsley Farms Organic Quinoa Kale Blend, 2.5 lbs.
+INFO            | Saved new item=Chiquita Guanabana Pulp, 2 ct./7 oz.
+INFO            | Saved new item=Wellsley Farms Organic Peas, 4 lbs.
+INFO            | Saved new item=Birds Eye Broccoli, Cauliflower and Carrots, 4 pk./12 oz.
+INFO            | Saved new item=Dole Mixed Fruit, 96 oz.
+INFO            | Saved new item=Wellsley Farms Asian Stir Fry Vegetables, 2 ct./24 oz.
+INFO            | Saved new item=Chiquita Cassava Yuca, 5 lbs.
+INFO            | Saved new item=Welch's Individually Quick Frozen Avocados, 32 oz.
+INFO            | Saved new item=Wellsley Farms Raspberries, 3 lbs.
+INFO            | Saved new item=Dole Whole Strawberries, 96 oz.
+INFO            | Saved new item=Wellsley Farms Organic Extra Fine Green Beans, 4 lbs.
+INFO            | Saved new item=Wellsley Farms Organic Tropical Blend, 3 lbs.
+INFO            | Saved new item=Welch's Orange Groove Fruit & Veggie Blend,  3 lbs.
+INFO            | Saved new item=Wellsley Farms Organic Triple Berry, 3 lbs.
+INFO            | Saved new item=Ore-Ida Steak Fries, 6 lbs.
+INFO            | Saved new item=Wellsley Farms Organic  Cauliflower Florets, 4 lbs.
+INFO            | Saved new item=Wellsley Farms Organic Pineapple, 4 lbs.
+INFO            | Saved new item=Cascadian Farm Shoe String Fries, 56 oz.
+INFO            | Saved new item=Wellsley Farms Organic Mixed Fruit, 4 lbs.
+INFO            | Saved new item=Chicken of the Sea Crab Claw Meat, 16 oz.
+INFO            | Saved new item=SeaPak Popcorn Shrimp, 2.5 lbs.
+INFO            | Saved new item=Phillips Maryland Style Crab Cakes, 6 pk./3 oz.
+INFO            | Saved new item=Bantry Bay Premium Seafoods Mussels In Garlic Butter Sauce, 2 lbs.
+INFO            | Saved new item=Chicken of the Sea Lump Crab Meat, 16 oz.
+INFO            | Saved new item=SeaPak Jumbo Butterfly Shrimp, 2 lbs.
+INFO            | Saved new item=Bantry Bay Mussel Meats in Thai Curry, 18 oz.
+INFO            | Saved new item=Mussel King PEI Mussels in Red Thai Curry, 2 lb.
+INFO            | Saved new item=Aqua Star Seafood Medley, 1.5 lbs.
+INFO            | Saved new item=Chicken of the Sea Jumbo Lump Crab Meat, 16 oz.
+INFO            | Saved new item=Gorton's Panko Breaded Haddock Fillets, 10 ct.
+INFO            | Saved new item=Seamazz North Atlantic Lobster Tails, 16 oz.
+INFO            | Saved new item=Sea Cuisine Parmesan Crusted Tilapia, 28 oz.
+INFO            | Saved new item=WorldCatch Wild Alaskan Salmon Burgers, 10 ct.
+INFO            | Saved new item=Inland Market Seasoned Mahi Burgers, 8 ct.
+INFO            | Saved new item=Sea Cuisine Multigrain Tilapia, 32 oz.
+INFO            | Saved new item=Australis Barramundi, 24 oz.
+INFO            | Saved new item=Wellsley Farms Gulf Shrimp, 2 lbs.
+INFO            | Saved new item=Salty Seas Steamed Clams, 1.25 lbs.
+INFO            | Saved new item=Gorton's Crunchy Panko Wild Alaskan Pollock Fillets, 30 ct.
+INFO            | Saved new item=Wellsley Farms Wild Caught Sockeye Salmon, 2 lbs.
+INFO            | Saved new item=Mussel King PEI Mussels in White Wine, 2 lb.
+INFO            | Saved new item=Sea Cuisine White Wine and Butter Haddock, 25.6 oz.
+INFO            | Saved new item=SeaPak Clam Strips, 2 lbs.
+INFO            | Saved new item=Wellsley Farms Extra Large Cooked Shrimp, 2 lbs.
+INFO            | Saved new item=Sea Cuisine Pub Style Cod, 32.oz.
+INFO            | Saved new item=Gorton's Fish Sticks, 115 ct.
+INFO            | Saved new item=Sea Cuisine Garlic & Herb Flounder, 30.4 oz.
+INFO            | Saved new item=Sea Cuisine Honey Lemon Dill Salmon Fillets, 20.8 oz.
+INFO            | Saved new item=Red Baron Singles Deep Dish Pizza Variety, 12 ct.
+INFO            | Saved new item=Wellsley Farms Organic Spinach and Feta Pizza, 3 pk.
+INFO            | Saved new item=Uno Pizzeria & Grill Chicago Thin Crust, 3 ct.
+INFO            | Saved new item=DiGiorno Flatbread Sausage and Pepper Pizza, 4 pk.
+INFO            | Saved new item=DiGiorno 12" Rising Crust Supreme Pizza, 3 pk./32.7 oz.
+INFO            | Saved new item=Jack's Original Thin Crust Pepperoni Pizza, 4 pk.
+INFO            | Saved new item=DiGiorno 12" Rising Crust 4 Cheese Pizza, 3 pk./28.2 oz.
+INFO            | Saved new item=Uno Pizzeria & Grill Personal Pizzas, 8 ct.
+INFO            | Saved new item=DiGiorno 12" Rising Crust Pepperoni Pizza, 3 pk./29.6 oz.
+INFO            | Saved new item=UNO Buffalo Chicken Flatbread Pizza, 3 pk.
+INFO            | Saved new item=SuperPretzel King Size Baked Soft Pretzel, 20 ct./5 oz.
+INFO            | Saved new item=DiGiorno Artisan Melts Pepperoni Speciale, 8 pk.
+INFO            | Saved new item=Digiorno Stuffed Crust Pepperoni Pizza, 2 pk.
+INFO            | Saved new item=Freschetta Brick Oven 5 Italian Cheese Pizza, 3 pk.
+INFO            | Saved new item=Red Baron French Bread Pepperoni Pizza, 9 ct.
+INFO            | Saved new item=Udi's White Bread, 26 oz.
+INFO            | Saved new item=UNO Chicken Bacon Ranch Flatbread, 3 ct.
+INFO            | Saved new item=New York Bakery Hearth-Baked Breadsticks with Real Garlic, 24 ct.
+INFO            | Saved new item=Udi's Whole Grain Bread, 26 oz.
+INFO            | Saved new item=DiGiorno Rising Crust Three Meat 12" Pizza, 3 pk.
+INFO            | Saved new item=Banquet Brown'n Serve Sausage Links, 70 ct.
+INFO            | Saved new item=Farm Rich French Toast Sticks, 3.5 lbs.
+INFO            | Saved new item=Eggo Buttermilk Pancakes, 64 ct.
+INFO            | Saved new item=MorningStar Farms Original Sausage Patties, 24 pk./1.3 oz.
+INFO            | Saved new item=Jimmy Dean Delights Applewood Smoked Chicken Sausage, Egg White &...
+INFO            | Saved new item=Jimmy Dean Fully Cooked Original Pork Sausage Links, 38.4 oz.
+INFO            | Saved new item=Pillsbury Heat-N-Go Maple Burst'n Mini Pancakes, 18 pk./2.82 oz.
+INFO            | Saved new item=Jimmy Dean Delights Farmer's Recipe Egg White Omelet, 6 ct.
+INFO            | Saved new item=Jimmy Dean Meat Lovers Simple Scrambles, 4 pk./5.4 oz.
+INFO            | Saved new item=Hot Pockets Bacon, Egg and Cheese, 17 pk.
+INFO            | Saved new item=Jimmy Dean Meat Lovers Breakfast Bowls, 8 ct.
+INFO            | Saved new item=Jimmy Dean Delights Bacon & Spinach Frittatas, 14 ct.
+INFO            | Saved new item=Kellogg's Eggo Blueberry Waffles, 60 ct.
+INFO            | Saved new item=Sandwich Bros. Egg & Cheese Sandwich, 12 ct.
+INFO            | Saved new item=Jimmy Dean Delights Turkey Sausage, Egg White and Cheese English...
+INFO            | Saved new item=Eggo Homestyle Waffles, 72 ct.
+INFO            | Category=Emergency Food is a product page with url=http://www.bjs.com/grocery-household--pet/emergency-food.category.3000000000000117130.3000000000000117223.2001362.1.
+INFO            | Saved new item=Augason Farms Ready Cuisine Entree Variety, 6 pk.
+INFO            | Saved new item=Wise Company 1-Month Emergency Food Supply
+INFO            | Saved new item=Augason Farms Potato Gems #10 Can, 3 pk./3 lbs.
+INFO            | Saved new item=Wise Company Emergency Food Variety Pack
+INFO            | Saved new item=Augason Farms Premium Emergency Food Storage Kit, 1 Year, 4 People
+INFO            | Saved new item=Augason Farms Butter Powder #10 Can, 3 pk./36 oz.
+INFO            | Saved new item=Augason Farms Cheese Blend Powder #10 Can, 3 pk./52 oz.
+INFO            | Saved new item=Augason Farms Scrambled Egg Mix #10 Can, 3 pk./36 oz.
+INFO            | Saved new item=Augason Farms Food Storage Emergency Pail Kit, 1 Year, 1 Person
+INFO            | Saved new item=Augason Farms 100% Real Instant Nonfat Dry Milk #10 Can, 3 pk./9.75...
+INFO            | Saved new item=Augason Farms Creamy Potato Soup Mix #10 Can, 3 pk./44 oz.
+INFO            | Saved new item=Augason Farms Long Grain Brown Rice Pail, 42 lbs.
+INFO            | Saved new item=Augason Farms Regular Rolled Oats Pail, 20 lbs.
+INFO            | Saved new item=Augason Farms Deluxe Emergency Food Supply, 1 Months, 4 People
+INFO            | Saved new item=Augason Farms Dehydrated Chopped Onions #10 Can, 3 pk./23 oz.
+INFO            | Saved new item=Augason Farms Emergency Water Storage Kit
+INFO            | Saved new item=Wise Company 372-Serving Gluten-Free Essential Package
+INFO            | Saved new item=Wise Company 6-Month Emergency Food Supply with Survival 5-Day...
+INFO            | Saved new item=Augason Farms Honey-Coated Banana Slices #10 Can, 3 pk./33 oz.
+INFO            | Saved new item=Augason Farms Simply Meal Emergency Food Storage Kit
+INFO            | Saved new item=Augason Farms Food Storage Emergency Pail Kit, 1 Year, 3 People
+INFO            | Saved new item=Augason Farms Freeze-Dried Sliced Strawberries #10 Can, 3 pk./6.4 oz.
+INFO            | Saved new item=Augason Farms Emergency Food Storage Kit, 1 Year, 4 People
+INFO            | Saved new item=Augason Farms Hard White Wheat Pail, 40 lbs.
+INFO            | Saved new item=Augason Farms Dehydrated Apple Slices #10 Can, 3 pk./19.2 oz.
+INFO            | Saved new item=Wise Company 24-Month Emergency Food Supply with 5 Survival 5-Day...
+INFO            | Saved new item=Augason Farms Emergency Food Supply Kit, 1 Week, 1 Person
+INFO            | Saved new item=Augason Farms Emergency Food Storage Kit, 1 Year, 1 Person
+INFO            | Saved new item=Augason Farms Hard Red Wheat Pail, 40 lbs.
+INFO            | Saved new item=Augason Farms Pinto Beans Pail, 41 lbs.
+INFO            | Saved new item=Augason Farms Lunch & Dinner Emergency Food Supply, 4 gal.
+INFO            | Saved new item=Augason Farms Dehydrated Potato Slices Pail, 10 lbs.
+INFO            | Saved new item=Augason Farms Freeze-Dried Whole Blueberries #10 Can, 3 pk./12 oz.
+INFO            | Saved new item=Augason Farms Gluten-Free Black Bean Burger, 4 gal.
+INFO            | Saved new item=Augason Farms Emergency Storage Dinner Pack
+INFO            | Saved new item=Wise Company 3-Month Ultimate Preparedness Pack
+INFO            | Saved new item=Augason Farms Emergency Storage Breakfast Pack
+INFO            | Saved new item=Augason Farms Freeze-Dried Fruit Variety Pail, 4 lbs. 2 oz.
+INFO            | Saved new item=Wise Company 3-Month Emergency Food Supply with Survival 5-Day...
+INFO            | Saved new item=Augason Farms Honey Powder #10 Can, 3 pk./3 lbs.
+INFO            | Category=Pet is a categories page with url=http://www.bjs.com/grocery-household--pet/pet.category.3000000000000117369.3000000000000117223.2001266.1.
+INFO            | Category=Pet Food & Treats is a categories page with url=http://www.bjs.com/pet/pet-food--treats.category.3000000000000117375.3000000000000117369.2001300.1.
+INFO            | Category=Pet Food is a product page with url=http://www.bjs.com/pet-food--treats/pet-food.category.34522.3000000000000117375.2001433.1.
+INFO            | Category=Pet Treats is a product page with url=http://www.bjs.com/pet-food--treats/pet-treats.category.131008.3000000000000117375.2001299.1.
+INFO            | Category=Pet Beds & Furniture is a categories page with url=http://www.bjs.com/pet/pet-beds--furniture.category.3000000000000154486.3000000000000117369.2002616.1.
+INFO            | Category=Ped Beds is a product page with url=http://www.bjs.com/pet-beds--furniture/ped-beds.category.3000000000000154487.3000000000000154486.2002615.1.
+INFO            | Category=Pet Steps, Gates & Crates is a product page with url=http://www.bjs.com/pet-beds--furniture/pet-steps-gates--crates.category.3000000000000154985.3000000000000154486.2002618.1.
+INFO            | Category=Pet Accessories is a categories page with url=http://www.bjs.com/pet/pet-accessories.category.728.3000000000000117369.2001238.1.
+INFO            | Category=Dog Healthcare is a product page with url=http://www.bjs.com/pet-accessories/dog-healthcare.category.3000000000000123462.728.2001659.1.
+INFO            | Category=Dog Travel Accessories is a product page with url=http://www.bjs.com/pet-accessories/dog-travel-accessories.category.34526.728.2001239.1.
+INFO            | Category=Cat Healthcare is a product page with url=http://www.bjs.com/pet-accessories/cat-healthcare.category.34531.728.2001240.1.
+INFO            | Saved new item=Pedigree Small Dog Complete Nutrition Dog Food, 20 lbs. - Steak &...
+INFO            | Saved new item=Purina Fancy Feast Grilled Poultry & Beef Feast Variety Cat Food, 36...
+INFO            | Saved new item=Purina Deli-Cat Cat Food, 14 lbs.
+INFO            | Saved new item=Purina Dog Chow Complete Dog Food, 55 lbs.
+INFO            | Saved new item=Freshpet Select Fresh from the Kitchen Home Cooked Dog Food, 4.5 lbs.
+INFO            | Saved new item=Purina Beneful Prepared Meals Variety Pack Dog Food, 10 oz. Plastic...
+INFO            | Saved new item=Meow Mix Classic Favorites Variety Pack, 36 pk./2.75 oz.
+INFO            | Saved new item=Purina Friskies Classic Pate Cat Food Variety Pack, 48 pk./5.5 oz.
+INFO            | Saved new item=Meow Mix Irresistibles Variety Pack, 4 ct.
+INFO            | Saved new item=Freshpet Select Fresh from the Kitchen Home-Cooked Chicken Dog Food...
+INFO            | Saved new item=Cesar Canine Cuisine Variety Pack, 30 pk./3.5 oz.
+INFO            | Saved new item=Meow Mix Tender Centers Salmon & White Meat Chicken Flavor Dry Cat...
+INFO            | Saved new item=Berkley Jensen Nutrient Blend Lamb and Rice Dry Dog Food, 44 lbs.
+INFO            | Saved new item=Freshpet Select Grain Free Tender Chicken With Spinach and Potato...
+INFO            | Saved new item=Freshpet Select Roasted Chicken Cat Meal, 1 lb.
+INFO            | Saved new item=Pedigree Adult Complete Nutrition Chicken Flavor Dry Dog Food, 52 lbs.
+INFO            | Saved new item=Rachael Ray Nutrish Real Chicken & Veggies Dry Dog Food, 40 lbs.
+INFO            | Saved new item=Purina Cat Chow Complete, 25 lbs.
+INFO            | Saved new item=Berkley Jensen Premium Black Oil Sunflower Wild Bird Food
+INFO            | Saved new item=Berkley Jensen All Natural Chicken and Brown Rice Holistic Recipe for...
+INFO            | Saved new item=Kibbles 'n Bits Original Savory Beef & Chicken Flavor Dry Dog Food...
+INFO            | Saved new item=Freshpet Select Chunky Chicken and Turkey with Vegetables and Brown...
+INFO            | Saved new item=Purina Cat Chow Naturals Original Plus Vitamins and Minerals Cat...
+INFO            | Saved new item=Meow Mix Original Choice Dry Cat Food, 18.5 lbs.
+INFO            | Saved new item=Berkley Jensen All Natural Larger Breed Chicken and Brown Rice...
+INFO            | Saved new item=
+INFO            | Saved new item=Purina Moist & Meaty Burger with Cheddar Cheese Flavor Dog Food, 54...
+INFO            | Saved new item=Iams ProActive Health Adult Indoor Weight & Hairball Care Dry Cat...
+INFO            | Saved new item=Purina Friskies Prime Filets Cat Food Variety Pack, 48 pk./5.5 oz.
+INFO            | Saved new item=Purina Alpo Gravy Cravers Variety Pack Dog Food, 24 pk./13.2 oz.
+INFO            | Saved new item=IAMS Minichunks Adult Dry Dog Food, 50 lbs.
+INFO            | Saved new item=Berkley Jensen Nutrient Blend Grain-Free Large Breed Turkey and Pea...
+INFO            | Saved new item=Freshpet Select Tender Chicken with Crisp Carrots and Leafy Spinach...
+INFO            | Saved new item=Freshpet Select Grain-Free Tender Chicken with Spinach and Potato Dog...
+INFO            | Saved new item=Purina ONE SmartBlend Healthy Weight Formula Adult Premium Dog Food...
+INFO            | Saved new item=9Lives Poultry Classics Variety Pack, 48 pk./5.5 oz.
+INFO            | Saved new item=Berkley Jensen Premium Select Blend Wild Bird Food
+INFO            | Saved new item=Freshpet Select Tender Chicken with Crisp Carrots and Leafy Spinach...
+INFO            | Saved new item=Freshpet Select Tender Chicken with Vegetables & Brown Rice Dog Food...
+INFO            | Saved new item=Berkley Jensen All Natural Canned Chicken Dinner Holistic Recipe for...
+INFO            | Saved new item=Milk-Bone Soft & Chewy Beef Recipe Dog Snacks, 37 oz.
+INFO            | Saved new item=Pup-Peroni Lean Beef Flavor Dog Snacks, 40 oz.
+INFO            | Saved new item=Purina Busy Rollhide Small/Medium Dog Treats, 15 ct.
+INFO            | Saved new item=Pup-Peroni Original Beef Flavor Dog Snacks, 50 oz.
+INFO            | Saved new item=Milk-Bone Brushing Chews Daily Dental Treats, 30 ct.
+INFO            | Saved new item=Milk-Bone MaroSnacks Small Dog Snacks, 50 oz.
+INFO            | Saved new item=Pedigree DENTASTIX Original Dog Treats, 51 ct.
+INFO            | Saved new item=Milk-Bone Flavor Snacks Small Dog Biscuits, 8 lbs.
+INFO            | Saved new item=Berkley Jensen Grain-Free Pork and Berry Links Treats, 1.25 lbs.
+INFO            | Saved new item=Pup-Peroni Lean Beef Flavor Dog Snacks, 50 oz.
+INFO            | Saved new item=Claudia's Canine Cuisine Gourmet Dog Cookies, 18 oz.
+INFO            | Saved new item=Berkley Jensen Chicken Jerky Dog Chews, 40 oz.
+INFO            | Saved new item=Blue Dog Bakery Deli Sticks for Dogs, 20 oz.
+INFO            | Saved new item=Freshpet Dog Joy Turkey Bacon Treats, 6 oz.
+INFO            | Saved new item=Milk-Bone Original Large Dog Biscuits, 14 lbs.
+INFO            | Saved new item=Blue Dog Bakery More Flavors Treats, 5.5 lbs.
+INFO            | Saved new item=Pup-Peroni Original Beef Flavor Dog Snacks, 40 oz.
+INFO            | Saved new item=Majestic Pet Products 6" Bully Stick for Dogs, 36 ct.
+INFO            | Saved new item=Pedigree Medium Jumbone Treats, 14 pk.
+INFO            | Saved new item=Majestic Pet Products 6" Bully Stick for Dogs, 24 ct.
+INFO            | Saved new item=Blue Dog Bakery Turkey & Gravy and Chicken & Sweet Potato Dog Treats...
+INFO            | Saved new item=Premium Pork Chomps Baked Pork Rolls, 18 ct.
+INFO            | Saved new item=Berkley Jensen Medium Dog Biscuits, 6.6 lbs.
+INFO            | Saved new item=Berkley Jensen Pig Ears Dog Chews, 30 ct.
+INFO            | Saved new item=Freshpet Dog Joy Chicken Treats, 8 oz.
+INFO            | Saved new item=Temptations Treats for Cats, 2 pk./16 oz.
+INFO            | Saved new item=Purina Beggin' Strips Bacon Flavor Dog Snacks, 48 oz.
+INFO            | Saved new item=Milk-Bone Brushing Chews Daily Dental Treats, Small/Medium, 40 ct.
+INFO            | Saved new item=Berkley Jensen All Natural Large Dog Biscuits, 14 lbs.
+INFO            | Saved new item=Berkley Jensen Retriever Rolls Dog Chews, 18 ct.
+INFO            | Saved new item=Nudges Health & Wellness Chicken Jerky Dog Treats, 36 oz.
+INFO            | Saved new item=Majestic Pet Products 40" Large Faux Suede Bagel Donut Pet Bed for...
+INFO            | Saved new item=Majestic Pet Products 24" Small Twill Bagel Donut Pet Bed for Dogs...
+INFO            | Saved new item=Majestic Pet Products Extra-Large Rectangle Pet Bed for Pets Over 70...
+INFO            | Saved new item=Majestic Pet Products Vertical Stripe Medium Rectangle Pet Bed -...
+INFO            | Saved new item=Majestic Pet Products 40" Large Twill Bagel Donut Pet Bed for Dogs...
+INFO            | Saved new item=Majestic Pet Products 52" Extra-Large Bagel Bed with Fleece Center -...
+INFO            | Saved new item=Majestic Pet Products Vertical Stripe Large Rectangle Pet Bed - Black
+INFO            | Saved new item=PAW Cuddle Round Plush Pet Bed for Dogs 25-45 lbs. - Brown
+INFO            | Saved new item=Majestic Pet Products Small/Medium Orthopedic Double Pet Bed for Pets...
+INFO            | Saved new item=Majestic Pet Products Vertical Stripe Medium Rectangle Pet Bed - Navy...
+INFO            | Saved new item=PAW Cuddle Round Plush Pet Bed for Dogs 25-45 lbs. - Pink
+INFO            | Saved new item=Majestic Pet Products Large/Extra-Large Orthopedic Double Pet Bed for...
+INFO            | Saved new item=Majestic Pet Products Vertical Stripe Small Rectangle Pet Bed - Navy...
+INFO            | Saved new item=Majestic Pet Products Vertical Stripe Small Rectangle Pet Bed - Black
+INFO            | Saved new item=Majestic Pet Products Large 40" Bagel Bed with Fleece Center - Black
+INFO            | Saved new item=Majestic Pet Products Large 40" Bagel Bed with Fleece Center - Khaki
+INFO            | Saved new item=Majestic Pet Products 40" Large Twill Bagel Donut Pet Bed for Dogs...
+INFO            | Saved new item=Berkley Jensen 30" x 40" Premium Orthopedic Pet Bed - Assorted
+INFO            | Saved new item=Majestic Pet Products Large/Extra-Large Orthopedic Pet Bed for Dogs...
+INFO            | Saved new item=PAW Large Plush Cozy Critter Pet Crate Pet Bed for Dogs 45-70 lbs. -...
+INFO            | Saved new item=Gen7Pets Pathfinder Large Cool-Air Cot - Red
+INFO            | Saved new item=PAW Cuddle Round Plush Pet Bed for Dogs 45-70 lbs. - Brown
+INFO            | Saved new item=Majestic Pet Products 32" Medium Twill Bagel Donut Pet Bed for Dogs...
+INFO            | Saved new item=Majestic Pet Products 24" Small Faux Suede Bagel Donut Pet Bed for...
+INFO            | Saved new item=Majestic Pet Products Vertical Stripe Small Rectangle Pet Bed - Black
+INFO            | Saved new item=Majestic Pet Products 52" Extra-Large Bagel Bed with Fleece Center -...
+INFO            | Saved new item=Majestic Pet Products Vertical Stripe Large Rectangle Pet Bed - Burnt...
+INFO            | Saved new item=Majestic Pet Products Extra-Large Rectangle Pet Bed for Pets Over 70...
+INFO            | Saved new item=Majestic Pet Products Large 40" Bagel Bed with Fleece Center - Blue
+INFO            | Saved new item=PAW Large Orthopedic Super Foam Pet Bed for Dogs 45-70 lbs. - Clay
+INFO            | Saved new item=Berkley Jensen 24" Plush Round Pet Bed - Assorted
+INFO            | Saved new item=PAW Extra Large Memory Foam Bed for Dogs 70-110 lbs. with Removable...
+INFO            | Saved new item=Majestic Pet Products 52" Extra-Large Bagel Bed with Fleece Center -...
+INFO            | Saved new item=Majestic Pet Products 40" Large Faux Suede Bagel Donut Pet Bed for...
+INFO            | Saved new item=Majestic Pet Products 52" Extra-Large Faux Suede Bagel Donut Pet Bed...
+INFO            | Saved new item=TrustyPup Memory Bliss Dog Bed - Assorted
+INFO            | Saved new item=Majestic Pet Products 52" Extra-Large Twill Bagel Donut Pet Bed for...
+INFO            | Saved new item=PAW Medium Plush Cozy Critter Pet Crate Pet Bed for Dogs 25-45 lbs. -...
+INFO            | Saved new item=Gen7Pets Trailblazer Large Cool-Air Cot - Blue
+INFO            | Saved new item=PAW Cuddle Round Plush Pet Bed for Dogs 70-110 lbs. - Brown
+INFO            | Saved new item=Majestic Pet Products Titan 42" Large Single-Door Folding Crate Cage...
+INFO            | Saved new item=Majestic Pet Products Titan 48" Extra-Large Single-Door Folding Crate...
+INFO            | Saved new item=Majestic Pet Products 36" Crate Pet Bed Mat - Honey
+INFO            | Saved new item=Majestic Pet Products Titan 42" Large Exercise Kennel Pen
+INFO            | Saved new item=PAW Foldable Pet Staircase
+INFO            | Saved new item=Gen7Pets Conversion Steps - Espresso
+INFO            | Saved new item=Majestic Pet Products 42" Crate Pet Bed Mat - Honey
+INFO            | Saved new item=Majestic Pet Products 42" Crate Pet Bed Mat - Charcoal
+INFO            | Saved new item=Gen7Pets Indoor Carpet Ramp
+INFO            | Saved new item=Majestic Pet Products 48" Crate Pet Bed Mat for Pets 90-110 lbs. -...
+INFO            | Saved new item=Gen7Pets Conversion Steps - Cherry
+INFO            | Saved new item=Majestic Pet Products Titan 42" Large Double-Door Folding Crate Cage...
+INFO            | Saved new item=Gen7Pets Natural-Step Ramp
+INFO            | Saved new item=Majestic Pet Products 48" Crate Pet Bed Mat for Pets 90-110 lbs. -...
+INFO            | Saved new item=Majestic Pet Products Titan 48" Extra-Large Double-Door Folding Crate...
+INFO            | Saved new item=Majestic Pet Products 3-Step Suede Pet Stairs - Stone
+INFO            | Saved new item=Cosequin DS Plus MSM Joint Health Supplement for Dogs, 132 ct.
+INFO            | Saved new item=Pet Select Pee-Pee Pads, 100 ct.
+INFO            | Saved new item=Majestic Pet Products Universal Waterproof Hammock Back Seat Cover -...
+INFO            | Saved new item=Majestic Pet Products Universal Waterproof Bucket Seat Cover - Gray
+INFO            | Saved new item=DMC 40" x 50" Reversible Pet Throw with Bonus Chew Toy - Assorted
+INFO            | Saved new item=Majestic Pet Products Universal Waterproof Back Seat Cover - Black
+INFO            | Saved new item=Gen7Pets Regal Plus Pet Stroller - Raspberry Sorbet
+INFO            | Saved new item=Majestic Pet Products Universal Waterproof Hammock Back Seat Cover -...
+INFO            | Saved new item=Gen7Pets Trailblazer Carry-Me Pet Carrier - Blue
+INFO            | Saved new item=Majestic Pet Products Universal Waterproof Bucket Seat Cover
+INFO            | Saved new item=Gen7Pets Carry-Me Pet Carrier - Raspberry Sorbet
+INFO            | Saved new item=Majestic Pet Products Universal Waterproof Hammock Back Seat Cover
+INFO            | Saved new item=Gen7Pets Carry-Me Pet Carrier - Gray Shadow
+INFO            | Saved new item=Gen7Pets Regal Plus Pet Stroller - Gray Shadow
+INFO            | Saved new item=Gen7Pets Regal Plus Pet Stroller - Starry Night
+INFO            | Saved new item=Berkley Jensen Multi-Cat Scoopable Cat Litter, 40 lbs.
+INFO            | Saved new item=Purina Tidy Cats Non-Clumping Clay Litter, 50 lbs.
+INFO            | Saved new item=Arm & Hammer Clump & Seal Multi-Cat Litter, 31 lbs.
+INFO            | Saved new item=Scoop Away Complete Performance Cat Litter, 42 lbs.
+INFO            | Saved new item=Arm & Hammer Complete Double Duty Clumping Litter, 42 lbs.
+INFO            | Saved new item=Fresh Step Lightweight Extreme Cat Litter, 25.8 lbs.
+INFO            | Saved new item=Fresh Step Cat Litter, Extreme Odor Control, 42 lbs.
+INFO            | Saved new item=Arm & Hammer Clump & Seal Litter, 28 lbs.
+INFO            | Saved new item=Purina Tidy Cats Clumping Instant Action Cat Litter, 38 lbs.
+INFO            | Saved new item=Fresh Step Triple Action Cat Litter, 42 lbs.
+INFO            | Saved new item=Fresh Step Extreme Cat Litter, 40 lbs.
+INFO            | Saved new item=Purina Tidy Cats 24/7 Performance Clumping Cat Litter, 19.5 lbs.
+INFO            | Category=Fresh & Refrigerated Food is a categories page with url=http://www.bjs.com/grocery-household--pet/fresh--refrigerated-food.category.3000000000000117224.3000000000000117223.2001252.1.
+INFO            | Category=Fresh Fruit & Vegetables is a categories page with url=http://www.bjs.com/fresh--refrigerated-food/fresh-fruit--vegetables.category.3000000000000117249.3000000000000117224.2001272.1.
+INFO            | Getting TOP category=http://www.bjs.com/grocery-household--pet.category.3000000000000117223.2001244, url=Grocery, Household & Pet
+INFO            | Category=Grocery, Household & Pet is a categories page with url=http://www.bjs.com/grocery-household--pet.category.3000000000000117223.2001244.
+INFO            | Category=Coffee, Tea & Creamers is a categories page with url=http://www.bjs.com/grocery-household--pet/coffee-tea--creamers.category.3000000000000117334.3000000000000117223.2001349.1.
+INFO            | Category=Cocoa is a product page with url=http://www.bjs.com/coffee-tea--creamers/cocoa.category.3000000000000117035.3000000000000117334.2001378.1.
+INFO            | Category=Tea is a product page with url=http://www.bjs.com/coffee-tea--creamers/tea.category.3000000000000117034.3000000000000117334.2001377.1.
+INFO            | Category=Coffee is a product page with url=http://www.bjs.com/coffee-tea--creamers/coffee.category.3000000000000117030.3000000000000117334.2001373.1.
+INFO            | Getting TOP category=http://www.bjs.com/grocery-household--pet.category.3000000000000117223.2001244, url=Grocery, Household & Pet
+INFO            | Category=Grocery, Household & Pet is a categories page with url=http://www.bjs.com/grocery-household--pet.category.3000000000000117223.2001244.
+INFO            | Category=Coffee, Tea & Creamers is a categories page with url=http://www.bjs.com/grocery-household--pet/coffee-tea--creamers.category.3000000000000117334.3000000000000117223.2001349.1.
+INFO            | Category=Cocoa is a product page with url=http://www.bjs.com/coffee-tea--creamers/cocoa.category.3000000000000117035.3000000000000117334.2001378.1.
+INFO            | Category=Tea is a product page with url=http://www.bjs.com/coffee-tea--creamers/tea.category.3000000000000117034.3000000000000117334.2001377.1.
+INFO            | Category=Coffee is a product page with url=http://www.bjs.com/coffee-tea--creamers/coffee.category.3000000000000117030.3000000000000117334.2001373.1.
+INFO            | Category=Creamer is a product page with url=http://www.bjs.com/coffee-tea--creamers/creamer.category.3000000000000117036.3000000000000117334.2001381.1.
+INFO            | Saved new item=Swiss Miss Hot Chocolate K-Cups, 160 ct.
+INFO            | Saved new item=Swiss Miss Cocoa Canister, Milk Chocolate, 58.4 oz.
+INFO            | Saved new item=Swiss Miss Cocoa Milk Chocolate Packets, 60 ct.
+INFO            | Saved new item=Pure Leaf Real Brewed Sweet Tea, 15 pk./18.5 oz.
+INFO            | Saved new item=Snapple Ice Tea Variety Pack, 24 pk./20 fl. oz.
+INFO            | Saved new item=Arizona Ice Tea with Lemon Flavor, 24 pk./16 oz.
+INFO            | Saved new item=Lipton Tea Bags, Decaffeinated, 144 ct.
+INFO            | Saved new item=Pure Leaf Unsweetened Tea, 15 ct./18.5 fl. oz.
+INFO            | Saved new item=4C Iced Tea Mix, 92.8 oz.
+INFO            | Saved new item=4C Raspberry Iced Tea Mix, 92.8 oz.
+INFO            | Saved new item=Snapple Diet Ice Tea Variety Pack, 24 pk./20 fl. oz.
+INFO            | Saved new item=Lipton Diet Green Tea with Citrus, 24 pk./16.9 oz.
+INFO            | Saved new item=Lipton Peach Iced Tea, 24 pk./16.9 oz.
+INFO            | Saved new item=Nestea Lemon Flavored Iced Tea, 24 ct./16.9 fl. oz.
+INFO            | Saved new item=Bigelow English Breakfast Tea, 100 pk.
+INFO            | Saved new item=Gold Peak Sweet Tea, 18 ct./18.5 oz.
+INFO            | Saved new item=Arizona Arnold Palmer Half & Half Green Tea Lemonade, 30 pk./24 oz.
+INFO            | Saved new item=Lipton Brisk Lemon Iced Tea, 36 pk./12 oz.
+INFO            | Saved new item=Celestial Seasonings Zinger Variety Pack, 80 ct.
+INFO            | Saved new item=Wellsley Farms Iced Tea with Lemon, 35 ct./16.9 fl. oz.
+INFO            | Saved new item=Arizona Green Tea with Ginseng and Honey, 16 pk./24 oz.
+INFO            | Saved new item=Lipton Lemon Iced Tea Mix, 38 qt.
+INFO            | Saved new item=Bigelow Earl Gray Tea, 100 pk.
+INFO            | Saved new item=Nestea Peach Flavored Iced Tea, 24 ct./16.9 fl. oz.
+INFO            | Saved new item=Bigelow Cozy Chamomile Tea, 100 ct.
+INFO            | Saved new item=Lipton Tea Bags, 312 ct.
+INFO            | Saved new item=Caribou Coffee Caribou Blend K-Cups, 180 ct.
+INFO            | Saved new item=Green Mountain Coffee Breakfast Blend K-Cups, 180 ct.
+INFO            | Saved new item=Starbucks Cafe Verona Dark Roast Ground Coffee, 32 oz.
+INFO            | Saved new item=Gevalia Kaffe Colombia Medium Roast K-Cups, 84 ct.
+INFO            | Saved new item=Folgers Instant Coffee, 16 oz.
+INFO            | Saved new item=Donut Shop Medium Roast Coffee K-Cups, 180 ct.
+INFO            | Saved new item=Wellsley Farms Breakfast Blend K-Cups, 100 ct.
+INFO            | Saved new item=Maxwell House House Blend K-Cups, 100 ct.
+INFO            | Saved new item=Tully's Italian Roast K-Cups, 180 ct.
+INFO            | Saved new item=Green Mountain Coffee Caramel Vanilla Cream K-Cups, 180 ct.
+INFO            | Saved new item=Starbucks, French Roast K-Cups, 54 ct.
+INFO            | Saved new item=Newman's Own Organics Newman's Special Decaf Coffee K-Cups, 180 ct.
+INFO            | Saved new item=Wellsley Farms Colombian Ground Coffee, 40 oz.
+INFO            | Saved new item=Wellsley Farms Organic Peruvian Ground Coffee, 32 oz.
+INFO            | Saved new item=Green Mountain Coffee Nantucket Blend K-Cups, 180 ct.
+INFO            | Saved new item=Green Mountain Coffee Sumatran Reserve K-Cups, 180 ct.
+INFO            | Saved new item=Wellsley Farms Breakfast Blend K-Cups, 200 ct.
+INFO            | Saved new item=Wellsley Farms Colombian K-Cups, 100 ct.
+INFO            | Saved new item=Chock Full O'Nuts Original Blend Ground Coffee, 3 lbs.
+INFO            | Saved new item=Starbucks Light Roast K-Cup Variety Pack, 3 pk./16 ct.
+INFO            | Saved new item=Eight O'Clock Original Arabica Whole Bean Coffee, 42 oz.
+INFO            | Saved new item=Keurig K-Cup Variety Pack, 72 ct.
+INFO            | Saved new item=Maxwell House Max Boost Three Levels of Caffeine Coffee K-Cup Variety...
+INFO            | Saved new item=Green Mountain Coffee French Vanilla Coffee K-Cups, 180 ct.
+INFO            | Saved new item=Wellsley Farms Decaffeinated Blend Ground Coffee, 40 oz.
+INFO            | Saved new item=Green Mountain Coffee Lovers Variety Pack, 54 ct.
+INFO            | Saved new item=Newman's Own Organics Special Blend Extra Bold K-Cups, 100 ct.
+INFO            | Saved new item=Wellsley Farms Costa Rican Whole Bean Coffee, 40 oz.
+INFO            | Saved new item=Starbucks House Blend Whole Bean Medium Roast Coffee, 40 oz.
+INFO            | Saved new item=Starbucks Vanilla Frappuccino, 15 ct.
+INFO            | Saved new item=Tully's Hawaiian Coffee K-Cups, 180 ct.
+INFO            | Saved new item=Wellsley Farms Organic Sumatra Estates Whole Bean Coffee, 40 oz.
+INFO            | Saved new item=Eight O'Clock Original K-Cups, 100 ct.
+INFO            | Saved new item=Green Mountain Coffee Colombian K-Cups, 180 ct.
+INFO            | Saved new item=Wellsley Farms Organic Extra Bold Single-Serve Cups, 100 ct.
+INFO            | Saved new item=Green Mountain Pumpkin Spice K-Cups, 54 ct.
+INFO            | Saved new item=Newman's Own French Roast K-Cups, 180 ct.
+INFO            | Saved new item=Dunkin' Donuts Original Blend K-Cups, 72 ct.
+INFO            | Saved new item=Stok Un-Sweet Black Cold-Brew Iced Coffee, 48 fl. oz.
+INFO            | Saved new item=Wellsley Farms Colombian K-Cups, 200 ct.
+INFO            | Saved new item=Nestle Coffee Mate Coffee Creamer, 56 oz.
+INFO            | Saved new item=Nestle CoffeeMate Non-Dairy Creamer, 56 oz.
+INFO            | Saved new item=Nestle Coffee-Mate Natural Bliss Coffee Creamer, 46 oz.
+INFO            | Saved new item=Nestle CoffeeMate Liquid Hazelnut Creamer, 2 pk./32 oz.
+INFO            | Saved new item=Land O'Lakes Fat Free 1/2 & 1/2 Creamer, 32 oz.
+INFO            | Saved new item=Nestle CoffeeMate Liquid French Vanilla Creamer, 2 pk./32 oz.
+INFO            | Saved new item=Nestle Coffeemate Original Liquid Coffee Creamer, 32 fl. oz.
+INFO            | Saved new item=Wellsley Farms Non-Dairy Creamer, 2pk./35.3 fl. oz.
+INFO            | Saved new item=Land O'Lakes Traditional 1/2 & 1/2 Creamer, 32 oz.
+INFO            | Saved new item=Land O'Lakes Heavy Whipping Cream, 32 oz.
+INFO            | Saved new item=Land O'Lakes Light Cream, 32 oz.
+INFO            | Category=Frozen Food is a categories page with url=http://www.bjs.com/grocery-household--pet/frozen-food.category.3000000000000117306.3000000000000117223.2001318.1.

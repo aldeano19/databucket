@@ -1,4 +1,9 @@
 import requests
+import json
+import yaml
+import urllib
+
+import GlobalUtil
 
 from Model import BjsProduct
 
@@ -23,9 +28,9 @@ class BjsProductRepository():
 		url = self.domain + \
 				self.port + \
 				self.base_path + \
-				self.post_items_url
+				self.post_items_url 
 
-		return requests.post(url, data=item_dict)
+		return requests.post(url, params=item_dict)
 
 	def get_items(self):
 		url = self.domain + \
@@ -37,12 +42,11 @@ class BjsProductRepository():
 
 	def update_item(self, item):
 		item_dict = item.__dict__
-
+		
 		url = self.domain + \
 				self.port + \
 				self.base_path + \
-				self.update_items_url % (item.id)
+				self.update_items_url % (item.id) 
 
-		return requests.put(url, data=item_dict)
-
+		return requests.put(url, params=item_dict)
 

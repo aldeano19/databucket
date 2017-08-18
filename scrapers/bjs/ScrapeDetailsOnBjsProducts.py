@@ -42,7 +42,7 @@ import Queue
 import threading
 
 
-PRINT_TO_CONSOLE = False
+PRINT_TO_CONSOLE = True
 
 def get_items_from_database():
     # init database
@@ -69,7 +69,6 @@ def scrape_details_for_item(wizard, soup, item):
 
     
     if not sku_and_model:
-        exit()
         return None
 
     item.sku = sku_and_model[0]
@@ -78,6 +77,12 @@ def scrape_details_for_item(wizard, soup, item):
     item.onlinePrice = wizard.get_online_price(soup)
     item.delivery = wizard.get_estimated_delivery(soup)
     item.description = wizard.get_details(soup)
+
+    print "item.sku =", item.sku
+    print "item.model =", item.model
+    print "item.onlinePrice =", item.onlinePrice
+    print "item.delivery =", item.delivery
+    print "item.description =", item.description
     
     return item
 
@@ -135,6 +140,7 @@ def scrape_items(logfile, items):
             "DEBUG"+logfile, BjsUtil.LOG_DEBUG, message, console_out=PRINT_TO_CONSOLE)
         
         item_counter += 1
+        print "========== item.productUrl =-==== ", item.productUrl
         driver.get(item.productUrl)
 
         try:
@@ -150,7 +156,7 @@ def scrape_items(logfile, items):
         soup = BeautifulSoup(driver.page_source, "html.parser")
 
         if not wizard.is_item_details_page(soup):
-            message = "%-20s item=%s" % ("Not details for", item.id)
+            message = "%-20s item=%s" % ("No details for", item.id)
             BjsUtil.log(
                 logfile, BjsUtil.LOG_INFO, message, console_out=PRINT_TO_CONSOLE)
             continue
@@ -163,7 +169,19 @@ def scrape_items(logfile, items):
                 logfile, BjsUtil.LOG_INFO, message, console_out=PRINT_TO_CONSOLE)
             continue
 
+
         response = repository.update_item(updated_item)
+
+        print "response.text = ", response.text
+
+        print "response.content = ", response.content
+
+        print "response.headers = ", response.headers
+
+        print "response.json = ", response.json
+
+        print "response.url = ", response.url
+
         return_code = response.status_code
 
         new_name = name_element.text
@@ -206,8 +224,9 @@ def scrape_items(logfile, items):
 
 items = get_items_from_database()
 
+"""Uncomment for debugging purposes."""
 # for i in items:
-#     if i.id == "595d43ed2b66a03cefe6e0da":
+#     if i.id == "59964d089a1e34f0ac1bd34f":
 #         items = [i]
 
 divided_payload = divide_items_payload(items, 1)

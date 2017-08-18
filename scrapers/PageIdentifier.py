@@ -26,14 +26,34 @@ class BjsPageWizard():
             "reviews", 
             "shipping + returns"]
 
-        description_tabs = soup.find("div", {"class":"tabs"})
+        """
+        This captures the name of the 4 tabs on an item:
+            1- description
+            2- specification
+            3- reviews
+            4- shipping + refunds
+        
+        changelog:
+            original
+                description_tabs = soup.find("div", {"class":"tabs"})
+
+            aug 17, 2017:
+                description_tabs = soup.find("ul", {"id":"qq0l09-responsiveaccordiontabs"}): 
+                    DO NOT USE THIS ID, IS DYNAMIC
+                description_tabs = soup.find("ul", {"class":"pdp-accordion tabs"})
+        """
+
+        description_tabs = soup.find("ul", {"class":"pdp-accordion tabs"})
         if not description_tabs:
+            print "PPPPPPP"
             return False
 
         for title in tab_titles:
             if title not in description_tabs.text:
+                print "WWWWWWWW"
                 return False
 
+        print "YYYYYYy"
         return True
 
     def is_item_details_page(self, soup):
@@ -208,6 +228,8 @@ class BjsPageWizard():
         
         sku_and_model_str = sku_and_model.text.replace("\n"," ")
 
+        # print "sku_and_model_str =", sku_and_model_str
+
         match = self.get_a_match_for_item_and_model(sku_and_model_str)
 
         # match = re.search(sku_and_model_regex_str, sku_and_model_str)
@@ -220,6 +242,9 @@ class BjsPageWizard():
         sku = match[0].group(1)
         model = match[0].group(2)
             
+        # print "sku =", sku
+        # print "model =", model
+
         return sku, model
 
     def get_online_price(self, soup):

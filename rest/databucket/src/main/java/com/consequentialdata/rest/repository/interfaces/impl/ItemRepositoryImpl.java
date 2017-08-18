@@ -30,12 +30,12 @@ public class ItemRepositoryImpl implements ItemRepositoryCustom {
 
         Item item = mongoTemplate.findOne(query, Item.class);
 
-        item.setSku(sku);
-        item.setModel(sku);
-        item.setModel(model);
-        item.setOnlinePrice(onlinePrice);
-        item.setDelivery(delivery);
-        item.setDescription(description);
+        if(sku != null){item.setSku(sku);}
+        if(model != null){item.setModel(model);}
+        if(onlinePrice != null){item.setOnlinePrice(onlinePrice);}
+        if(delivery != null){item.setDelivery(delivery);}
+        if(description != null){item.setDescription(description);}
+
         item.setUpdated(new Date());
 
         mongoTemplate.save(item);

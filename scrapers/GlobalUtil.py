@@ -8,6 +8,13 @@ sys.path.append("..")
 import time
 import datetime
 import math
+import urllib
+
+def encode_url_params(dictionary):
+    mydata = {}
+    for k, v in dictionary.iteritems():
+        mydata[k] = unicode(v).encode('utf-8')
+    return urllib.urlencode(mydata)
 
 def estimate_remaining_time(total, consumed, start_time):
     """

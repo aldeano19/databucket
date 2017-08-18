@@ -1,0 +1,14 @@
+172.19.0.1 - - [18/Aug/2017:01:48:37 +0000] "GET / HTTP/1.1" 200 11250
+172.19.0.1 - - [18/Aug/2017:01:48:41 +0000] "GET /rest-0.1.0/swagger-resources/configuration/ui HTTP/1.1" 200 238
+172.19.0.1 - - [18/Aug/2017:01:48:41 +0000] "GET /rest-0.1.0/swagger-resources HTTP/1.1" 200 80
+172.19.0.1 - - [18/Aug/2017:01:48:41 +0000] "GET /rest-0.1.0/v2/api-docs HTTP/1.1" 200 9338
+172.19.0.1 - - [18/Aug/2017:01:48:41 +0000] "GET /rest-0.1.0/swagger-resources/configuration/security HTTP/1.1" 200 81
+172.19.0.1 - - [18/Aug/2017:02:54:11 +0000] "GET /rest-0.1.0/swagger-ui.html HTTP/1.1" 304 -
+172.19.0.1 - - [18/Aug/2017:02:54:12 +0000] "GET /rest-0.1.0/swagger-resources/configuration/ui HTTP/1.1" 200 238
+172.19.0.1 - - [18/Aug/2017:02:54:12 +0000] "GET /rest-0.1.0/swagger-resources HTTP/1.1" 200 80
+172.19.0.1 - - [18/Aug/2017:02:54:12 +0000] "GET /rest-0.1.0/v2/api-docs HTTP/1.1" 200 9338
+172.19.0.1 - - [18/Aug/2017:02:54:12 +0000] "GET /rest-0.1.0/webjars/springfox-swagger-ui/images/favicon-32x32.png HTTP/1.1" 200 1141
+172.19.0.1 - - [18/Aug/2017:02:54:12 +0000] "GET /rest-0.1.0/swagger-resources/configuration/security HTTP/1.1" 200 81
+172.19.0.1 - - [18/Aug/2017:02:54:12 +0000] "GET /rest-0.1.0/webjars/springfox-swagger-ui/images/favicon-16x16.png HTTP/1.1" 200 445
+172.19.0.1 - - [18/Aug/2017:02:54:17 +0000] "GET /rest-0.1.0/webjars/springfox-swagger-ui/images/throbber.gif HTTP/1.1" 200 9257
+172.19.0.1 - - [18/Aug/2017:02:55:57 +0000] "GET /items HTTP/1.1" 404 1004

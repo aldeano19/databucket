@@ -34,19 +34,21 @@ import os
 
 LOGFILE = ("%s.log" % (os.path.basename(__file__))).replace(".py","")
 
+# CATEGORY_NAME_ELEMENT_XPATH = '//*[@id="listing-container"]/div[1]/section/header/h1'
+# aug 17, 2017 : xpath update
+CATEGORY_NAME_ELEMENT_XPATH = '//*[@id="listing-container"]/div[1]/div[1]/header/h1'
+
 def get_items_from_store_website(driver, wizard, category, url):
 
     driver.get(url)
-
-    category_name_element_xapth = '//*[@id="listing-container"]/div[1]/section/header/h1'
     try:
         category_name_element = WebDriverWait(driver, 3).until(
-            EC.presence_of_element_located((By.XPATH, category_name_element_xapth))
+            EC.presence_of_element_located((By.XPATH, CATEGORY_NAME_ELEMENT_XPATH))
         )
     except Exception, e:
         message = "Cant find category=%s at url=%s" % (category, url)
         BjsUtil.log(LOGFILE, BjsUtil.LOG_ERROR, message, console_out=True)
-        return
+        return []
 
     soup = BeautifulSoup(driver.page_source, "html.parser")
     
@@ -93,12 +95,14 @@ def get_and_save_new_items(
 
     driver = webdriver.Firefox()
     driver.get(bjs_main_product_page)
+
+    # CATEGORY_NAME_ELEMENT_XPATH = '//*[@id="listing-container"]/div[1]/section/header/h1'
+    # aug 17, 2017 : xpath update
+    CATEGORY_NAME_ELEMENT_XPATH = '//*[@id="listing-container"]/div[1]/div[1]/header/h1'
     
-    time.sleep(3)
-    # name_element_xpath = '//*[@id="listing-container"]/div[1]/section/header/h1'
-    # name_element = WebDriverWait(driver, 3).until(
-    #     EC.presence_of_element_located((By.XPATH, name_element_xpath))
-    # )
+    name_element = WebDriverWait(driver, 3).until(
+        EC.presence_of_element_located((By.XPATH, CATEGORY_NAME_ELEMENT_XPATH))
+    )
 
     wizard = BjsPageWizard()
 
@@ -111,8 +115,7 @@ def get_and_save_new_items(
         BjsUtil.log(LOGFILE, BjsUtil.LOG_INFO, message, console_out=True)
 
         category_map = wizard.map_categories_to_urls(soup)
-        print "QQQQQQQQQ" + str(category_map)
-        # exit()
+        
     else:
         message = "Not categories on page, category=%s, url=%s" % (
             bjs_main_product_category_name, 
@@ -129,23 +132,28 @@ def get_and_save_new_items(
         existing_item_names.append(item["name"]) 
         
     items = []
-    for key in category_map:
-        items += get_items_from_store_website(driver, wizard, key, category_map[key])
-
     new_items_responses = []
-    for i in items:
-        if i.name in existing_item_names:
-            message = "Item=%s already exists. Skipping." % (i.name)
+    for key in category_map:
+        print "CHK1"
+        new_items = get_items_from_store_website(driver, wizard, key, category_map[key])
+        items += new_items
+
+    
+        for i in new_items:
+            print "CHK2"
+            if i.name in existing_item_names:
+                message = "Item=%s already exists. Skipping." % (i.name)
+                BjsUtil.log(LOGFILE, BjsUtil.LOG_INFO, message, console_out=True)
+                print "CHK2.5"
+                continue
+
+            resp = repository.create_new_item(i)
+            new_items_responses.append(resp.content)
+            
+            message = "Saved new item=%s" % (i.name)
             BjsUtil.log(LOGFILE, BjsUtil.LOG_INFO, message, console_out=True)
-
-            continue
-
-        resp = repository.create_new_item(i)
-        new_items_responses.append(resp.content)
-        
-        message = "Saved new item=%s" % (i.name)
-        BjsUtil.log(LOGFILE, BjsUtil.LOG_INFO, message, console_out=True)
-
+            print "CHK3"
+    print "CHK4"
     return new_items_responses
 
 
