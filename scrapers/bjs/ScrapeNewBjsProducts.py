@@ -134,17 +134,13 @@ def get_and_save_new_items(
     items = []
     new_items_responses = []
     for key in category_map:
-        print "CHK1"
         new_items = get_items_from_store_website(driver, wizard, key, category_map[key])
         items += new_items
 
-    
         for i in new_items:
-            print "CHK2"
             if i.name in existing_item_names:
                 message = "Item=%s already exists. Skipping." % (i.name)
                 BjsUtil.log(LOGFILE, BjsUtil.LOG_INFO, message, console_out=True)
-                print "CHK2.5"
                 continue
 
             resp = repository.create_new_item(i)
@@ -152,8 +148,7 @@ def get_and_save_new_items(
             
             message = "Saved new item=%s" % (i.name)
             BjsUtil.log(LOGFILE, BjsUtil.LOG_INFO, message, console_out=True)
-            print "CHK3"
-    print "CHK4"
+
     return new_items_responses
 
 

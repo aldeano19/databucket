@@ -78,12 +78,6 @@ def scrape_details_for_item(wizard, soup, item):
     item.delivery = wizard.get_estimated_delivery(soup)
     item.description = wizard.get_details(soup)
 
-    print "item.sku =", item.sku
-    print "item.model =", item.model
-    print "item.onlinePrice =", item.onlinePrice
-    print "item.delivery =", item.delivery
-    print "item.description =", item.description
-    
     return item
 
 def divide_items_payload(items, total_divisions):
@@ -140,7 +134,6 @@ def scrape_items(logfile, items):
             "DEBUG"+logfile, BjsUtil.LOG_DEBUG, message, console_out=PRINT_TO_CONSOLE)
         
         item_counter += 1
-        print "========== item.productUrl =-==== ", item.productUrl
         driver.get(item.productUrl)
 
         try:
@@ -171,16 +164,6 @@ def scrape_items(logfile, items):
 
 
         response = repository.update_item(updated_item)
-
-        print "response.text = ", response.text
-
-        print "response.content = ", response.content
-
-        print "response.headers = ", response.headers
-
-        print "response.json = ", response.json
-
-        print "response.url = ", response.url
 
         return_code = response.status_code
 
@@ -225,9 +208,9 @@ def scrape_items(logfile, items):
 items = get_items_from_database()
 
 """Uncomment for debugging purposes."""
-# for i in items:
-#     if i.id == "59964d089a1e34f0ac1bd34f":
-#         items = [i]
+for i in items:
+    if i.id == "599675559a1e3406aa0f5ed0":
+        items = [i]
 
 divided_payload = divide_items_payload(items, 1)
 

@@ -45,15 +45,12 @@ class BjsPageWizard():
 
         description_tabs = soup.find("ul", {"class":"pdp-accordion tabs"})
         if not description_tabs:
-            print "PPPPPPP"
             return False
 
         for title in tab_titles:
             if title not in description_tabs.text:
-                print "WWWWWWWW"
                 return False
 
-        print "YYYYYYy"
         return True
 
     def is_item_details_page(self, soup):
@@ -228,11 +225,7 @@ class BjsPageWizard():
         
         sku_and_model_str = sku_and_model.text.replace("\n"," ")
 
-        # print "sku_and_model_str =", sku_and_model_str
-
         match = self.get_a_match_for_item_and_model(sku_and_model_str)
-
-        # match = re.search(sku_and_model_regex_str, sku_and_model_str)
 
         if not match[0]:
             error = "No match for regex=%s on string=%s" % (
@@ -242,22 +235,36 @@ class BjsPageWizard():
         sku = match[0].group(1)
         model = match[0].group(2)
             
-        # print "sku =", sku
-        # print "model =", model
-
         return sku, model
 
     def get_online_price(self, soup):
-        """Gets the price on the item's detail page. Marked by class=price4"""
-        price = soup.find("div",{"class":"price4"})
-        if price:
-            return price.text.strip()
+        """
+        Change log:
+            original:
+                price = soup.find("div",{"class":"price4"})
+            aug 18, 2017:
+                price = soup.find("div",{"class":"price4"})
+        """
+        price = soup.find("div",{"class":"price-container"})
+        if not price:
+            return None
         
-        return None
+        """This regex leaves the dollar sign out of group 1"""
+        regex_str = ".*\$([\d\.]+)"
+
+        match = re.search(regex_str, price.text.strip())
+
+        return match.group(1)
 
     def get_estimated_delivery(self, soup):
-        """Gets the estimated delivery on item's detail page. Marked by id=estimatedDelivery"""
-        delivery_elem = soup.find(id="estimatedDelivery")
+        """
+        Changelog:
+            original:
+                delivery_elem = soup.find(id="estimatedDelivery")
+            aug 18, 2017:
+                delivery_elem = soup.find("div":{"class":"est-delivery"})        
+        """
+        delivery_elem = soup.find("div",{"class":"est-delivery"})        
 
         
         if delivery_elem:
@@ -271,7 +278,6 @@ class BjsPageWizard():
 
     def get_details(self, soup):
         """ Gets the details panel for an item."""
-        # details_elem = soup.find("div",{"class":"detailPanel"})
         details_elem = soup.find(id="tab-1")
 
         if details_elem:
