@@ -214,10 +214,10 @@ for i in items:
 
 divided_payload = divide_items_payload(items, 1)
 
-logfile = ("%s.log" % (os.path.basename(__file__))).replace(".py","")
+LOGFILE = ("bjs-logs/%s.log" % (os.path.basename(__file__))).replace(".py","")
 
 
-threads = ready_threads(logfile, divided_payload)
+threads = ready_threads(LOGFILE, divided_payload)
 
 for t in threads:
     t.start()

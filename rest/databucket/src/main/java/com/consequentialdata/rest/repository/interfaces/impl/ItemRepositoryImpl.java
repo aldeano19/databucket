@@ -2,13 +2,15 @@ package com.consequentialdata.rest.repository.interfaces.impl;
 
 import com.consequentialdata.rest.model.Item;
 import com.consequentialdata.rest.repository.interfaces.custom.ItemRepositoryCustom;
+import com.mongodb.DBObject;
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.core.aggregation.*;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 
-import java.util.Date;
+import java.util.*;
 
 
 /**
@@ -41,5 +43,28 @@ public class ItemRepositoryImpl implements ItemRepositoryCustom {
         mongoTemplate.save(item);
 
         return item;
+    }
+
+    @Override
+    public Map<String, String> getUrlsMap() {
+        ProjectionOperation pop = Aggregation.project("name", "productUrl");
+
+        List<AggregationOperation> criteria = new ArrayList<>();
+
+        criteria.add(pop);
+
+
+        TypedAggregation<Item> aggregation = Aggregation.newAggregation(Item.class, criteria);
+        AggregationResults<DBObject> result = mongoTemplate.aggregate(aggregation, DBObject.class);
+
+        Map<String, String> urlsMap = new HashMap<>();
+
+        for(DBObject dbObject : result){
+            String name = dbObject.get("name").toString();
+            String productUrl = dbObject.get("productUrl").toString();
+            urlsMap.put(name, productUrl);
+        }
+
+        return urlsMap;
     }
 }

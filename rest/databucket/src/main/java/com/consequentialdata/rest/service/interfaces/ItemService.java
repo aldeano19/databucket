@@ -3,6 +3,7 @@ package com.consequentialdata.rest.service.interfaces;
 import com.consequentialdata.rest.model.Item;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by Eriel.Marimon on 6/21/17.
@@ -76,4 +77,6 @@ public interface ItemService {
      * @return The updated item.
      */
     Item update(String id, String sku, String model, String onlinePrice, String delivery, String description);
+
+    Map<String,String> getUrlsMap();
 }

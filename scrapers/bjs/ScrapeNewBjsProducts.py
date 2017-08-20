@@ -32,7 +32,7 @@ import time
 import os
 
 
-LOGFILE = ("%s.log" % (os.path.basename(__file__))).replace(".py","")
+LOGFILE = ("bjs-logs/%s.log" % (os.path.basename(__file__))).replace(".py","")
 
 # CATEGORY_NAME_ELEMENT_XPATH = '//*[@id="listing-container"]/div[1]/section/header/h1'
 # aug 17, 2017 : xpath update

@@ -13,7 +13,10 @@ import sys
 sys.path.append("..")
 
 from ProductRepository import BjsProductRepository
+from LocationRepository import BjsLocationRepository
 from PageIdentifier import BjsPageWizard
+
+from Model import BjsLocation
 
 import BjsUtil
 
@@ -23,69 +26,134 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
+import re
 import json
 import time
 import os
 
+
+LOGFILE = ("bjs-logs/%s.log" % (os.path.basename(__file__))).replace(".py","")
+
 def get_location_ids(driver, locations_search_url):
     driver.get(locations_search_url)
 
-    states_xpath = '//*[@id="locator_dropdown"]/table/tbody/tr[1]/td/em/select/option'
-    state_option_elements = driver.find_elements(
-        By.XPATH, states_xpath)
+    """
+    Changelog:
+        original:
+            states_xpath = '//*[@id="locator_dropdown"]/table/tbody/tr[1]/td/em/select/option' 
+                - The store id is the value property in this <a> (anchor tag)
+        aug 19, 2017:
+            location_elements = '//*[@id="left"]/ul/li/a'
+                - The store id is the number on the href property before ".shtml"
+                - User the regex pattern '(\d+)\.shtml' to get it
+    """
+    
+    location_elements = '//*[@id="left"]/ul/li/a'
+    all_location_elements = driver.find_elements(
+        By.XPATH, location_elements)
 
     location_id_map = {}
 
-    for state_element in state_option_elements:
-        state_element.click()
-        cities_xpath = '//*[@id="locator_dropdown"]/table/tbody/tr[2]/td/em/select/option'
-        city_elements = driver.find_elements(
-            By.XPATH, cities_xpath)
+    for anchortag_element in all_location_elements:
+        href = anchortag_element.get_attribute("href")
+        regex_str = "(\d+)\.shtml"
+        match = re.search(regex_str, href)
 
-        for city_element in city_elements:
-            key = "%s, %s" % (city_element.text, state_element.text)
-            location_id_map[key] = city_element.get_attribute("value")
+        if match:
+            location_id = match.group(1)
+        else:
+            message = "Can't extract store id from href=%s with regex=%s " % (href, regex_str)
+            BjsUtil.log(LOGFILE, BjsUtil.LOG_ERROR, message, console_out=True)
+            continue
+
+        location_id_map[anchortag_element.text] = location_id
+        
+        message = "%-30s : %s" % (anchortag_element.text, location_id)
+        BjsUtil.log(LOGFILE, BjsUtil.LOG_INFO, message, console_out=False)
 
     return location_id_map
         
 def build_urls(info_map):
+    """
+    Changelog:
+        aug 19, 2017: 
+            store_info_url_tmpl = "https://www.bjs.com/locations/clubs/0199.shtml"
+                - Introduced, but old url stil valid. 
+                - Using old, since the location id doesnt need the extra 0 that this one needs
+    """
     store_info_url_tmpl = "http://www.bjs.com/webapp/wcs/stores/servlet/LocatorMapDirectionsView?locationId=%s"
-    for key in info_map:
-        if "Select a Town" in key:
-            continue
-        info_map[key] = store_info_url_tmpl % (info_map[key])
     
+    for key in info_map:
+        info_map[key] = store_info_url_tmpl % (info_map[key])
 
+    return info_map
+    
+def get_address(driver):
+    address_element_xpath = [
+        '//*[@id="locator-results"]/div/div/div[2]/div[1]',
+        '//*[@id="locator-results"]/div/div/div/div[1]'
+    ]
 
-def change_club(driver, club_id_url):
+    for xpath in address_element_xpath:
+        try:
+            address_element = driver.find_element(
+                By.XPATH, xpath)
+            return address_element.text
+        except:
+            pass
 
-    driver.get(club_id_url)
-
-    change_club_button_id = "shopClubBtn"
-    change_button = WebDriverWait(driver, 5).until(
-        EC.presence_of_element_located((By.ID, change_club_button_id))
-    )
-
-    change_button.click()
-    return True
+    return None
 
 
 ##########
 ## main ##
 ##########
-LOGFILE = ("%s.log" % (os.path.basename(__file__))).replace(".py","")
 
 locations_search_url = "http://www.bjs.com/webapp/wcs/stores/servlet/LocatorIndexView"
 
 driver = webdriver.Firefox()
 
-h = get_location_ids(driver, locations_search_url)
+wizard = BjsPageWizard()
 
-build_urls(h)
+locationRepository = BjsLocationRepository()
 
-for key in h:
-    print change_club(driver, h[key])
-    time.sleep(5)
+locations_map = get_location_ids(driver, locations_search_url)
+
+locations_map = build_urls(locations_map)
+
+for key in locations_map:
+    # print "%-30s : %s" % (key, change_club(driver, h[key]))
+    # time.sleep(1)
+    found_club = BjsUtil.change_club(driver, locations_map[key])
+    if not found_club:
+        # TODO: Log a warning message. This club's url is unreachable.
+        continue
+
+    name = key
+    street_address = get_address(driver)
+
+    if not street_address:
+        message = "No address found for %s." % (key)
+        BjsUtil.log(LOGFILE, BjsUtil.LOG_WARN, message, console_out=True)
+
+    club_url = locations_map[key]
+
+    location = BjsLocation(
+        retailer="Bjs",
+        name=name,
+        streetAddress=street_address,
+        state=None,
+        city=None,
+        zipcode=None,
+        clubUrl=club_url)
+
+    update_response = locationRepository.update_locations(location)
+
+    message = "%s : %s" % (
+        update_response.json()["id"], 
+        update_response.status_code)
+    BjsUtil.log(LOGFILE, BjsUtil.LOG_INFO, message, console_out=True)
+
 
 
 

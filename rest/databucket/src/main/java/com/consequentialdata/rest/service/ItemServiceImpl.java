@@ -20,9 +20,6 @@ public class ItemServiceImpl implements ItemService{
     /**
      * Injection of the ItemRepository Bean as defined by the class ItemRepositoryImpl
      */
-//    @Autowired
-//    ItemRepository itemRepository;
-
     @Autowired
     ItemRepository itemRepository;
 
@@ -66,6 +63,11 @@ public class ItemServiceImpl implements ItemService{
         return itemRepository.save(newItem);
     }
 
+
+    @Override
+    public Map<String, String> getUrlsMap() {
+        return itemRepository.getUrlsMap();
+    }
 
     /**
      * @inheritDoc

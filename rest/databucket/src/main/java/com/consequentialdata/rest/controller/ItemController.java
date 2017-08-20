@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by Eriel.Marimon on 6/20/17.
@@ -72,6 +73,11 @@ public class ItemController {
     @RequestMapping(method = RequestMethod.GET)
     public List<Item> list(){
         return  itemService.findAll();
+    }
+
+    @RequestMapping(value="/getUrlsMap", method = RequestMethod.GET)
+    public Map<String, String> getUrlsMap(){
+        return itemService.getUrlsMap();
     }
 
     /**
