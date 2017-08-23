@@ -63,6 +63,8 @@ clubs_url_map = location_repository.get_locations_urls().json()
 
 items_url_map = product_repository.get_products_urls().json()
 
+item_club_errors = {}
+
 for item_name in items_url_map:
     
     club_price_map = {}
@@ -82,9 +84,13 @@ for item_name in items_url_map:
 
         mxpath = '//*[@id="containerLeft"]/div/div[2]'
 
-        WebDriverWait(driver, 5).until(
-            EC.presence_of_element_located((By.XPATH, mxpath))
-        )
+        try:
+            WebDriverWait(driver, 5).until(
+                EC.presence_of_element_located((By.XPATH, mxpath))
+            )
+        except:
+            item_club_errors[item_name]=club
+            continue
         
         """ 
         Necessary delay to let the text load. For some reason waiting for its 
@@ -102,12 +108,14 @@ for item_name in items_url_map:
         price_string = match_price(get_all_text_from_element_list(ele))
         
         club_price_map[club] = price_string
-        break
+        
+    
+    product_repository.patch_availability(item_name, club_price_map).content
+    print "updated item %s."
 
-
-    print club_price_map
-    print product_repository.patch_availability(item_name, club_price_map).json()
-    exit()
+print "ERRORS:"
+print item_club_errors
+    
 
 
 

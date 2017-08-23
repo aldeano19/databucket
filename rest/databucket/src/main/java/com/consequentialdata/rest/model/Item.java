@@ -49,7 +49,7 @@ public class Item {
     /**
      * The availability of the item. Formatted as a map of StoreNames to Prices. Ex {"Costco":1.50,"BJs":3.40}
      */
-    private Map<String, Double> availability;
+    private Map<String, String> availability;
 
     /**
      * Date this record was created.
@@ -85,7 +85,7 @@ public class Item {
             String name,
             String imageUrl,
             String productUrl,
-            Map<String, Double> availability,
+            Map<String, String> availability,
             Date created,
             Date updated) {
         this.sku = sku;
@@ -162,7 +162,7 @@ public class Item {
         this.name = name;
     }
 
-    public void setAvailability(Map<String, Double> availability) {
+    public void setAvailability(Map<String, String> availability) {
         this.availability = availability;
     }
 
@@ -182,7 +182,7 @@ public class Item {
         return name;
     }
 
-    public Map<String, Double> getAvailability() {
+    public Map<String, String> getAvailability() {
         return availability;
     }
 

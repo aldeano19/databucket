@@ -140,7 +140,7 @@ for key in locations_map:
 
     location = BjsLocation(
         retailer="Bjs",
-        name=name,
+        name=name.replace(".", ""),
         streetAddress=street_address,
         state=None,
         city=None,

@@ -2,30 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fbdd62cd-73e3-45ba-94f1-57dbce19f959" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/consequentialdata/rest/controller/LocationController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/consequentialdata/rest/model/Location.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/consequentialdata/rest/repository/interfaces/LocationRepository.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/consequentialdata/rest/repository/interfaces/custom/LocationRepositoryCustom.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/consequentialdata/rest/repository/interfaces/impl/LocationRepositoryImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/consequentialdata/rest/service/LocationServiceImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/consequentialdata/rest/service/interfaces/LocationService.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../scrapers/bjs/DEBUGScrapeDetailsOnBjsProducts.log" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../scrapers/bjs/ScrapeDetailsOnBjsProducts.log" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../scrapers/bjs/ScrapeNewBjsProducts.log" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/com/consequentialdata/rest/service/ItemServiceImpl.class" afterPath="$PROJECT_DIR$/build/classes/main/com/consequentialdata/rest/service/ItemServiceImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/classes/main/com/consequentialdata/rest/controller/ItemController.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/classes/main/com/consequentialdata/rest/repository/interfaces/custom/ItemRepositoryCustom.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/classes/main/com/consequentialdata/rest/repository/interfaces/impl/ItemRepositoryImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/classes/main/com/consequentialdata/rest/service/ItemServiceImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/classes/main/com/consequentialdata/rest/service/interfaces/ItemService.class" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/consequentialdata/rest/controller/ItemController.java" afterPath="$PROJECT_DIR$/src/main/java/com/consequentialdata/rest/controller/ItemController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/consequentialdata/rest/model/Item.java" afterPath="$PROJECT_DIR$/src/main/java/com/consequentialdata/rest/model/Item.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/consequentialdata/rest/repository/interfaces/custom/ItemRepositoryCustom.java" afterPath="$PROJECT_DIR$/src/main/java/com/consequentialdata/rest/repository/interfaces/custom/ItemRepositoryCustom.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/consequentialdata/rest/repository/interfaces/impl/ItemRepositoryImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/consequentialdata/rest/repository/interfaces/impl/ItemRepositoryImpl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/consequentialdata/rest/service/ItemServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/consequentialdata/rest/service/ItemServiceImpl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/consequentialdata/rest/service/interfaces/ItemService.java" afterPath="$PROJECT_DIR$/src/main/java/com/consequentialdata/rest/service/interfaces/ItemService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../scrapers/Model.py" afterPath="$PROJECT_DIR$/../../scrapers/Model.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../scrapers/PageIdentifier.py" afterPath="$PROJECT_DIR$/../../scrapers/PageIdentifier.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../scrapers/bjs/BjsUtil.py" afterPath="$PROJECT_DIR$/../../scrapers/bjs/BjsUtil.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../scrapers/bjs/ScrapeDetailsOnBjsProducts.py" afterPath="$PROJECT_DIR$/../../scrapers/bjs/ScrapeDetailsOnBjsProducts.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../scrapers/bjs/ScrapeNewBjsProducts.py" afterPath="$PROJECT_DIR$/../../scrapers/bjs/ScrapeNewBjsProducts.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../scrapers/bjs/ScrapeStoreInfo.py" afterPath="$PROJECT_DIR$/../../scrapers/bjs/ScrapeStoreInfo.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../scrapers/bjs/geckodriver.log" afterPath="$PROJECT_DIR$/../../scrapers/bjs/geckodriver.log" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -59,7 +46,87 @@
     <favorites_list name="databucket" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="ItemController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/consequentialdata/rest/controller/ItemController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="297">
+              <caret line="91" column="5" lean-forward="true" selection-start-line="91" selection-start-column="5" selection-end-line="91" selection-end-column="5" />
+              <folding>
+                <element signature="docComment;method#create#0;class#ItemController#0" expanded="false" />
+                <element signature="method#create#0;class#ItemController#0" expanded="false" />
+                <element signature="method#update#0;class#ItemController#0" expanded="false" />
+                <element signature="docComment;method#list#0;class#ItemController#0" expanded="false" />
+                <element signature="e#3077#3078#0" expanded="true" />
+                <element signature="e#3122#3123#0" expanded="true" />
+                <element signature="e#3237#3238#0" expanded="true" />
+                <element signature="e#3284#3285#0" expanded="true" />
+                <element signature="docComment;method#updateAvailability2#0;class#ItemController#0" expanded="false" />
+                <element signature="docComment;method#getById#0;class#ItemController#0" expanded="false" />
+                <element signature="docComment;method#getByName#0;class#ItemController#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ItemService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/consequentialdata/rest/service/interfaces/ItemService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="311">
+              <caret line="82" column="83" lean-forward="false" selection-start-line="82" selection-start-column="83" selection-end-line="82" selection-end-column="83" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ItemServiceImpl.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/consequentialdata/rest/service/ItemServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="217">
+              <caret line="77" column="113" lean-forward="true" selection-start-line="77" selection-start-column="113" selection-end-line="77" selection-end-column="113" />
+              <folding>
+                <element signature="e#1549#1550#0" expanded="true" />
+                <element signature="e#1599#1600#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Item.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/consequentialdata/rest/model/Item.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="502">
+              <caret line="186" column="5" lean-forward="true" selection-start-line="186" selection-start-column="5" selection-end-line="186" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ItemRepositoryCustom.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/consequentialdata/rest/repository/interfaces/custom/ItemRepositoryCustom.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="296">
+              <caret line="25" column="86" lean-forward="true" selection-start-line="25" selection-start-column="86" selection-end-line="25" selection-end-column="86" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ItemRepositoryImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/consequentialdata/rest/repository/interfaces/impl/ItemRepositoryImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="66">
+              <caret line="64" column="70" lean-forward="true" selection-start-line="64" selection-start-column="70" selection-end-line="64" selection-end-column="70" />
+              <folding>
+                <element signature="docComment;class#ItemRepositoryImpl#0" expanded="false" />
+                <element signature="docComment;method#update#0;class#ItemRepositoryImpl#0" expanded="false" />
+                <element signature="method#update#0;class#ItemRepositoryImpl#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -632,7 +699,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/consequentialdata/rest/repository/interfaces/Repository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/consequentialdata/rest/repository/interfaces/impl/ItemRepositoryImplAlt.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/consequentialdata/rest/repository/interfaces/RepositoryCustom.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/consequentialdata/rest/model/Item.java" />
         <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/src/main/resources/META-INF/context.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/consequentialdata/rest/configuration/MongodbConfig.java" />
@@ -648,11 +714,12 @@
         <option value="$PROJECT_DIR$/src/main/java/com/consequentialdata/rest/service/LocationServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/consequentialdata/rest/repository/interfaces/custom/LocationRepositoryCustom.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/consequentialdata/rest/repository/interfaces/impl/LocationRepositoryImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/consequentialdata/rest/controller/ItemController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/consequentialdata/rest/service/interfaces/ItemService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/consequentialdata/rest/service/ItemServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/consequentialdata/rest/repository/interfaces/custom/ItemRepositoryCustom.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/consequentialdata/rest/controller/ItemController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/consequentialdata/rest/repository/interfaces/impl/ItemRepositoryImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/consequentialdata/rest/model/Item.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/consequentialdata/rest/service/ItemServiceImpl.java" />
       </list>
     </option>
   </component>
@@ -1277,7 +1344,7 @@
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32793522" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3269494" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1295,7 +1362,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36388507" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36388507" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1341,11 +1408,23 @@
           <properties />
           <option name="timeStamp" value="26" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/consequentialdata/rest/service/ItemServiceImpl.java</url>
+          <line>60</line>
+          <properties />
+          <option name="timeStamp" value="34" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/consequentialdata/rest/controller/ItemController.java</url>
+          <line>90</line>
+          <properties />
+          <option name="timeStamp" value="35" />
+        </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="28" />
+      <option name="time" value="36" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1564,14 +1643,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/consequentialdata/rest/model/Item.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="77" column="31" lean-forward="true" selection-start-line="16" selection-start-column="4" selection-end-line="77" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/consequentialdata/rest/service/interfaces/LocationService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -1620,56 +1691,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/consequentialdata/rest/controller/ItemController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="82">
-          <caret line="79" column="40" lean-forward="false" selection-start-line="79" selection-start-column="40" selection-end-line="79" selection-end-column="40" />
-          <folding>
-            <element signature="docComment;method#create#0;class#ItemController#0" expanded="false" />
-            <element signature="method#create#0;class#ItemController#0" expanded="false" />
-            <element signature="method#update#0;class#ItemController#0" expanded="false" />
-            <element signature="docComment;method#list#0;class#ItemController#0" expanded="false" />
-            <element signature="e#3005#3006#0" expanded="true" />
-            <element signature="e#3050#3051#0" expanded="true" />
-            <element signature="e#3165#3166#0" expanded="true" />
-            <element signature="e#3212#3213#0" expanded="true" />
-            <element signature="docComment;method#updateAvailability#0;class#ItemController#0" expanded="false" />
-            <element signature="method#updateAvailability#0;class#ItemController#0" expanded="false" />
-            <element signature="docComment;method#getById#0;class#ItemController#0" expanded="false" />
-            <element signature="docComment;method#getByName#0;class#ItemController#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/consequentialdata/rest/service/interfaces/ItemService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="80" column="36" lean-forward="true" selection-start-line="80" selection-start-column="36" selection-end-line="80" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/consequentialdata/rest/service/ItemServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="68" column="42" lean-forward="false" selection-start-line="68" selection-start-column="42" selection-end-line="68" selection-end-column="42" />
-          <folding>
-            <element signature="e#2324#2325#0" expanded="true" />
-            <element signature="e#2374#2375#0" expanded="true" />
-            <element signature="e#2458#2459#0" expanded="true" />
-            <element signature="e#2521#2522#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/consequentialdata/rest/repository/interfaces/custom/ItemRepositoryCustom.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="23" column="36" lean-forward="true" selection-start-line="23" selection-start-column="36" selection-end-line="23" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/consequentialdata/rest/repository/interfaces/ItemRepository.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="271">
@@ -1683,16 +1704,8 @@
         <state relative-caret-position="301">
           <caret line="42" column="23" lean-forward="true" selection-start-line="24" selection-start-column="8" selection-end-line="42" selection-end-column="23" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/consequentialdata/rest/repository/interfaces/impl/ItemRepositoryImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="373">
-          <caret line="66" column="0" lean-forward="true" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1713,6 +1726,73 @@
           <caret line="35" column="0" lean-forward="true" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/consequentialdata/rest/repository/interfaces/custom/ItemRepositoryCustom.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="296">
+          <caret line="25" column="86" lean-forward="true" selection-start-line="25" selection-start-column="86" selection-end-line="25" selection-end-column="86" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/consequentialdata/rest/repository/interfaces/impl/ItemRepositoryImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="64" column="70" lean-forward="true" selection-start-line="64" selection-start-column="70" selection-end-line="64" selection-end-column="70" />
+          <folding>
+            <element signature="docComment;class#ItemRepositoryImpl#0" expanded="false" />
+            <element signature="docComment;method#update#0;class#ItemRepositoryImpl#0" expanded="false" />
+            <element signature="method#update#0;class#ItemRepositoryImpl#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/consequentialdata/rest/controller/ItemController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="91" column="5" lean-forward="true" selection-start-line="91" selection-start-column="5" selection-end-line="91" selection-end-column="5" />
+          <folding>
+            <element signature="docComment;method#create#0;class#ItemController#0" expanded="false" />
+            <element signature="method#create#0;class#ItemController#0" expanded="false" />
+            <element signature="method#update#0;class#ItemController#0" expanded="false" />
+            <element signature="docComment;method#list#0;class#ItemController#0" expanded="false" />
+            <element signature="e#3077#3078#0" expanded="true" />
+            <element signature="e#3122#3123#0" expanded="true" />
+            <element signature="e#3237#3238#0" expanded="true" />
+            <element signature="e#3284#3285#0" expanded="true" />
+            <element signature="docComment;method#updateAvailability2#0;class#ItemController#0" expanded="false" />
+            <element signature="docComment;method#getById#0;class#ItemController#0" expanded="false" />
+            <element signature="docComment;method#getByName#0;class#ItemController#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/consequentialdata/rest/service/interfaces/ItemService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="311">
+          <caret line="82" column="83" lean-forward="false" selection-start-line="82" selection-start-column="83" selection-end-line="82" selection-end-column="83" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/consequentialdata/rest/model/Item.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="502">
+          <caret line="186" column="5" lean-forward="true" selection-start-line="186" selection-start-column="5" selection-end-line="186" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/consequentialdata/rest/service/ItemServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="77" column="113" lean-forward="true" selection-start-line="77" selection-start-column="113" selection-end-line="77" selection-end-column="113" />
+          <folding>
+            <element signature="e#1549#1550#0" expanded="true" />
+            <element signature="e#1599#1600#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -46,9 +46,6 @@ def change_club(driver, club_url):
             change_button.click()
             return True
         except Exception, e:
-            print "-"*50
-            print e
-            print "-"*50
             continue
 
     return False

@@ -3,9 +3,11 @@ package com.consequentialdata.rest.controller;
 
 import com.consequentialdata.rest.model.Item;
 import com.consequentialdata.rest.service.interfaces.ItemService;
+import com.sun.org.apache.regexp.internal.RE;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -80,6 +82,15 @@ public class ItemController {
         return itemService.getUrlsMap();
     }
 
+    @RequestMapping(method = RequestMethod.PATCH)
+    public Item updateAvailability(@RequestParam String itemName,
+                                   @RequestBody Map<String,String> itemAvailabilityMap){
+
+//        Map<String,String> itemAvailabilityMap = new HashMap<>();
+
+        return itemService.updateAvailability(itemName, itemAvailabilityMap);
+    }
+
     /**
      * Add or modify mappings in the availability object for item with given name.
      * @param name The name of the item for which availability should be updated.
@@ -91,7 +102,7 @@ public class ItemController {
      * @return The modified Item.
      */
     @RequestMapping(value="/availability/{name}", method = RequestMethod.PATCH)
-    public Item updateAvailability(@PathVariable String name,
+    public Item updateAvailability2(@PathVariable String name,
                                    @RequestParam List<String> availabilityStores,
                                    @RequestParam List<Double> availabilityPrices) throws Exception {
         return itemService.updateAvailability(name, availabilityStores, availabilityPrices);

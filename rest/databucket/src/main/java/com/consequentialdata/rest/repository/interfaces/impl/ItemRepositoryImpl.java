@@ -9,6 +9,7 @@ import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.aggregation.*;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
+import org.springframework.data.mongodb.core.query.Update;
 
 import java.util.*;
 
@@ -66,5 +67,20 @@ public class ItemRepositoryImpl implements ItemRepositoryCustom {
         }
 
         return urlsMap;
+    }
+
+    @Override
+    public Item updateAvailability(String itemName, Map<String, String> itemAvailabilityMap) {
+        Query query = new Query();
+        query.addCriteria(Criteria.where("name").is(itemName));
+
+        Update update = new Update();
+        update.set("availability", itemAvailabilityMap);
+
+        /* Update operation */
+        mongoTemplate.updateFirst(query, update, Item.class);
+
+        /* Get updated operation */
+        return mongoTemplate.findOne(query, Item.class);
     }
 }

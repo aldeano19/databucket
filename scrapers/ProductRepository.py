@@ -66,14 +66,23 @@ class BjsProductRepository():
 		url = self.domain + \
 				self.port + \
 				self.base_path + \
-				self.items_base_url + \
-				self.patch_items_availability % (item_name) 
+				self.items_base_url
 
-		params = {
-			"name":item_name
+		headers = {
+			"Content-Type": "application/json"
 		}
 
-		return requests.patch(url, params=params, data=price_update_map)
+		params={
+			"itemName":item_name
+		}
+
+		price_update_map = json.dumps(price_update_map)
+
+		print "url:",url
+		print "prams:",params
+		print "data:",price_update_map
+
+		return requests.patch(url, params=params, data=price_update_map, headers=headers)
 
 
 

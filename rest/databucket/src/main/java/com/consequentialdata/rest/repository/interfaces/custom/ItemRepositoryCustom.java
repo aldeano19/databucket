@@ -22,4 +22,6 @@ public interface ItemRepositoryCustom {
     Item update(String id, String sku, String model, String onlinePrice, String delivery, String description);
 
     Map<String,String> getUrlsMap();
+
+    Item updateAvailability(String itemName, Map<String, String> itemAvailabilityMap);
 }
