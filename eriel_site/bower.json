@@ -1,0 +1,20 @@
+{
+  "name": "databucket-website",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Eriel Marimon <eriel.marimon@sato-global.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/aldeano19/databucket",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "gulp": "^3.9.1"
+  }
+}

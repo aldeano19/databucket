@@ -1,0 +1,15 @@
+{
+  "name": "databucket-website",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "gulp": "^3.9.1"
+  },
+  "devDependencies": {
+    "gulp-war": "^0.1.4",
+    "gulp-zip": "^4.0.0"
+  }
+}
