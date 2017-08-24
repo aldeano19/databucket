@@ -20,3 +20,11 @@ services:
     volumes:
       - ../databucket/build/libs/rest-0.1.0.war:/opt/tomcat/webapps/rest-0.1.0.war
       - ./logs/rest:/opt/tomcat/logs
+
+  web:
+    image: inovatrend/tomcat8-java8
+    ports:
+      - "8089:8080"
+    volumes:
+      - ../databucket/build/libs/databucker-website.war:/opt/tomcat/webapps/databucker-website.war
+      - ./logs/web:/opt/tomcat/logs
