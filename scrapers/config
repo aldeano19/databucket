@@ -1,0 +1,4 @@
+[REST]
+server: http://ec2-13-58-52-4.us-east-2.compute.amazonaws.com
+port: 8088
+base: /rest-0.1.0

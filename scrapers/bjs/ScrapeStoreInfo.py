@@ -9,8 +9,13 @@ Information captured about stores:
 @updated: july 8, 2017
 """
 
+import re
+import json
+import time
+import os
 import sys
-sys.path.append("..")
+new_modules = "%s/.." % (os.path.dirname(os.path.realpath(__file__)))
+sys.path.append(new_modules)
 
 from ProductRepository import BjsProductRepository
 from LocationRepository import BjsLocationRepository
@@ -25,11 +30,6 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-
-import re
-import json
-import time
-import os
 
 
 LOGFILE = ("bjs-logs/%s.log" % (os.path.basename(__file__))).replace(".py","")

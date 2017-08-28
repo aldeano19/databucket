@@ -6,8 +6,14 @@ The script gets the prices for all items for all individual stores.
 @created: aug 19, 2017
 @updated: aug 19, 2017
 """
+import re
+import json
+import time
+import os
+import threading
 import sys
-sys.path.append("..")
+new_modules = "%s/.." % (os.path.dirname(os.path.realpath(__file__)))
+sys.path.append(new_modules)
 
 from ProductRepository import BjsProductRepository
 from LocationRepository import BjsLocationRepository
@@ -23,12 +29,8 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-import re
-import json
-import time
-import os
-import threading
 
+CONSOLE_LOG_TRUE = True
 LOGFILE = ("bjs-logs/%s.log" % (os.path.basename(__file__))).replace(".py","")
 
 def match_price(string):
@@ -124,14 +126,59 @@ def ready_threads(items_url_map, clubs_url_map, payloads):
         threads.append(th)
 
     return threads
+
+def get_rest_env():
+    DEFAULT_ENVS = {
+        "localhost":{
+            "domain":"localhost",
+            "port":"8080",
+            "base_path":""
+        },
+        "t2medium":{
+            "domain":"http://13.58.52.4",
+            "port":"8088",
+            "base_path":"/rest-0.1.0"
+        }
+    }
+
+    system_in = sys.argv
+
+    if len(system_in) < 2:
+        identifier = "t2medium"
+    else:
+        identifier = system_in[1]
+
+    if identifier in DEFAULT_ENVS:
+        message = "Using default env '%s'" % (identifier)
+        BjsUtil.log(LOGFILE, BjsUtil.LOG_INFO, message, console_out=CONSOLE_LOG_TRUE)
+        return DEFAULT_ENVS[identifier]
+
 ##########
 ## main ##
 ##########
 
-location_repository = BjsLocationRepository()
-product_repository = BjsProductRepository()
+rest_connection = get_rest_env()
 
-clubs_url_map = location_repository.get_locations_urls().json()
+product_repository = BjsProductRepository(
+    rest_connection["domain"], 
+    rest_connection["port"], 
+    rest_connection["base_path"])
+
+location_repository = BjsLocationRepository(
+    rest_connection["domain"], 
+    rest_connection["port"], 
+    rest_connection["base_path"])
+
+print location_repository.get_locations_urls()
+print "WHATTT"
+http_response = location_repository.get_locations_urls()
+
+if http_response.status_code == 404:
+    print http_response.content
+    exit()
+
+print "Response code=%s" % (http_response.status_code)
+clubs_url_map = http_response.json()
 
 items_url_map = product_repository.get_products_urls().json()
 

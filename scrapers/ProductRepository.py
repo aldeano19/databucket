@@ -9,11 +9,11 @@ from Model import BjsProduct
 
 class BjsProductRepository():
 	"""docstring for BjsProductRepository"""
-	def __init__(self):
+	def __init__(self, domain, port, base_path):
 
-		self.domain = "http://localhost"
-		self.port = ":8080"
-		self.base_path = ""
+		self.domain = domain
+		self.port = ":"+str(port)
+		self.base_path = base_path
 
 		self.items_base_url = "/items"
 		self.update_items_url = "/%s"

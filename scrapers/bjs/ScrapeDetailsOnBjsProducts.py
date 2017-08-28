@@ -13,10 +13,16 @@ Information captured about items:
 @created: july 1, 2017
 @updated: july 4, 2017
 """
-
+import re
+import json
+import time
+import os
+import threading
 import sys
-sys.path.append("..")
-sys.path.append("exceptions")
+new_modules = "%s/.." % (os.path.dirname(os.path.realpath(__file__)))
+exceptions_modules = "%s/exceptions" % (os.path.dirname(os.path.realpath(__file__)))
+sys.path.append(new_modules)
+sys.path.append(exceptions_modules)
 
 from ProductRepository import BjsProductRepository
 from PageIdentifier import BjsPageWizard
