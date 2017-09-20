@@ -1,14 +1,51 @@
 """
 Utility accessible to all scripts.
 """
-
-import sys
-sys.path.append("..")
-
+import re
+import json
 import time
 import datetime
 import math
 import urllib
+import os
+import sys
+# new_modules = "%s/.." % (os.path.dirname(os.path.realpath(__file__)))
+# sys.path.append(new_modules)
+
+CONSOLE_LOG_TRUE = True
+LOGFILE = ("bjs-logs/%s.log" % (os.path.basename(__file__))).replace(".py","")
+
+# Log levels
+LOG_INFO = "INFO"
+LOG_WARN = "WARN"
+LOG_ERROR = "ERROR"
+LOG_DEBUG = "DEBUG"
+
+def get_rest_env():
+    DEFAULT_ENVS = {
+        "localhost":{
+            "domain":"localhost",
+            "port":"8080",
+            "base_path":""
+        },
+        "t2medium":{
+            "domain":"http://13.58.52.4",
+            "port":"8088",
+            "base_path":"/rest-0.1.0"
+        }
+    }
+
+    system_in = sys.argv
+
+    if len(system_in) < 2:
+        identifier = "t2medium"
+    else:
+        identifier = system_in[1]
+
+    if identifier in DEFAULT_ENVS:
+        message = "Using default env '%s'" % (identifier)
+        log(LOGFILE, LOG_INFO, message, console_out=CONSOLE_LOG_TRUE)
+        return DEFAULT_ENVS[identifier]
 
 def encode_url_params(dictionary):
     mydata = {}
@@ -55,3 +92,15 @@ def calculate_running_time(start_time):
 
     return "%.0f:%.0f:%.0f" % (hours, minutes, seconds)
 
+def log(logfile, level, message, console_out=False):
+    logdir = os.path.dirname(logfile)
+    if not os.path.exists(logdir):
+        os.makedirs(logdir)
+
+    message = message.encode('ascii','ignore')
+    with open(logfile, "a") as f:
+        line = "%-15s | %s\n" % (level, message) 
+        f.write(line)
+
+    if console_out:
+        print message

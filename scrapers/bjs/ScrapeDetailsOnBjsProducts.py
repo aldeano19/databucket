@@ -20,7 +20,7 @@ import os
 import threading
 import sys
 new_modules = "%s/.." % (os.path.dirname(os.path.realpath(__file__)))
-exceptions_modules = "%s/exceptions" % (os.path.dirname(os.path.realpath(__file__)))
+exceptions_modules = "%s/../exceptions" % (os.path.dirname(os.path.realpath(__file__)))
 sys.path.append(new_modules)
 sys.path.append(exceptions_modules)
 
@@ -51,13 +51,19 @@ PRINT_TO_CONSOLE = True
 
 def get_items_from_database():
     # init database
-    repository = BjsProductRepository()
+    rest_connection = GlobalUtil.get_rest_env()
+
+    repository = BjsProductRepository(
+        rest_connection["domain"], 
+        rest_connection["port"], 
+        rest_connection["base_path"])
 
     # get items from database
     items_on_db = json.loads(repository.get_items().content)
 
     items = []
 
+    # TODO : Do not transform json to model, at least not manually like bjs_dict_to_model is doing.
     for item_dict in items_on_db:
         items.append(BjsUtil.bjs_dict_to_model(item_dict))
 
@@ -127,16 +133,21 @@ def scrape_items(logfile, items):
 
     wizard = BjsPageWizard()
 
-    repository = BjsProductRepository()
+    rest_connection = GlobalUtil.get_rest_env()
+
+    repository = BjsProductRepository(
+        rest_connection["domain"], 
+        rest_connection["port"], 
+        rest_connection["base_path"])
 
     item_counter = 0
     message = "LAST item=%s" % (items[-1].id)
-    BjsUtil.log(
-        "DEBUG"+logfile, BjsUtil.LOG_DEBUG, message, console_out=PRINT_TO_CONSOLE)
+    GlobalUtil.log(
+        "DEBUG"+logfile, GlobalUtil.LOG_DEBUG, message, console_out=PRINT_TO_CONSOLE)
     for item in items:
         message = "STARTING item=%s" % (item.id)
-        BjsUtil.log(
-            "DEBUG"+logfile, BjsUtil.LOG_DEBUG, message, console_out=PRINT_TO_CONSOLE)
+        GlobalUtil.log(
+            "DEBUG"+logfile, GlobalUtil.LOG_DEBUG, message, console_out=PRINT_TO_CONSOLE)
         
         item_counter += 1
         driver.get(item.productUrl)
@@ -147,24 +158,24 @@ def scrape_items(logfile, items):
             )
         except TimeoutException, e:
             message = "%-20s item=%s" % ("Item not available", item.id)
-            BjsUtil.log(
-                logfile, BjsUtil.LOG_INFO, message, console_out=PRINT_TO_CONSOLE)
+            GlobalUtil.log(
+                logfile, GlobalUtil.LOG_INFO, message, console_out=PRINT_TO_CONSOLE)
             continue
 
         soup = BeautifulSoup(driver.page_source, "html.parser")
 
         if not wizard.is_item_details_page(soup):
             message = "%-20s item=%s" % ("No details for", item.id)
-            BjsUtil.log(
-                logfile, BjsUtil.LOG_INFO, message, console_out=PRINT_TO_CONSOLE)
+            GlobalUtil.log(
+                logfile, GlobalUtil.LOG_INFO, message, console_out=PRINT_TO_CONSOLE)
             continue
 
         updated_item = scrape_details_for_item(wizard, soup, item)
 
         if not updated_item:
             message = "%-20s item=%s" % ("Cant scrape", item.id)
-            BjsUtil.log(
-                logfile, BjsUtil.LOG_INFO, message, console_out=PRINT_TO_CONSOLE)
+            GlobalUtil.log(
+                logfile, GlobalUtil.LOG_INFO, message, console_out=PRINT_TO_CONSOLE)
             continue
 
 
@@ -180,13 +191,13 @@ def scrape_items(logfile, items):
                     item.id, 
                     new_name, 
                     item.name)
-            BjsUtil.log(
-                logfile, BjsUtil.LOG_WARN, message, console_out=PRINT_TO_CONSOLE)
+            GlobalUtil.log(
+                logfile, GlobalUtil.LOG_WARN, message, console_out=PRINT_TO_CONSOLE)
         else:
             message = "%-20s item=%s : %s" % ("Updating", item.id, return_code)
 
-        BjsUtil.log(
-            logfile, BjsUtil.LOG_INFO, message, console_out=PRINT_TO_CONSOLE)
+        GlobalUtil.log(
+            logfile, GlobalUtil.LOG_INFO, message, console_out=PRINT_TO_CONSOLE)
 
         remaining = GlobalUtil.estimate_remaining_time(
                 len(items), item_counter, start_time)

@@ -5,8 +5,6 @@ import urllib
 
 import GlobalUtil
 
-from Model import BjsProduct
-
 class BjsProductRepository():
 	"""docstring for BjsProductRepository"""
 	def __init__(self, domain, port, base_path):

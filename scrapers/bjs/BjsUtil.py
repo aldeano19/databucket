@@ -7,7 +7,7 @@ sys.path.append("..")
 
 import os
 
-from Model import BjsProduct
+from Model import Product
 
 from bs4 import BeautifulSoup
 from selenium import webdriver
@@ -15,10 +15,6 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-LOG_INFO = "INFO"
-LOG_WARN = "WARN"
-LOG_ERROR = "ERROR"
-LOG_DEBUG = "DEBUG"
 
 def change_club(driver, club_url):
     driver.get(club_url)
@@ -88,7 +84,7 @@ def bjs_dict_to_model(item_dict):
     if "productUrl" in item_dict:
         product_url = item_dict["productUrl"]
 
-    return BjsProduct(
+    return Product(
                     id=id,
                     sku=sku,
                     model=model,
@@ -99,15 +95,3 @@ def bjs_dict_to_model(item_dict):
                     imageUrl=image_url,
                     productUrl=product_url)
 
-def log(logfile, level, message, console_out=False):
-    logdir = os.path.dirname(logfile)
-    if not os.path.exists(logdir):
-        os.makedirs(logdir)
-
-    message = message.encode('ascii','ignore')
-    with open(logfile, "a") as f:
-        line = "%-15s | %s\n" % (level, message) 
-        f.write(line)
-
-    if console_out:
-        print message

@@ -1,14 +1,44 @@
 # Takes in a BeautifulSoup object and looks for specific contents in it
+
+import os
 import sys
-sys.path.append("exceptions")
+exceptions_modules = "%s/exceptions" % (os.path.dirname(os.path.realpath(__file__)))
+sys.path.append(exceptions_modules)
+
+print "-"*50
+print exceptions_modules
 
 from BjsExceptions import BjsScrapeException
 
 import re
 
-from Model import BjsProduct
+from Model import Product
 
+class CostcoPageWizard():
+    """docstring for CostcoPageWizard"""
+    def __init__(self):
+        self.base_url = "http://www.costco.com"
 
+    def map_categories_to_urls(self, soup):
+        """
+        Get all categories on page as a map of category name to url
+        """
+        category_list = soup.find_all("div",{"class":"col-xs-6 col-md-3 col-xl-3"})
+        if category_list == None:
+            raise Exception("No Categories grid on page=")
+
+        category_url_map = {}
+
+        for cat in category_list:
+            cat_url = cat.find("a", href=True)["href"]
+            key = cat.text.strip()
+
+            category_url_map[key] = cat_url
+
+        return category_url_map        
+        
+    def get_partial_products(self, soup):
+        pass
 
 class BjsPageWizard():
     """docstring for BjsPageWizard"""
@@ -53,9 +83,16 @@ class BjsPageWizard():
 
         return True
 
-    def is_item_details_page(self, soup):
-        return \
-            self.has_description_tab(soup)
+    def has_categories_block(self, soup):
+        categories_block = soup.find("fieldset", {"class":"checklist -open"})
+
+        if categories_block == None:
+            return False
+
+        regex_str = "Categories"
+        match = re.search(regex_str, categories_block.text)
+
+        return match != None # true if found match
 
     def has_item_filter_options(self, soup):
         """
@@ -116,6 +153,8 @@ class BjsPageWizard():
 
         return match != None # true if found match
 
+
+
     def is_product_page(self, soup):
         """
         Identifies if a page has a list of products
@@ -126,16 +165,9 @@ class BjsPageWizard():
             # and \
             # self.has_brands_and_rating_block(soup)
 
-    def has_categories_block(self, soup):
-        categories_block = soup.find("fieldset", {"class":"checklist -open"})
-
-        if categories_block == None:
-            return False
-
-        regex_str = "Categories"
-        match = re.search(regex_str, categories_block.text)
-
-        return match != None # true if found match
+    def is_item_details_page(self, soup):
+        return \
+            self.has_description_tab(soup)
 
     def is_categories_page(self, soup):
         return \
@@ -145,17 +177,21 @@ class BjsPageWizard():
                 self.has_item_block(soup) or \
                 self.has_brands_and_rating_block(soup))
 
+
+
     def map_categories_to_urls(self, soup):
         """
         Get all categories on page as a map of category name to url
         """
         categories_grid = soup.find("ul",{"class":"categories"})
         if categories_grid == None:
-            raise Exception("No Categories grid on page="+url)
+            # TODO: set page= to an actual url
+            raise Exception("No Categories grid on page=(define url)")
 
         category_list = categories_grid.find_all("li",{"class":"category"})
         if category_list == None:
-            raise Exception("Categories grid is empty on this page="+url)
+            # TODO: set page= to an actual url
+            raise Exception("Categories grid is empty on this page=(define url)")
 
         category_url_map = {}
 
@@ -171,7 +207,7 @@ class BjsPageWizard():
         """
         Gets all the products on a page. Information on this page is incomplete. 
         Fields provided: name, product_url, image_url.
-        Call complete_product(BjsProduct) to fill all the fields for a specific product.
+        Call complete_product(Product) to fill all the fields for a specific product.
         """
         product_grid = soup.find_all("div", {"class":"productBox"})
         if product_grid == None:
@@ -189,7 +225,7 @@ class BjsPageWizard():
             image_url = product_html.find("img")["src"]
 
             products.append(
-                BjsProduct(
+                Product(
                     sku=sku,
                     model=model,
                     name=name,
@@ -254,7 +290,10 @@ class BjsPageWizard():
 
         match = re.search(regex_str, price.text.strip())
 
-        return match.group(1)
+        if match:
+            return match.group(1)
+
+        return None
 
     def get_estimated_delivery(self, soup):
         """
@@ -285,7 +324,70 @@ class BjsPageWizard():
 
         return None
 
+# UNIT TEST CLASS #
+import unittest
 
+from bs4 import BeautifulSoup
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+
+class TestCostcoPageWizard(unittest.TestCase):
+
+    def setUp(self):
+        self.online = True
+        self.wizard = CostcoPageWizard()
+
+    def test_map_categories_to_urls_online(self):
+        if(not self.online):
+            print "Skip online test."
+            return
+
+        costco_main_product_page = "https://www.costco.com/grocery-household.html"
+        driver = webdriver.Firefox()
+        driver.get(costco_main_product_page)
+        
+
+        soup = BeautifulSoup(driver.page_source, "html.parser")
+
+        category_map = self.wizard.map_categories_to_urls(soup)
+
+        self.assertTrue(category_map)
+
+    def test_map_categories_to_urls_offline(self):
+
+        if(self.online):
+            print "Skip offline test."
+            return
+
+        with open("costco/main-grocery-page-save.html", "r") as f:
+            page_source = f.read()
+
+        soup = BeautifulSoup(page_source, "html.parser")
+
+        category_map = self.wizard.map_categories_to_urls(soup)
+
+        # print category_map
+
+        self.assertTrue(category_map)
+
+    def test_get_partial_products(self):
+
+        soup = ""
+        
+        partial_product = self.wizard.get_partial_products(soup)
+
+        # Validate partial_product contains:
+        #   name, product_url, image_url
+        self.assertIsNotNone(partial_product)
+        self.assertTrue(partial_product.name)
+        self.assertTrue(partial_product.product_url)
+        self.assertTrue(partial_product.image_url)
+
+
+if __name__ == '__main__':
+    unittest.main()
 
 
 

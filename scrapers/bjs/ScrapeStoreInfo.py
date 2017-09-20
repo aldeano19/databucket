@@ -24,6 +24,7 @@ from PageIdentifier import BjsPageWizard
 from Model import BjsLocation
 
 import BjsUtil
+import GlobalUtil
 
 from bs4 import BeautifulSoup
 from selenium import webdriver
@@ -63,13 +64,13 @@ def get_location_ids(driver, locations_search_url):
             location_id = match.group(1)
         else:
             message = "Can't extract store id from href=%s with regex=%s " % (href, regex_str)
-            BjsUtil.log(LOGFILE, BjsUtil.LOG_ERROR, message, console_out=True)
+            GlobalUtil.log(LOGFILE, GlobalUtil.LOG_ERROR, message, console_out=True)
             continue
 
         location_id_map[anchortag_element.text] = location_id
         
         message = "%-30s : %s" % (anchortag_element.text, location_id)
-        BjsUtil.log(LOGFILE, BjsUtil.LOG_INFO, message, console_out=False)
+        GlobalUtil.log(LOGFILE, GlobalUtil.LOG_INFO, message, console_out=False)
 
     return location_id_map
         
@@ -115,7 +116,12 @@ driver = webdriver.Firefox()
 
 wizard = BjsPageWizard()
 
-locationRepository = BjsLocationRepository()
+rest_connection = GlobalUtil.get_rest_env()
+
+locationRepository = BjsLocationRepository(
+    rest_connection["domain"], 
+    rest_connection["port"], 
+    rest_connection["base_path"])
 
 locations_map = get_location_ids(driver, locations_search_url)
 
@@ -134,7 +140,7 @@ for key in locations_map:
 
     if not street_address:
         message = "No address found for %s." % (key)
-        BjsUtil.log(LOGFILE, BjsUtil.LOG_WARN, message, console_out=True)
+        GlobalUtil.log(LOGFILE, GlobalUtil.LOG_WARN, message, console_out=True)
 
     club_url = locations_map[key]
 
@@ -152,7 +158,7 @@ for key in locations_map:
     message = "%s : %s" % (
         update_response.json()["id"], 
         update_response.status_code)
-    BjsUtil.log(LOGFILE, BjsUtil.LOG_INFO, message, console_out=True)
+    GlobalUtil.log(LOGFILE, GlobalUtil.LOG_INFO, message, console_out=True)
 
 
 

@@ -38,8 +38,8 @@ class BjsLocation():
         # TODO: need to send clubHours as json in the body of the update.
         #################
 
-class BjsProduct():
-    """docstring for BjsProduct"""
+class Product():
+    """docstring for Product"""
     def __init__(self, 
         sku, 
         model, 

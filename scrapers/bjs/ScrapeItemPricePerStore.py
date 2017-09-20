@@ -21,6 +21,7 @@ from PageIdentifier import BjsPageWizard
 
 from Model import BjsLocation
 
+import GlobalUtil
 import BjsUtil
 
 from bs4 import BeautifulSoup
@@ -58,7 +59,7 @@ def get_item_price_from_club(driver, item_name, items_url_map, club, clubs_url_m
     time.sleep(1)
     if not found_club:
         message = "Couldn't find club %s at %s." % (club, clubs_url_map[club])
-        BjsUtil.log(LOGFILE, BjsUtil.LOG_ERROR, message, console_out=True)
+        GlobalUtil.log(LOGFILE, GlobalUtil.LOG_ERROR, message, console_out=True)
         return None
 
     driver.get(items_url_map[item_name])
@@ -100,18 +101,18 @@ def process_items_subset(item_subset_list, items_url_map, clubs_url_map):
         i = 0
         for club_name in clubs_url_map:
             message = "Processing item=%s and club=%s." % (item_name, club_name)
-            BjsUtil.log(LOGFILE, BjsUtil.LOG_ERROR, message, console_out=True)
+            GlobalUtil.log(LOGFILE, GlobalUtil.LOG_ERROR, message, console_out=True)
             i+=1
             try:
                 club_price_map[club_name] = get_item_price_from_club(driver, item_name, items_url_map, club_name, clubs_url_map)
             except:
                 message = "No Update on item=%s with store=%s." % (item_name, club_name)
-                BjsUtil.log(LOGFILE, BjsUtil.LOG_ERROR, message, console_out=True)
+                GlobalUtil.log(LOGFILE, GlobalUtil.LOG_ERROR, message, console_out=True)
                 pass
             
         product_repository.patch_availability(item_name, club_price_map).content
         message = "Updated item %s." % (item_name)
-        BjsUtil.log(LOGFILE, BjsUtil.LOG_INFO, message, console_out=True)
+        GlobalUtil.log(LOGFILE, GlobalUtil.LOG_INFO, message, console_out=True)
 
     return item_club_errors
 
@@ -150,7 +151,7 @@ def get_rest_env():
 
     if identifier in DEFAULT_ENVS:
         message = "Using default env '%s'" % (identifier)
-        BjsUtil.log(LOGFILE, BjsUtil.LOG_INFO, message, console_out=CONSOLE_LOG_TRUE)
+        GlobalUtil.log(LOGFILE, GlobalUtil.LOG_INFO, message, console_out=CONSOLE_LOG_TRUE)
         return DEFAULT_ENVS[identifier]
 
 ##########
@@ -169,16 +170,8 @@ location_repository = BjsLocationRepository(
     rest_connection["port"], 
     rest_connection["base_path"])
 
-print location_repository.get_locations_urls()
-print "WHATTT"
-http_response = location_repository.get_locations_urls()
 
-if http_response.status_code == 404:
-    print http_response.content
-    exit()
-
-print "Response code=%s" % (http_response.status_code)
-clubs_url_map = http_response.json()
+clubs_url_map = location_repository.get_locations_urls().json()
 
 items_url_map = product_repository.get_products_urls().json()
 

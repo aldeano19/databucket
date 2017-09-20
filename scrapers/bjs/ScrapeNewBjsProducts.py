@@ -25,6 +25,7 @@ from ProductRepository import BjsProductRepository
 from PageIdentifier import BjsPageWizard
 
 import BjsUtil
+import GlobalUtil
 
 from bs4 import BeautifulSoup
 from selenium import webdriver
@@ -47,13 +48,15 @@ CATEGORY_NAME_ELEMENT_XPATH = '//*[@id="listing-container"]/div[1]/div[1]/header
 def get_items_from_store_website(driver, wizard, category, url):
 
     driver.get(url)
+
+    # Try to wait for a page identifier to appear
     try:
         category_name_element = WebDriverWait(driver, 3).until(
             EC.presence_of_element_located((By.XPATH, CATEGORY_NAME_ELEMENT_XPATH))
         )
     except Exception, e:
         message = "Cant find category=%s at url=%s" % (category, url)
-        BjsUtil.log(LOGFILE, BjsUtil.LOG_ERROR, message, console_out=CONSOLE_LOG_TRUE)
+        GlobalUtil.log(LOGFILE, GlobalUtil.LOG_ERROR, message, console_out=CONSOLE_LOG_TRUE)
         return []
 
     soup = BeautifulSoup(driver.page_source, "html.parser")
@@ -64,19 +67,19 @@ def get_items_from_store_website(driver, wizard, category, url):
     if category_name_element.text != category:
         """Log warning message that names mismatched"""
         message = "Mismatch in category=%s and url=%s" % (category, url)
-        BjsUtil.log(LOGFILE, BjsUtil.LOG_WARN, message, console_out=CONSOLE_LOG_TRUE)
+        GlobalUtil.log(LOGFILE, GlobalUtil.LOG_WARN, message, console_out=CONSOLE_LOG_TRUE)
 
     elif wizard.is_product_page(soup):
         """Get products on this page"""
         message = "Category=%s is a product page with url=%s." % (category, url)
-        BjsUtil.log(LOGFILE, BjsUtil.LOG_INFO, message, console_out=CONSOLE_LOG_TRUE)
+        GlobalUtil.log(LOGFILE, GlobalUtil.LOG_INFO, message, console_out=CONSOLE_LOG_TRUE)
 
         return wizard.get_partial_products(soup)
 
     elif wizard.is_categories_page(soup):
         """Get categories on this page and recurse"""
         message = "Category=%s is a categories page with url=%s." % (category, url)
-        BjsUtil.log(LOGFILE, BjsUtil.LOG_INFO, message, console_out=CONSOLE_LOG_TRUE)
+        GlobalUtil.log(LOGFILE, GlobalUtil.LOG_INFO, message, console_out=CONSOLE_LOG_TRUE)
 
         category_map = wizard.map_categories_to_urls(soup)
         products = []
@@ -85,35 +88,11 @@ def get_items_from_store_website(driver, wizard, category, url):
         return products
     else:
         message = "This shouldn't be happening, category=%s, url=%s" % (category, url)
-        BjsUtil.log(LOGFILE, BjsUtil.LOG_ERROR, message, console_out=CONSOLE_LOG_TRUE)
+        GlobalUtil.log(LOGFILE, GlobalUtil.LOG_ERROR, message, console_out=CONSOLE_LOG_TRUE)
 
         return []
 
-def get_rest_env():
-    DEFAULT_ENVS = {
-        "localhost":{
-            "domain":"localhost",
-            "port":"8080",
-            "base_path":""
-        },
-        "t2medium":{
-            "domain":"http://13.58.52.4",
-            "port":"8088",
-            "base_path":"/rest-0.1.0"
-        }
-    }
 
-    system_in = sys.argv
-
-    if len(system_in) < 2:
-        identifier = "localhost"
-    else:
-        identifier = system_in[1]
-
-    if identifier in DEFAULT_ENVS:
-        message = "Using default env '%s'" % (identifier)
-        BjsUtil.log(LOGFILE, BjsUtil.LOG_INFO, message, console_out=CONSOLE_LOG_TRUE)
-        return DEFAULT_ENVS[identifier]
 
 
 def get_and_save_new_items(
@@ -123,7 +102,7 @@ def get_and_save_new_items(
     message = "Getting TOP category=%s, url=%s" % (
         bjs_main_product_page, 
         bjs_main_product_category_name)
-    BjsUtil.log(LOGFILE, BjsUtil.LOG_INFO, message, console_out=CONSOLE_LOG_TRUE)
+    GlobalUtil.log(LOGFILE, GlobalUtil.LOG_INFO, message, console_out=CONSOLE_LOG_TRUE)
 
     driver = webdriver.Firefox()
     driver.get(bjs_main_product_page)
@@ -144,7 +123,7 @@ def get_and_save_new_items(
         message = "Category=%s is a categories page with url=%s." % (
             bjs_main_product_category_name, 
             bjs_main_product_page)
-        BjsUtil.log(LOGFILE, BjsUtil.LOG_INFO, message, console_out=CONSOLE_LOG_TRUE)
+        GlobalUtil.log(LOGFILE, GlobalUtil.LOG_INFO, message, console_out=CONSOLE_LOG_TRUE)
 
         category_map = wizard.map_categories_to_urls(soup)
         
@@ -153,10 +132,10 @@ def get_and_save_new_items(
             bjs_main_product_category_name, 
             bjs_main_product_page)
 
-        BjsUtil.log(LOGFILE, BjsUtil.LOG_INFO, message, console_out=CONSOLE_LOG_TRUE)
+        GlobalUtil.log(LOGFILE, GlobalUtil.LOG_INFO, message, console_out=CONSOLE_LOG_TRUE)
         raise Exception(message)
 
-    rest_connection = get_rest_env()
+    rest_connection = GlobalUtil.get_rest_env()
 
     repository = BjsProductRepository(
         rest_connection["domain"], 
@@ -177,14 +156,14 @@ def get_and_save_new_items(
         for i in new_items:
             if i.name in existing_item_names:
                 message = "Item=%s already exists. Skipping." % (i.name)
-                BjsUtil.log(LOGFILE, BjsUtil.LOG_INFO, message, console_out=CONSOLE_LOG_TRUE)
+                GlobalUtil.log(LOGFILE, GlobalUtil.LOG_INFO, message, console_out=CONSOLE_LOG_TRUE)
                 continue
 
             resp = repository.create_new_item(i)
             new_items_responses.append(resp.content)
             
             message = "Saved new item=%s" % (i.name)
-            BjsUtil.log(LOGFILE, BjsUtil.LOG_INFO, message, console_out=CONSOLE_LOG_TRUE)
+            GlobalUtil.log(LOGFILE, GlobalUtil.LOG_INFO, message, console_out=CONSOLE_LOG_TRUE)
 
     return new_items_responses
 
