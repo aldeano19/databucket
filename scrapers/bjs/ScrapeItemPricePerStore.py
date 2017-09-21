@@ -15,11 +15,9 @@ import sys
 new_modules = "%s/.." % (os.path.dirname(os.path.realpath(__file__)))
 sys.path.append(new_modules)
 
-from ProductRepository import BjsProductRepository
+from ProductRepository import ProductRepository
 from LocationRepository import BjsLocationRepository
 from PageIdentifier import BjsPageWizard
-
-from Model import BjsLocation
 
 import GlobalUtil
 import BjsUtil
@@ -160,7 +158,7 @@ def get_rest_env():
 
 rest_connection = get_rest_env()
 
-product_repository = BjsProductRepository(
+product_repository = ProductRepository(
     rest_connection["domain"], 
     rest_connection["port"], 
     rest_connection["base_path"])

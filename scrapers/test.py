@@ -1,4 +1,3 @@
-import os
+import bs4
 
-
-print os.path.dirname(os.path.realpath(__file__))
+print bs4.__version__

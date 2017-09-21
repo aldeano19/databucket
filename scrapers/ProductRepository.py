@@ -5,8 +5,8 @@ import urllib
 
 import GlobalUtil
 
-class BjsProductRepository():
-	"""docstring for BjsProductRepository"""
+class ProductRepository():
+	"""docstring for ProductRepository"""
 	def __init__(self, domain, port, base_path):
 
 		self.domain = domain
@@ -22,14 +22,14 @@ class BjsProductRepository():
 		self.patch_items_availability = "/%s" # takes an item's name
 
 	def create_new_item(self, item):
-		item_dict = item.__dict__
+		# item_dict = item.__dict__
 
 		url = self.domain + \
 				self.port + \
 				self.base_path + \
 				self.items_base_url 
 
-		return requests.post(url, params=item_dict)
+		return requests.post(url, params=item)
 
 	def get_products_urls(self):
 		url = self.domain + \
@@ -49,15 +49,15 @@ class BjsProductRepository():
 		return requests.get(url)
 
 	def update_item(self, item):
-		item_dict = item.__dict__
+		# item_dict = item.__dict__
 		
 		url = self.domain + \
 				self.port + \
 				self.base_path + \
 				self.items_base_url + \
-				self.update_items_url % (item.id) 
+				self.update_items_url % (item["id"]) 
 
-		return requests.put(url, params=item_dict)
+		return requests.put(url, params=item)
 
 
 	def patch_availability(self, item_name, price_update_map):

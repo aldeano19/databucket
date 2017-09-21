@@ -1,5 +1,6 @@
 package com.consequentialdata.rest.model;
 
+import com.consequentialdata.rest.constans.StoreEnum;
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.Indexed;
@@ -30,6 +31,11 @@ public class Item {
      * SKU of this item.
      */
     private String sku;
+
+    /**
+     * The store where this item is found.
+     */
+    private StoreEnum store;
 
     /**
      * Unique identifier of the item within the SKU.
@@ -83,7 +89,7 @@ public class Item {
             String sku,
             String model,
             String name,
-            String imageUrl,
+            StoreEnum store, String imageUrl,
             String productUrl,
             Map<String, String> availability,
             Date created,
@@ -91,6 +97,7 @@ public class Item {
         this.sku = sku;
         this.model = model;
         this.name = name;
+        this.store = store;
         this.imageUrl = imageUrl;
         this.productUrl = productUrl;
         this.availability = availability;
@@ -192,5 +199,13 @@ public class Item {
 
     public long getUpdated() {
         return updated.getTime();
+    }
+
+    public StoreEnum getStore() {
+        return store;
+    }
+
+    public void setStore(StoreEnum store) {
+        this.store = store;
     }
 }

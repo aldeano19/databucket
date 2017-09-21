@@ -12,7 +12,7 @@ from BjsExceptions import BjsScrapeException
 
 import re
 
-from Model import Product
+import GlobalUtil
 
 class CostcoPageWizard():
     """docstring for CostcoPageWizard"""
@@ -28,17 +28,58 @@ class CostcoPageWizard():
             raise Exception("No Categories grid on page=")
 
         category_url_map = {}
-
+        costco_base_url = "https://www.costco.com"
         for cat in category_list:
             cat_url = cat.find("a", href=True)["href"]
             key = cat.text.strip()
 
-            category_url_map[key] = cat_url
+            category_url_map[key] = costco_base_url + cat_url
 
         return category_url_map        
         
     def get_partial_products(self, soup):
-        pass
+        
+        product_list = soup.find_all("div",{"class":"col-xs-6 col-md-4 col-xl-3 product"})
+
+        products = []
+
+        for product_element in product_list:
+
+            # Get link to this product
+            product_url = product_element.find("a",{"class":"thumbnail"})["href"]
+            
+            # Get product itemid
+            anchortag = product_element.find("a",{"class":"thumbnail"})
+            itemid = anchortag["itemid"]
+
+            # Get link to image of this product
+            image_elem = anchortag.find("img",{"class":"img-responsive"})
+            image_url = ""
+            if "src" in image_elem:
+                image_url = image_elem["src"]
+            elif "data-src" in image_elem:
+                image_url = image_elem["data-src"]
+
+            # Get price of this product
+            price_elem = product_element.find("div",{"class":"price"})
+            price = ""
+            if price_elem:
+                price = price_elem.text
+
+            # Get name of this product
+            name = product_element.find("p",{"class":"description"}).text
+            
+            products.append({
+                "name":name,
+                "onlinePrice":price,
+                "imageUrl":image_url,
+                "model":itemid,
+                "productUrl":product_url,
+                "store":"COSTCO"
+            })
+
+        return products
+        
 
 class BjsPageWizard():
     """docstring for BjsPageWizard"""
@@ -154,7 +195,6 @@ class BjsPageWizard():
         return match != None # true if found match
 
 
-
     def is_product_page(self, soup):
         """
         Identifies if a page has a list of products
@@ -176,7 +216,6 @@ class BjsPageWizard():
                 (self.has_item_filter_options(soup) or \
                 self.has_item_block(soup) or \
                 self.has_brands_and_rating_block(soup))
-
 
 
     def map_categories_to_urls(self, soup):
@@ -216,23 +255,16 @@ class BjsPageWizard():
         products = []
 
         for product_html in product_grid:
-            sku = None # sku is provided in product details page only
-            model = None # model is provided in product details page only
             name = product_html.find("h4",{"class":"name"}).text
-            availability_stores = None # availability requires a dedicated process
-            availability_prices = None # availability requires a dedicated process
             product_url = self.base_url + product_html.find("a", href=True)["href"]
             image_url = product_html.find("img")["src"]
 
-            products.append(
-                Product(
-                    sku=sku,
-                    model=model,
-                    name=name,
-                    availabilityStores=availability_stores,
-                    availabilityPrices=availability_prices,
-                    imageUrl=image_url,
-                    productUrl=product_url))
+            products.append({
+                "name":name,
+                "imageUrl":image_url,
+                "productUrl":product_url,
+                "store":"BJS"
+            })
 
         return products
 
@@ -301,11 +333,10 @@ class BjsPageWizard():
             original:
                 delivery_elem = soup.find(id="estimatedDelivery")
             aug 18, 2017:
-                delivery_elem = soup.find("div":{"class":"est-delivery"})        
+                delivery_elem = soup.find("div":{"class":"est-delivery"})
         """
-        delivery_elem = soup.find("div",{"class":"est-delivery"})        
+        delivery_elem = soup.find("div",{"class":"est-delivery"})
 
-        
         if delivery_elem:
             delivery_regex_str = "Estimated Delivery:\s(.*)"
             match = re.search(delivery_regex_str, delivery_elem.text)
@@ -316,7 +347,7 @@ class BjsPageWizard():
         return None
 
     def get_details(self, soup):
-        """ Gets the details panel for an item."""
+        """ Gets the details panel for an item. """
         details_elem = soup.find(id="tab-1")
 
         if details_elem:
@@ -339,52 +370,22 @@ class TestCostcoPageWizard(unittest.TestCase):
         self.online = True
         self.wizard = CostcoPageWizard()
 
-    def test_map_categories_to_urls_online(self):
-        if(not self.online):
-            print "Skip online test."
-            return
-
-        costco_main_product_page = "https://www.costco.com/grocery-household.html"
-        driver = webdriver.Firefox()
-        driver.get(costco_main_product_page)
-        
-
-        soup = BeautifulSoup(driver.page_source, "html.parser")
-
-        category_map = self.wizard.map_categories_to_urls(soup)
-
-        self.assertTrue(category_map)
-
-    def test_map_categories_to_urls_offline(self):
-
-        if(self.online):
-            print "Skip offline test."
-            return
-
-        with open("costco/main-grocery-page-save.html", "r") as f:
-            page_source = f.read()
-
-        soup = BeautifulSoup(page_source, "html.parser")
-
-        category_map = self.wizard.map_categories_to_urls(soup)
-
-        # print category_map
-
-        self.assertTrue(category_map)
-
     def test_get_partial_products(self):
 
-        soup = ""
+        grocery_organics_products_page = "https://www.costco.com/grocery-household.html?keyword=organic&COSTID=grocery_organic"
+        driver = webdriver.Firefox()
+        driver.get(grocery_organics_products_page)
+
+        soup = BeautifulSoup(driver.page_source, "html.parser")
         
-        partial_product = self.wizard.get_partial_products(soup)
+        partial_products = self.wizard.get_partial_products(soup)
 
         # Validate partial_product contains:
         #   name, product_url, image_url
-        self.assertIsNotNone(partial_product)
-        self.assertTrue(partial_product.name)
-        self.assertTrue(partial_product.product_url)
-        self.assertTrue(partial_product.image_url)
 
+
+        self.assertIsNotNone(partial_products)
+        self.assertTrue(len(partial_products) > 0)
 
 if __name__ == '__main__':
     unittest.main()

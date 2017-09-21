@@ -17,11 +17,9 @@ import sys
 new_modules = "%s/.." % (os.path.dirname(os.path.realpath(__file__)))
 sys.path.append(new_modules)
 
-from ProductRepository import BjsProductRepository
+from ProductRepository import ProductRepository
 from LocationRepository import BjsLocationRepository
 from PageIdentifier import BjsPageWizard
-
-from Model import BjsLocation
 
 import BjsUtil
 import GlobalUtil
@@ -144,14 +142,14 @@ for key in locations_map:
 
     club_url = locations_map[key]
 
-    location = BjsLocation(
-        retailer="Bjs",
-        name=name.replace(".", ""),
-        streetAddress=street_address,
-        state=None,
-        city=None,
-        zipcode=None,
-        clubUrl=club_url)
+    location = {
+        "retailer":"Bjs",
+        "name":name.replace(".", ""),
+        "streetAddress":street_address,
+        "state":None,
+        "city":None,
+        "zipcode":None,
+        "clubUrl":club_url}
 
     update_response = locationRepository.update_locations(location)
 

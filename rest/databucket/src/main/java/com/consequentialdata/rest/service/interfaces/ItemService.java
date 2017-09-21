@@ -1,5 +1,6 @@
 package com.consequentialdata.rest.service.interfaces;
 
+import com.consequentialdata.rest.constans.StoreEnum;
 import com.consequentialdata.rest.model.Item;
 
 import java.util.List;
@@ -24,7 +25,7 @@ public interface ItemService {
      * @throws Exception Generic exception with detailed error message.
      */
     Item create(
-            String sku, String model, String name, String imageUrl,
+            String sku, String model, String name, StoreEnum store, String imageUrl,
             String productUrl, List<String> availabilityStores, List<Double> availabilityPrices)
             throws Exception;
 
@@ -33,7 +34,7 @@ public interface ItemService {
      * @return The newly created item.
      * @throws Exception Generic exception with detailed error message.
      */
-    Item create(Item item) throws Exception;
+    Item create(Item item, Map<String, String> availability) throws Exception;
 
     /**
      * Gets all the items in the database;
@@ -81,4 +82,6 @@ public interface ItemService {
     Map<String,String> getUrlsMap();
 
     Item updateAvailability(String itemName, Map<String,String> itemAvailabilityMap);
+
+    List<Item> filter(Item item);
 }

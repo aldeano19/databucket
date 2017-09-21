@@ -24,7 +24,7 @@ exceptions_modules = "%s/../exceptions" % (os.path.dirname(os.path.realpath(__fi
 sys.path.append(new_modules)
 sys.path.append(exceptions_modules)
 
-from ProductRepository import BjsProductRepository
+from ProductRepository import ProductRepository
 from PageIdentifier import BjsPageWizard
 from BjsExceptions import BjsScrapeException
 
@@ -53,19 +53,19 @@ def get_items_from_database():
     # init database
     rest_connection = GlobalUtil.get_rest_env()
 
-    repository = BjsProductRepository(
+    repository = ProductRepository(
         rest_connection["domain"], 
         rest_connection["port"], 
         rest_connection["base_path"])
 
     # get items from database
-    items_on_db = json.loads(repository.get_items().content)
+    # items_on_db = json.loads(repository.get_items().content)
 
-    items = []
+    items = json.loads(repository.get_items().content)
 
-    # TODO : Do not transform json to model, at least not manually like bjs_dict_to_model is doing.
-    for item_dict in items_on_db:
-        items.append(BjsUtil.bjs_dict_to_model(item_dict))
+    # # TODO : Do not transform json to model, at least not manually like bjs_dict_to_model is doing.
+    # for item_dict in items_on_db:
+    #     items.append(BjsUtil.bjs_dict_to_model(item_dict))
 
     return items
 
@@ -82,12 +82,12 @@ def scrape_details_for_item(wizard, soup, item):
     if not sku_and_model:
         return None
 
-    item.sku = sku_and_model[0]
-    item.model = sku_and_model[1]
+    item["sku"] = sku_and_model[0]
+    item["model"] = sku_and_model[1]
 
-    item.onlinePrice = wizard.get_online_price(soup)
-    item.delivery = wizard.get_estimated_delivery(soup)
-    item.description = wizard.get_details(soup)
+    item["onlinePrice"] = wizard.get_online_price(soup)
+    item["delivery"] = wizard.get_estimated_delivery(soup)
+    item["description"] = wizard.get_details(soup)
 
     return item
 
@@ -135,29 +135,29 @@ def scrape_items(logfile, items):
 
     rest_connection = GlobalUtil.get_rest_env()
 
-    repository = BjsProductRepository(
+    repository = ProductRepository(
         rest_connection["domain"], 
         rest_connection["port"], 
         rest_connection["base_path"])
 
     item_counter = 0
-    message = "LAST item=%s" % (items[-1].id)
+    message = "LAST item=%s" % (items[-1]["id"])
     GlobalUtil.log(
         "DEBUG"+logfile, GlobalUtil.LOG_DEBUG, message, console_out=PRINT_TO_CONSOLE)
     for item in items:
-        message = "STARTING item=%s" % (item.id)
+        message = "STARTING item=%s" % (item["id"])
         GlobalUtil.log(
             "DEBUG"+logfile, GlobalUtil.LOG_DEBUG, message, console_out=PRINT_TO_CONSOLE)
         
         item_counter += 1
-        driver.get(item.productUrl)
+        driver.get(item["productUrl"])
 
         try:
             name_element = WebDriverWait(driver, 3).until(
                 EC.presence_of_element_located((By.ID, "itemNameID"))
             )
         except TimeoutException, e:
-            message = "%-20s item=%s" % ("Item not available", item.id)
+            message = "%-20s item=%s" % ("Item not available", item["id"])
             GlobalUtil.log(
                 logfile, GlobalUtil.LOG_INFO, message, console_out=PRINT_TO_CONSOLE)
             continue
@@ -165,7 +165,7 @@ def scrape_items(logfile, items):
         soup = BeautifulSoup(driver.page_source, "html.parser")
 
         if not wizard.is_item_details_page(soup):
-            message = "%-20s item=%s" % ("No details for", item.id)
+            message = "%-20s item=%s" % ("No details for", item["id"])
             GlobalUtil.log(
                 logfile, GlobalUtil.LOG_INFO, message, console_out=PRINT_TO_CONSOLE)
             continue
@@ -173,28 +173,27 @@ def scrape_items(logfile, items):
         updated_item = scrape_details_for_item(wizard, soup, item)
 
         if not updated_item:
-            message = "%-20s item=%s" % ("Cant scrape", item.id)
+            message = "%-20s item=%s" % ("Cant scrape", item["id"])
             GlobalUtil.log(
                 logfile, GlobalUtil.LOG_INFO, message, console_out=PRINT_TO_CONSOLE)
             continue
-
 
         response = repository.update_item(updated_item)
 
         return_code = response.status_code
 
         new_name = name_element.text
-        if new_name != item.name:
-            updated_item.name = new_name
+        if new_name != item["name"]:
+            updated_item["name"] = new_name
             message = "%-20s item=%s. New name=%s, old name=%s. Updating name." \
                 % ("Names differ for", 
-                    item.id, 
+                    item["id"], 
                     new_name, 
-                    item.name)
+                    item["name"])
             GlobalUtil.log(
                 logfile, GlobalUtil.LOG_WARN, message, console_out=PRINT_TO_CONSOLE)
         else:
-            message = "%-20s item=%s : %s" % ("Updating", item.id, return_code)
+            message = "%-20s item=%s : %s" % ("Updating", item["id"], return_code)
 
         GlobalUtil.log(
             logfile, GlobalUtil.LOG_INFO, message, console_out=PRINT_TO_CONSOLE)
@@ -224,14 +223,13 @@ def scrape_items(logfile, items):
 items = get_items_from_database()
 
 """Uncomment for debugging purposes."""
-for i in items:
-    if i.id == "599675559a1e3406aa0f5ed0":
-        items = [i]
+# for i in items:
+#     if i["id"] == "599675559a1e3406aa0f5ed0":
+#         items = [i]
 
 divided_payload = divide_items_payload(items, 1)
 
 LOGFILE = ("bjs-logs/%s.log" % (os.path.basename(__file__))).replace(".py","")
-
 
 threads = ready_threads(LOGFILE, divided_payload)
 

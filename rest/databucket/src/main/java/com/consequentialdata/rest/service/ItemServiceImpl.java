@@ -1,8 +1,12 @@
 package com.consequentialdata.rest.service;
 
+import com.consequentialdata.rest.constans.StoreEnum;
 import com.consequentialdata.rest.model.Item;
 import com.consequentialdata.rest.repository.interfaces.ItemRepository;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Example;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import com.consequentialdata.rest.service.interfaces.ItemService;
 
@@ -24,9 +28,11 @@ public class ItemServiceImpl implements ItemService{
     ItemRepository itemRepository;
 
     @Override
-    public Item create(Item item){
+    public Item create(Item item, Map<String, String> availability){
         item.setCreated(new Date());
         item.setUpdated(new Date());
+        item.setAvailability(availability);
+
         return itemRepository.save(item);
     }
 
@@ -37,7 +43,7 @@ public class ItemServiceImpl implements ItemService{
      */
     @Override
     public Item create(
-            String sku, String model, String name, String imageUrl,
+            String sku, String model, String name, StoreEnum store, String imageUrl,
             String productUrl, List<String> availabilityStores, List<Double> availabilityPrices)
             throws Exception {
 
@@ -45,7 +51,7 @@ public class ItemServiceImpl implements ItemService{
 
         Date created = new Date();
 
-        Item newItem = new Item(sku, model, name, imageUrl, productUrl, availability, created, created);
+        Item newItem = new Item(sku, model, name, store, imageUrl, productUrl, availability, created, created);
         return itemRepository.save(newItem);
     }
 
@@ -59,6 +65,18 @@ public class ItemServiceImpl implements ItemService{
     public Item updateAvailability(String itemName, Map<String,String> itemAvailabilityMap) {
 
         return itemRepository.updateAvailability(itemName, itemAvailabilityMap);
+    }
+
+    /**
+     * Gets a list of filtered items.
+     * @param item An example of the items to be returned, no filed is required.
+     * @return A list of the items that match the filter.
+     */
+    @Override
+    public List<Item> filter(Item item) {
+        Example<Item> itemExample = Example.of(item);
+        Sort itemSort = new Sort(Sort.Direction.ASC, "updated");
+        return itemRepository.findAll(itemExample, itemSort);
     }
 
     /**

@@ -5,8 +5,6 @@ import urllib
 
 import GlobalUtil
 
-from Model import BjsLocation
-
 class BjsLocationRepository():
     """docstring for BjsLocationRepository"""
     def __init__(self, domain, port, base_path):
@@ -31,27 +29,13 @@ class BjsLocationRepository():
         return requests.get(url=url)
 
     def update_locations(self, location):
-        location_dict = location.__dict__
         
         url = self.domain + \
                 self.port + \
                 self.base_path + \
                 self.locations_base_url
 
-        return requests.put(url, params=location_dict)
+        return requests.put(url, params=location)
 
-
-#### Test it
-# l = BjsLocation(
-#         name="Nashua",
-#         streetAddress="123 n 23 ave",
-#         state="NY",
-#         city="Nashua",
-#         zipcode="12312",
-#         clubUrl="bjsnashua.com")
-
-# a = BjsLocationRepository()
-
-# print a.update_locations(l).text
 
 

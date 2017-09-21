@@ -1,9 +1,11 @@
 package com.consequentialdata.rest.controller;
 
 
+import com.consequentialdata.rest.constans.StoreEnum;
 import com.consequentialdata.rest.model.Item;
 import com.consequentialdata.rest.service.interfaces.ItemService;
 import com.sun.org.apache.regexp.internal.RE;
+import org.apache.catalina.Store;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -25,37 +27,17 @@ public class ItemController {
     @Autowired
     private ItemService itemService;
 
-    @RequestMapping(value="/create", method = RequestMethod.POST)
-    public Item create2(Item item) throws Exception {
-        return itemService.create(item);
-    }
-
     /**
      * Create a new Item in the database.
-     * @param sku Identifies an item.
-     * @param model An instance of the named SKU.
-     * @param name Name of the SKU (item).
-     * @param imageUrl Url for the image on this item.
-     * @param productUrl Url for the item on the store's website.
-     * @param availabilityStores List of stores where this item could be found.
-     * @param availabilityPrices Prices for this item in the respective stores. Mapping occurs 1 to 1
-     *                           with availabilityStores.
-     * @return  The newly created item. Note that availabilityStores and availabilityPrices will create a new object.
-     * @throws Exception Generic error. Error message specifies what went wrong.
+     * @param item The new item to be saved.
+     * @param availability The availability of this item in a separate object.
+     * @return The newly saved item.
+     * @throws Exception
      */
     @RequestMapping(method = RequestMethod.POST)
-    public Item create(@RequestParam(required=false) String sku,
-                       @RequestParam(required=false) String model,
-                       @RequestParam String name,
-                       @RequestParam(required=false) String imageUrl,
-                       @RequestParam String productUrl,
-                       @RequestParam(required=false) List<String> availabilityStores,
-                       @RequestParam(required=false) List<Double> availabilityPrices) throws Exception {
-
-        return itemService.create(sku,model,name,imageUrl,productUrl,
-                availabilityStores,availabilityPrices);
+    public Item create(Item item, @RequestBody(required=false) Map<String, String> availability) throws Exception {
+        return itemService.create(item, availability);
     }
-
 
     @RequestMapping(value="/{id}", method = RequestMethod.PUT)
     public Item update(@PathVariable String id,
@@ -75,6 +57,11 @@ public class ItemController {
     @RequestMapping(method = RequestMethod.GET)
     public List<Item> list(){
         return  itemService.findAll();
+    }
+
+    @RequestMapping(value = "/filter", method = RequestMethod.GET)
+    public List<Item> filter(Item item) {
+        return itemService.filter(item);
     }
 
     @RequestMapping(value="/getUrlsMap", method = RequestMethod.GET)

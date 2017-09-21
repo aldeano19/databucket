@@ -21,7 +21,7 @@ import sys
 new_modules = "%s/.." % (os.path.dirname(os.path.realpath(__file__)))
 sys.path.append(new_modules)
 
-from ProductRepository import BjsProductRepository
+from ProductRepository import ProductRepository
 from PageIdentifier import BjsPageWizard
 
 import BjsUtil
@@ -137,7 +137,7 @@ def get_and_save_new_items(
 
     rest_connection = GlobalUtil.get_rest_env()
 
-    repository = BjsProductRepository(
+    repository = ProductRepository(
         rest_connection["domain"], 
         rest_connection["port"], 
         rest_connection["base_path"])
@@ -154,15 +154,16 @@ def get_and_save_new_items(
         items += new_items
 
         for i in new_items:
-            if i.name in existing_item_names:
-                message = "Item=%s already exists. Skipping." % (i.name)
+            if i["name"] in existing_item_names:
+                message = "Item=%s already exists. Skipping." % (i["name"])
                 GlobalUtil.log(LOGFILE, GlobalUtil.LOG_INFO, message, console_out=CONSOLE_LOG_TRUE)
                 continue
 
             resp = repository.create_new_item(i)
+            
             new_items_responses.append(resp.content)
             
-            message = "Saved new item=%s" % (i.name)
+            message = "Saved new item=%s" % (i["name"])
             GlobalUtil.log(LOGFILE, GlobalUtil.LOG_INFO, message, console_out=CONSOLE_LOG_TRUE)
 
     return new_items_responses

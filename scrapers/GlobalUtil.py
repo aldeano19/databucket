@@ -21,10 +21,22 @@ LOG_WARN = "WARN"
 LOG_ERROR = "ERROR"
 LOG_DEBUG = "DEBUG"
 
+def extract_src(string):
+    regex_str = """(\ssrc=".*?")|(\ssrc='.*?')"""
+
+    print string
+    print "="*20
+    print regex_str
+
+    match = re.search(regex_str, string.strip())
+
+    return match.group(1)
+
+
 def get_rest_env():
     DEFAULT_ENVS = {
         "localhost":{
-            "domain":"localhost",
+            "domain":"http://localhost",
             "port":"8080",
             "base_path":""
         },
@@ -38,7 +50,8 @@ def get_rest_env():
     system_in = sys.argv
 
     if len(system_in) < 2:
-        identifier = "t2medium"
+        # identifier = "t2medium"
+        identifier = "localhost"
     else:
         identifier = system_in[1]
 

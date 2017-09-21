@@ -7,8 +7,6 @@ sys.path.append("..")
 
 import os
 
-from Model import Product
-
 from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -45,53 +43,4 @@ def change_club(driver, club_url):
             continue
 
     return False
-
-def bjs_dict_to_model(item_dict):
-    id=None
-    sku=None
-    model=None
-    name=None
-    availability_stores=None
-    availability_prices=None
-    online_price=None
-    image_url=None
-    product_url=None
-
-    if "id" in item_dict:
-        id = item_dict["id"]
-
-    if "sku" in item_dict:
-        sku = item_dict["sku"]
-
-    if "model" in item_dict:
-        model = item_dict["model"]
-    
-    if "name" in item_dict:
-        name = item_dict["name"]
-    
-    if "availabilityStores" in item_dict:
-        availability_stores = item_dict["availabilityStores"]
-    
-    if "availabilityPrices" in item_dict:
-        availability_prices = item_dict["availabilityPrices"]
-    
-    if "onlinePrice" in item_dict:
-        online_price = item_dict["onlinePrice"]
-
-    if "imageUrl" in item_dict:
-        image_url = item_dict["imageUrl"]
-    
-    if "productUrl" in item_dict:
-        product_url = item_dict["productUrl"]
-
-    return Product(
-                    id=id,
-                    sku=sku,
-                    model=model,
-                    name=name,
-                    availabilityStores=availability_stores,
-                    availabilityPrices=availability_prices,
-                    onlinePrice=online_price,
-                    imageUrl=image_url,
-                    productUrl=product_url)
 

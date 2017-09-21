@@ -2,6 +2,7 @@ package com.consequentialdata.rest.repository.interfaces;
 
 import com.consequentialdata.rest.model.Item;
 import com.consequentialdata.rest.repository.interfaces.custom.ItemRepositoryCustom;
+import org.springframework.data.domain.Example;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 import java.util.List;
@@ -27,4 +28,6 @@ public interface ItemRepository extends MongoRepository<Item, String>, ItemRepos
     Item findById(String id);
 
     List<Item> findAllByOrderByUpdated();
+
+    List<Item> findAllByOrderByUpdated(Example<Item> item);
 }
