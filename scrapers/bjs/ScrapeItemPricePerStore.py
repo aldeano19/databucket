@@ -215,13 +215,15 @@ def run():
 
     clubs_url_map = location_repository.get_locations_urls().json()
 
-    items_url_map = product_repository.get_products_urls().json()
+    # items_url_map = product_repository.get_products_urls().json()
+    filters = {"store":"BJS"}
+    items_url_map = product_repository.filter_items(filters).json()
 
 
     # TODO: uuuuuuuuuuuu divide items_url_map.keys() into many
-    payloads = divide_keys(items_url_map.keys(), 4)
+    payloads = divide_keys(items_url_map, 4)
 
-    print "TZ: ", len(items_url_map.keys())
+    print "TZ: ", len(items_url_map)
 
     for p in payloads:
         print "PZ: ", len(p)
