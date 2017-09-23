@@ -160,8 +160,30 @@ def get_rest_env():
         return DEFAULT_ENVS[identifier]
 
 
+def divide_keys(keys, divisions):
+    # TODO: there is an offset in the algorithm not being accounted for, fix it so no items get overlooked on any run.
+    section_size = len(keys)/divisions
+
+    payloads = []
+
+    mi = 0
+    ma = section_size
+
+    for d in range(divisions):
+        payloads.append(keys[mi:ma])
+        mi = ma
+        ma += section_size
+
+    return payloads
+
 def run():
     
+    rest_connection = get_rest_env()
+
+    product_repository = ProductRepository(
+        rest_connection["domain"], 
+        rest_connection["port"], 
+        rest_connection["base_path"])
 
     location_repository = BjsLocationRepository(
         rest_connection["domain"], 
@@ -175,7 +197,14 @@ def run():
 
 
     # TODO: uuuuuuuuuuuu divide items_url_map.keys() into many
-    threads = ready_threads(items_url_map, clubs_url_map, [items_url_map.keys()])
+    payloads = divide_keys(items_url_map.keys(), 4)
+
+    print "TZ: ", len(items_url_map.keys())
+
+    for p in payloads:
+        print "PZ: ", len(p)
+
+    threads = ready_threads(items_url_map, clubs_url_map, payloads)
 
     for t in threads:
         t.start()
