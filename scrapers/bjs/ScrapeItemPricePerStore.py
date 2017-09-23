@@ -102,10 +102,11 @@ def process_items_subset(item_subset_list, items_url_map, clubs_url_map):
     item_counter = 0
 
     for item_name in items_url_map:
-        item_counter += 1
         """ Only process the items which names were given in the item_subset_list, ignore the rest."""
         if item_name not in item_subset_list:
             continue
+
+        item_counter += 1
 
         club_price_map = {}
         i = 0
