@@ -50,8 +50,8 @@ def get_rest_env():
     system_in = sys.argv
 
     if len(system_in) < 2:
-        # identifier = "t2medium"
-        identifier = "localhost"
+        identifier = "t2medium"
+        # identifier = "localhost"
     else:
         identifier = system_in[1]
 

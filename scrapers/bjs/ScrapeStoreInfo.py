@@ -103,60 +103,64 @@ def get_address(driver):
 
     return None
 
+def run():
+    locations_search_url = "http://www.bjs.com/webapp/wcs/stores/servlet/LocatorIndexView"
+
+    driver = webdriver.Firefox()
+
+    wizard = BjsPageWizard()
+
+    rest_connection = GlobalUtil.get_rest_env()
+
+    locationRepository = BjsLocationRepository(
+        rest_connection["domain"], 
+        rest_connection["port"], 
+        rest_connection["base_path"])
+
+    locations_map = get_location_ids(driver, locations_search_url)
+
+    locations_map = build_urls(locations_map)
+
+    for key in locations_map:
+        # print "%-30s : %s" % (key, change_club(driver, h[key]))
+        # time.sleep(1)
+        found_club = BjsUtil.change_club(driver, locations_map[key])
+        if not found_club:
+            # TODO: Log a warning message. This club's url is unreachable.
+            continue
+
+        name = key
+        street_address = get_address(driver)
+
+        if not street_address:
+            message = "No address found for %s." % (key)
+            GlobalUtil.log(LOGFILE, GlobalUtil.LOG_WARN, message, console_out=True)
+
+        club_url = locations_map[key]
+
+        location = {
+            "retailer":"Bjs",
+            "name":name.replace(".", ""),
+            "streetAddress":street_address,
+            "state":None,
+            "city":None,
+            "zipcode":None,
+            "clubUrl":club_url}
+
+        update_response = locationRepository.update_locations(location)
+
+        message = "%s : %s" % (
+            update_response.json()["id"], 
+            update_response.status_code)
+        GlobalUtil.log(LOGFILE, GlobalUtil.LOG_INFO, message, console_out=True)
 
 ##########
 ## main ##
 ##########
 
-locations_search_url = "http://www.bjs.com/webapp/wcs/stores/servlet/LocatorIndexView"
 
-driver = webdriver.Firefox()
-
-wizard = BjsPageWizard()
-
-rest_connection = GlobalUtil.get_rest_env()
-
-locationRepository = BjsLocationRepository(
-    rest_connection["domain"], 
-    rest_connection["port"], 
-    rest_connection["base_path"])
-
-locations_map = get_location_ids(driver, locations_search_url)
-
-locations_map = build_urls(locations_map)
-
-for key in locations_map:
-    # print "%-30s : %s" % (key, change_club(driver, h[key]))
-    # time.sleep(1)
-    found_club = BjsUtil.change_club(driver, locations_map[key])
-    if not found_club:
-        # TODO: Log a warning message. This club's url is unreachable.
-        continue
-
-    name = key
-    street_address = get_address(driver)
-
-    if not street_address:
-        message = "No address found for %s." % (key)
-        GlobalUtil.log(LOGFILE, GlobalUtil.LOG_WARN, message, console_out=True)
-
-    club_url = locations_map[key]
-
-    location = {
-        "retailer":"Bjs",
-        "name":name.replace(".", ""),
-        "streetAddress":street_address,
-        "state":None,
-        "city":None,
-        "zipcode":None,
-        "clubUrl":club_url}
-
-    update_response = locationRepository.update_locations(location)
-
-    message = "%s : %s" % (
-        update_response.json()["id"], 
-        update_response.status_code)
-    GlobalUtil.log(LOGFILE, GlobalUtil.LOG_INFO, message, console_out=True)
+if __name__ == "__main__":
+    run()
 
 
 

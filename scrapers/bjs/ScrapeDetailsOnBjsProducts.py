@@ -32,7 +32,7 @@ import BjsUtil
 import GlobalUtil
 
 from bs4 import BeautifulSoup
-from pyvirtualdisplay import Display
+# from pyvirtualdisplay import Display
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
@@ -213,40 +213,43 @@ def scrape_items(logfile, items):
             print thread_progress
         
 
+def run(num_of_threads):
+    # display = Display(visible=0, size=(800, 600))
+    # display.start()
+
+    items = get_items_from_database()
+
+    """Uncomment for debugging purposes."""
+    # for i in items:
+    #     if i["id"] == "599675559a1e3406aa0f5ed0":
+    #         items = [i]
+
+    divided_payload = divide_items_payload(items, num_of_threads)
+
+    LOGFILE = ("bjs-logs/%s.log" % (os.path.basename(__file__))).replace(".py","")
+
+    threads = ready_threads(LOGFILE, divided_payload)
+
+    for t in threads:
+        t.start()
+
+
+    thread_alive = True
+    while thread_alive:
+        """keep running untill all threads are done"""
+        thread_alive = False
+        for t in threads:
+            if t.is_alive():
+                thread_alive = True
+
+        time.sleep(5)
+
 ##########
 ## main ##
 ##########
 
-# display = Display(visible=0, size=(800, 600))
-# display.start()
-
-items = get_items_from_database()
-
-"""Uncomment for debugging purposes."""
-# for i in items:
-#     if i["id"] == "599675559a1e3406aa0f5ed0":
-#         items = [i]
-
-divided_payload = divide_items_payload(items, 1)
-
-LOGFILE = ("bjs-logs/%s.log" % (os.path.basename(__file__))).replace(".py","")
-
-threads = ready_threads(LOGFILE, divided_payload)
-
-for t in threads:
-    t.start()
-
-
-thread_alive = True
-while thread_alive:
-    """keep running untill all threads are done"""
-    thread_alive = False
-    for t in threads:
-        if t.is_alive():
-            thread_alive = True
-
-    time.sleep(5)
-
+if __name__ == "__main__":
+    run(1)
 
 
 

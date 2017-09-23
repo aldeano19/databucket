@@ -168,14 +168,17 @@ def get_and_save_new_items(
 
     return new_items_responses
 
+def run():
+    bjs_main_product_page = "http://www.bjs.com/grocery-household--pet.category.3000000000000117223.2001244"
+    bjs_main_product_category_name = "Grocery, Household & Pet"
 
+    get_and_save_new_items(
+        bjs_main_product_category_name,
+        bjs_main_product_page)
+    
 ##########
 ## main ##
 ##########
 
-bjs_main_product_page = "http://www.bjs.com/grocery-household--pet.category.3000000000000117223.2001244"
-bjs_main_product_category_name = "Grocery, Household & Pet"
-
-get_and_save_new_items(
-    bjs_main_product_category_name,
-    bjs_main_product_page)
+if __name__ == "__main__":
+    run()

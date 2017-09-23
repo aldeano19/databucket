@@ -152,43 +152,48 @@ def get_rest_env():
         GlobalUtil.log(LOGFILE, GlobalUtil.LOG_INFO, message, console_out=CONSOLE_LOG_TRUE)
         return DEFAULT_ENVS[identifier]
 
+
+def run():
+    rest_connection = get_rest_env()
+
+    product_repository = ProductRepository(
+        rest_connection["domain"], 
+        rest_connection["port"], 
+        rest_connection["base_path"])
+
+    location_repository = BjsLocationRepository(
+        rest_connection["domain"], 
+        rest_connection["port"], 
+        rest_connection["base_path"])
+
+
+    clubs_url_map = location_repository.get_locations_urls().json()
+
+    items_url_map = product_repository.get_products_urls().json()
+
+
+    # TODO: uuuuuuuuuuuu divide items_url_map.keys() into many
+    threads = ready_threads(items_url_map, clubs_url_map, [items_url_map.keys()])
+
+    for t in threads:
+        t.start()
+
+    thread_alive = True
+    while thread_alive:
+        """keep running untill all threads are done"""
+        thread_alive = False
+        for t in threads:
+            if t.is_alive():
+                thread_alive = True
+
+        time.sleep(5)
+
 ##########
 ## main ##
 ##########
 
-rest_connection = get_rest_env()
-
-product_repository = ProductRepository(
-    rest_connection["domain"], 
-    rest_connection["port"], 
-    rest_connection["base_path"])
-
-location_repository = BjsLocationRepository(
-    rest_connection["domain"], 
-    rest_connection["port"], 
-    rest_connection["base_path"])
-
-
-clubs_url_map = location_repository.get_locations_urls().json()
-
-items_url_map = product_repository.get_products_urls().json()
-
-
-# TODO: uuuuuuuuuuuu divide items_url_map.keys() into many
-threads = ready_threads(items_url_map, clubs_url_map, [items_url_map.keys()])
-
-for t in threads:
-    t.start()
-
-thread_alive = True
-while thread_alive:
-    """keep running untill all threads are done"""
-    thread_alive = False
-    for t in threads:
-        if t.is_alive():
-            thread_alive = True
-
-    time.sleep(5)
+if __name__ == "__main__":
+    run()
 
 
 
