@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 """
 The script identifies new items in the website inventory and saves them to the
 database. Items already in the database will be ignored. In-depth details for
