@@ -203,14 +203,14 @@ def scrape_items(logfile, items):
         running_time = GlobalUtil.calculate_running_time(start_time)
 
         if (item_counter%5)==0:
-            thread_progress = "%s %s/%s : %8s : %8s" \
+            message = "%s %s/%s : %8s : %8s" \
                 % (threading.current_thread().name, 
                     len(items), 
                     item_counter, 
                     remaining,
                     running_time)
 
-            print thread_progress
+            GlobalUtil.log(LOGFILE, GlobalUtil.LOG_INFO, message, console_out=True)
         
 
 def run(num_of_threads):

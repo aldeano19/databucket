@@ -85,6 +85,8 @@ def get_item_price_from_club(driver, item_name, items_url_map, club, clubs_url_m
     return match_price(get_all_text_from_element_list(ele))
 
 def process_items_subset(item_subset_list, items_url_map, clubs_url_map):
+    start_time = time.time() * 1000
+
     driver = webdriver.Firefox()
     wizard = BjsPageWizard()
 
@@ -97,7 +99,10 @@ def process_items_subset(item_subset_list, items_url_map, clubs_url_map):
 
     item_club_errors = {}
 
+    item_counter = 0
+
     for item_name in items_url_map:
+        item_counter += 1
         """ Only process the items which names were given in the item_subset_list, ignore the rest."""
         if item_name not in item_subset_list:
             continue
@@ -118,6 +123,22 @@ def process_items_subset(item_subset_list, items_url_map, clubs_url_map):
         product_repository.patch_availability(item_name, club_price_map).content
         message = "Updated item %s." % (item_name)
         GlobalUtil.log(LOGFILE, GlobalUtil.LOG_INFO, message, console_out=True)
+
+        # CALC progress
+        remaining = GlobalUtil.estimate_remaining_time(
+                len(item_subset_list), item_counter, start_time)
+        running_time = GlobalUtil.calculate_running_time(start_time)
+
+        if (item_counter%1)==0:
+            message = "%s %s/%s : %8s : %8s" \
+                % (threading.current_thread().name, 
+                    len(item_subset_list), 
+                    item_counter, 
+                    remaining,
+                    running_time)
+
+            GlobalUtil.log(LOGFILE, GlobalUtil.LOG_INFO, message, console_out=True)
+            
 
     return item_club_errors
 
