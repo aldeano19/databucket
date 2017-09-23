@@ -88,6 +88,13 @@ def process_items_subset(item_subset_list, items_url_map, clubs_url_map):
     driver = webdriver.Firefox()
     wizard = BjsPageWizard()
 
+    rest_connection = get_rest_env()
+
+    product_repository = ProductRepository(
+        rest_connection["domain"], 
+        rest_connection["port"], 
+        rest_connection["base_path"])
+
     item_club_errors = {}
 
     for item_name in items_url_map:
@@ -154,12 +161,7 @@ def get_rest_env():
 
 
 def run():
-    rest_connection = get_rest_env()
-
-    product_repository = ProductRepository(
-        rest_connection["domain"], 
-        rest_connection["port"], 
-        rest_connection["base_path"])
+    
 
     location_repository = BjsLocationRepository(
         rest_connection["domain"], 
